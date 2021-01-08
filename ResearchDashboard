@@ -1,0 +1,630 @@
+library(shinythemes)
+library(tmap)
+library(tmaptools)
+library(sf)
+library(leaflet)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(ggrepel)
+library(extrafont)
+library(extrafontdb)
+library(devtools)
+library(tidytext)
+library(tigris)
+library(csv)
+library(forcats)
+library(usethis)
+library(sp)
+library(data.table)
+library(reactable)
+library(tidycensus)
+library(tidyr)
+library(stringr)
+
+################################ Dataframes
+nj_counties <- tigris::counties("NJ", class = "sf")
+dashboard_risk <- read.csv("dashboard_risk.csv")
+county_risk <- nj_counties %>% 
+    left_join(dashboard_risk, by = c("GEOID" = "County_ID")) %>% 
+    st_transform(4326)
+
+nj_tracts <- tigris::tracts("NJ", class = "sf", )
+risk <- read.csv("pollutantrisk.csv") %>% 
+    mutate_at(5, as.character)
+nj_tracts <- nj_tracts %>% 
+    left_join(risk, by = c("GEOID" = "Tract"))
+
+registry_new <- read.csv("All Sites Cleaned - 2019.csv")
+master_report <- read.csv("Master Report.csv")
+cinj2 <- read.csv("cinj2.csv")
+new_trials <- read.csv(("new_trials.csv"))
+brs <- read.csv("BRS.csv")
+
+options(tigris_use_cache = TRUE)
+census_api_key("81cc090027aa172987dc489efcbb5576416671ba")
+
+################################# input choice lists
+site_list <- as.list(sort(unique(new_trials$Disease.Site)))
+rwj_list <- as.list(sort(unique(registry_new$RWJBH.Site)))
+proto_list <- as.list(sort(unique(new_trials$Protocol.Type)))
+phase_list <- as.list(sort(unique(new_trials$Phase)))
+tsg_list <- as.list(sort(unique(new_trials$Subject.Tumor.Study.Group)))
+data4_list <- as.list(sort(unique(new_trials$Data.Table.4.Report.Type)))
+clin_list <- as.list(sort(unique(master_report$Clin_Stage)))
+path_list <- as.list(sort(unique(master_report$Path_Stage)))
+trial_list <- as.list(sort(unique(new_trials$X)))
+risk <- dashboard_risk %>% 
+    select(-county, -NAME, -County_ID)
+risk_list <- as.list(sort(colnames(risk)))
+
+################################## ACS Data
+cumby <- get_acs(geography = "tract", state = "NJ", geometry = FALSE, 
+                 variables = c(median_income = "B19013_001",
+                               spanish_speaking = "B06007_003",
+                               less_than_well = "B06007_005",
+                               black_aa = "B02001_003",
+                               insurance = "B27001_001",
+                               education = "B06009_001",
+                               high_school = "B15003_017",
+                               hispanic = "B03002_003",
+                               stamps = "B19058_001",
+                               drive = "B08101_009",
+                               walk = "B08101_033"),
+                 summary_var = c(population = "B01003_001")) %>% 
+  mutate(pct = 100 * (estimate / summary_est)) %>% 
+  select(GEOID, NAME, variable, estimate, pct) %>% 
+  pivot_wider(id_cols = c(GEOID, NAME), names_from = variable, values_from = c(estimate, pct))
+
+cumby2 <- get_acs(geography = "tract", state = "NJ", geometry = TRUE, 
+                  variables = c(population = "B01003_001")) %>% 
+  select(-variable, -moe) %>% 
+  rename(population = estimate)
+
+cumby2 <- cumby2 %>% 
+  left_join(cumby, by = c("GEOID" = "GEOID", "NAME" = "NAME"))
+cumby_geom <- st_transform(cumby2, 4326)
+
+new_trials <- new_trials %>% 
+  mutate(Year = case_when(
+    str_detect(On.Study.Date, "2016") ~ "2016",
+    str_detect(On.Study.Date, "2017") ~ "2017",
+    str_detect(On.Study.Date, "2018") ~ "2018",
+    str_detect(On.Study.Date, "2019") ~ "2019",
+    str_detect(On.Study.Date, "2020") ~ "2020"
+  )) %>% 
+  relocate(Year, .after = Age) %>% 
+  mutate_at(6, as.numeric)
+
+####################################### UI
+
+ui <- fluidPage(theme = shinytheme("flatly"),
+                
+                titlePanel(title = div(img(src="RWJBHlogo.png", height = 150, width = 550))),
+                
+                navbarPage("Catchment Area Research Dashboard",
+                
+                    tabsetPanel(
+######################################### Tab 1                        
+                      navbarMenu("Clinical Trials",
+                        tabPanel(title = "Clinical Trials Enrollment at CINJ",
+                            sidebarLayout(
+                            sidebarPanel(width = 3,
+                                         selectInput(inputId = "disease_site",
+                                                     label = "Disease Site",
+                                                     choices = site_list,
+                                                     selected = "Adrenal Glands"),
+                                         checkboxGroupInput(inputId = "data4",
+                                                            label = "Data Table 4 Type",
+                                                            choices = data4_list,
+                                                            selected = data4_list),
+                                         checkboxGroupInput(inputId = "protocol",
+                                                            label = "Protocol Type",
+                                                            choices = proto_list,
+                                                            selected = proto_list),
+                                         checkboxGroupInput(inputId = "phase",
+                                                            label = "Phase",
+                                                            choices = phase_list,
+                                                            selected = phase_list),
+                                         checkboxGroupInput(inputId = "tsg",
+                                                            label = "Subject Tumor Study Group",
+                                                            choices = tsg_list,
+                                                            selected = tsg_list)),
+                            fluidRow(
+                            column(2,
+                                   selectInput(inputId = "trial_site",
+                                               label = "Choose RWJBH Site",
+                                               choices = trial_list,
+                                               selected = "CINJ")),
+                            column(1, 
+                                 checkboxGroupInput(inputId = "year",
+                                                    label = "Year",
+                                                    choices = c("2016" = "2016",
+                                                                "2017" = "2017",
+                                                                "2018" = "2018",
+                                                                "2019" = "2019",
+                                                                "2020" = "2020"),
+                                                    selected = c("2016", "2017", "2018", "2019", "2020"))),
+                            column(1, 
+                                 checkboxGroupInput(inputId = "gender",
+                                                    label = "Gender",
+                                                    choices = c("Female" = "Female",
+                                                                "Male" = "Male"),
+                                                    selected = c("Female", "Male"))),
+                            column(3,
+                                 checkboxGroupInput(inputId = "race_ethnicity",
+                                                    label = "Race/Ethnicity",
+                                                    choices = c("White" = "White",
+                                                           "Black" = "Black",
+                                                           "Asian" = "Asian",
+                                                           "Hispanic/Latino" = "Hispanic/Latino",
+                                                           "Other/Unknown" = "Other/Unknown"),
+                                                    selected = c("White", "Black", "Asian", "Hispanic/Latino", "Other/Unknown"))),
+                                
+                            mainPanel(
+                                 
+                                 plotOutput("accrual")
+                        ))))),
+################################### Tab 2
+                       navbarMenu("Biospecimens",
+                        tabPanel(title = "Total Samples", "Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)",
+                                 reactableOutput("brs")),
+                        tabPanel(title = "Unique Samples", "Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Unique Samples as of 11/24/2020)",
+                                 reactableOutput("brs2"))),
+                        
+ ################################## Tab 3                    
+                        tabPanel(title = "Cancer and Risk Factors", fluid = TRUE,
+                                 fluidRow(
+                                   column(3,
+                                 varSelectInput(inputId = "x_axis",
+                                                label = "Choose x-axis",
+                                                data = dashboard_risk,
+                                                selected = "Overall.Cancer.Incidence")),
+                                 column(3,
+                                 varSelectInput(inputId = "y_axis",
+                                                label = "Choose y-axis",
+                                                data = dashboard_risk,
+                                                selected = "Overall.Cancer.Mortality")),
+                                 plotOutput("cancer_risk", height = 800, width = 1200),
+                                 
+                        )),
+##################################### Tab 4                        
+                        navbarMenu("RWJBH Tumor Registries",
+                        tabPanel(title = "Analytic Cases by Disease Site", fluid = TRUE,
+                                 fluidRow(
+                                 column(4,
+                                        selectInput(inputId = "rwj_site",
+                                                    label = "Choose RWJBH Registry",
+                                                    choices = rwj_list,
+                                                    selected = "New Brunswick")),
+                                 column(2,
+                                 checkboxGroupInput(inputId = "report_year",
+                                                    label = "Year",
+                                                    choices = c("2019" = "2019",
+                                                                "2020" = "2020"),
+                                                    selected = c("2019"))),
+                                 column(6,
+                                        sliderInput(inputId = "age_range",
+                                                    label = "Select age range:",
+                                                    min = 0,
+                                                    max = 100,
+                                                    value = c(0, 100))),
+                                 plotOutput("disease_site")
+                                 
+                        )),
+                        tabPanel(title = "Analytic Cases by Disease Site v2", fluid = TRUE,
+                                 fluidRow(
+                                   column(3,
+                                                selectInput(inputId = "rwj_site2",
+                                                            label = "Choose RWJBH Registry",
+                                                            choices = rwj_list,
+                                                            selected = "New Brunswick")),
+                                     
+                                     column(1,
+                                            checkboxGroupInput(inputId = "report_year2",
+                                                               label = "Select Year(s)",
+                                                               choices = c("2019" = "2019",
+                                                                           "2020" = "2020"),
+                                                               selected = c("2019", "2020"))),
+                                     column(2,
+                                            checkboxGroupInput(inputId = "gender2",
+                                                               label =  "Select Gender(s)",
+                                                               choices = c("Male" = "Male",
+                                                                           "Female" = "Female"),
+                                                               selected = c("Male", "Female"))),
+                                     column(2,
+                                            checkboxGroupInput(inputId = "race",
+                                                               label = "Select Race/Ethnicity",
+                                                               choices = c("White" = "White",
+                                                                           "Black" = "Black",
+                                                                           "Asian" = "Asian",
+                                                                           "Hispanic/Latino" = "Hispanic/Latino",
+                                                                           "Other/Unknown" = "Other/Unknown"),
+                                                               selected = c("White", "Black", "Asian", "Hispanic/Latino", "Other/Unknown"))),
+                                     column(4,
+                                            sliderInput(inputId = "age_range2",
+                                                        label = "Select age range:",
+                                                        min = 0,
+                                                        max = 100,
+                                                        value = c(0, 100)))),
+                                     plotOutput("disease_site2", height = "100%", width = "100%")))
+                        ,
+########################################## Tab 5                        
+                        navbarMenu("Maps",
+                        
+                        tabPanel(title = "County Map",
+                                 tmapOutput("countymap1", height = "600px", width = "75%")),
+                        
+                        tabPanel(title = "Air Pollutant Map",
+                                 tmapOutput("air_risk", height = "600px", width = "75%"))
+                        )
+                        )))
+
+################################### SERVER
+server <- function(input, output) {
+    
+    cinj_shiny <- reactive({new_trials %>% 
+            filter(Disease.Site != "") %>% 
+            filter(Gender %in% input$gender,
+                   X %in% input$trial_site,
+                   Disease.Site %in% input$disease_site,
+                   Year %in% input$year,
+                   Race.Ethnicity %in% input$race_ethnicity,
+                   Data.Table.4.Report.Type %in% input$data4,
+                   Protocol.Type %in% input$protocol,
+                   Phase %in% input$phase,
+                   Subject.Tumor.Study.Group %in% input$tsg)
+        
+    })
+    
+    ### Tab 1: Clinical Trials Accrual
+    output$accrual <- renderPlot({
+        
+        cinj_react <- cinj_shiny()
+        
+        ggplot(cinj_react) +
+            geom_histogram(aes(x = Age), fill = "firebrick3", color = "black", binwidth = 1) +
+            scale_x_continuous("Patient Age at Enrollment", limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+            scale_y_continuous(NULL, limits = c(0, 70), breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70)) +
+            ggtitle(paste("Clinical Trials Enrollment (by Disease Site) - ", input$disease_site)) +
+            labs(caption = "OnCore Subject Search: 1/5/2021 (Does not include studies where Disease Site is not captured)") +
+            theme(plot.title = element_text(size = 18),
+                  axis.text = element_text(size = 14, color = "black"),
+                  axis.title = element_text(size = 15, color = "black"))
+    }, height = 600, width = 1000)
+    
+    ### Tab 2: Biospecimen Tables
+    
+    brs <- brs %>% 
+      rename(Race_Ethnicity = X)
+    brs2 <- brs %>% 
+      group_by(SEQ., SPECIMEN_TYPE) %>% 
+      slice_head(n = 1)
+    
+    
+    output$brs <- renderReactable({
+      brs_react <- brs %>% 
+        group_by(DISEASE_SITE, SPECIMEN_TYPE, Race_Ethnicity, GENDER) %>% 
+        count() %>% 
+        arrange(DISEASE_SITE, SPECIMEN_TYPE) %>% 
+        pivot_wider(names_from = SPECIMEN_TYPE, values_from = n) %>% 
+        relocate(Tissue, .after = GENDER) %>% 
+        reactable(groupBy = c("DISEASE_SITE", "Race_Ethnicity"),
+                  defaultColDef = colDef(
+                    align = "center",
+                    headerStyle = list(
+                      background = "lightgray",
+                      color = "black"
+                    ),
+                    footerStyle = list(
+                      fontWeight = "bold"
+                    )),
+                  style = list(
+                    fontFamily = "Sans-Serif"
+                  ),
+                  columns = list(
+                    Race_Ethnicity = colDef(name = "Race/Ethnicity"),
+                    DISEASE_SITE = colDef(name = "Primary Disease Site",
+                                          footer = "TOTAL",
+                                          filterable = TRUE),
+                    GENDER = colDef(name = "Gender"),
+                    Blood = colDef(aggregate = "sum",
+                                   footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")
+                    ),
+                    `Outside Paraffin Blocks` = colDef(aggregate = "sum",
+                                                       footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Tissue = colDef(aggregate = "sum",
+                                    name = "Tumor Tissue",
+                                    footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Urine = colDef(aggregate = "sum",
+                                   footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Glass Slides` = colDef(aggregate = "sum",
+                                            footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Body Fluid` = colDef(aggregate = "sum",
+                                          footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Bone Marrow` = colDef(aggregate = "sum",
+                                           footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Biomarker = colDef(aggregate = "sum",
+                                       footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }"))
+                  ),
+                  columnGroups = list(
+                    colGroup(name = "", columns = c("Race_Ethnicity", "DISEASE_SITE")),
+                    colGroup(name = "Specimen Type",
+                             columns = c(
+                               "Biomarker",
+                               "Blood",
+                               "Body Fluid",
+                               "Bone Marrow",
+                               "Glass Slides",
+                               "Outside Paraffin Blocks",
+                               "Tissue",
+                               "Urine"
+                             ))),
+                  
+                  bordered = TRUE,
+                  highlight = TRUE,
+                  striped = TRUE)
+      print(brs_react)
+      })
+      
+    
+    output$brs2 <- renderReactable({
+      brs_react2 <- brs2 %>% 
+        group_by(DISEASE_SITE, SPECIMEN_TYPE, Race_Ethnicity, GENDER) %>% 
+        count() %>% 
+        arrange(DISEASE_SITE, SPECIMEN_TYPE) %>% 
+        pivot_wider(names_from = SPECIMEN_TYPE, values_from = n) %>% 
+        relocate(Tissue, .after = GENDER) %>% 
+        reactable(groupBy = c("DISEASE_SITE", "Race_Ethnicity"),
+                  defaultColDef = colDef(
+                    align = "center",
+                    headerStyle = list(
+                      background = "lightgray",
+                      color = "black"
+                    ),
+                    footerStyle = list(
+                      fontWeight = "bold"
+                    )),
+                  style = list(
+                    fontFamily = "Sans-Serif"
+                  ),
+                  columns = list(
+                    Race_Ethnicity = colDef(name = "Race/Ethnicity"),
+                    DISEASE_SITE = colDef(name = "Primary Disease Site",
+                                          footer = "TOTAL",
+                                          filterable = TRUE),
+                    GENDER = colDef(name = "Gender"),
+                    Blood = colDef(aggregate = "sum",
+                                   footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")
+                    ),
+                    `Outside Paraffin Blocks` = colDef(aggregate = "sum",
+                                                       footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Tissue = colDef(aggregate = "sum",
+                                    name = "Tumor Tissue",
+                                    footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Urine = colDef(aggregate = "sum",
+                                   footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Glass Slides` = colDef(aggregate = "sum",
+                                            footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Body Fluid` = colDef(aggregate = "sum",
+                                          footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    `Bone Marrow` = colDef(aggregate = "sum",
+                                           footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }")),
+                    Biomarker = colDef(aggregate = "sum",
+                                       footer = JS("function(colInfo) {
+        var total = 0
+        colInfo.data.forEach(function(row) {
+          total += row[colInfo.column.id]
+        })
+        return '' + total.toFixed(0)
+      }"))
+                  ),
+                  columnGroups = list(
+                    colGroup(name = "", columns = c("Race_Ethnicity", "DISEASE_SITE")),
+                    colGroup(name = "Specimen Type",
+                             columns = c(
+                               "Biomarker",
+                               "Blood",
+                               "Body Fluid",
+                               "Bone Marrow",
+                               "Glass Slides",
+                               "Outside Paraffin Blocks",
+                               "Tissue",
+                               "Urine"
+                             ))),
+                  
+                  bordered = TRUE,
+                  highlight = TRUE,
+                  striped = TRUE)
+      print(brs_react2)
+      })
+      
+    
+    
+    ### Tab 3: Cancer & Risk Factors
+    
+    dashboard_risk2 <- reactive({dashboard_risk})
+    
+    output$cancer_risk <- renderPlot({
+        
+        ggplot(data = dashboard_risk2(), 
+               aes_string(x = input$x_axis, y = input$y_axis)) +
+            geom_point( 
+                       shape = 21, fill = "firebrick3", color = "black", alpha = 0.85, size = 7) +
+            geom_label_repel(aes(label = county), size = 3) +
+            ggtitle("Cancer Incidence Rates and Behavioral Risk Factors") +
+            theme(plot.title = element_text(size = 18),
+                  axis.text = element_text(size = 14, color = "black"),
+                  axis.title = element_text(size = 15, color = "black"))
+    }, height = 700, width = 900)
+
+    ### Tab 4: Analytic Cases
+    output$disease_site <- renderPlot({
+        
+        registry_rwj <- reactive({master_report %>% 
+                filter(Disease.Site != "", Gender %in% c("Male", "Female")) %>%
+                group_by(RWJBH.Site, Disease.Site, Gender, Year) %>% 
+                count() %>%
+                filter(RWJBH.Site %in% input$rwj_site, Year %in% input$report_year)
+        })
+        
+        ggplot(registry_rwj(), aes(x = reorder_within(Disease.Site, n, Gender), y = n)) +
+            facet_wrap(~Gender, scales = "free_y") +
+            geom_col(aes(), color = "black", fill = "firebrick3", position = "stack") +
+            coord_flip() +
+            scale_x_reordered() +
+            scale_y_continuous(limits = c(0, 450), breaks = c(0, 50, 100, 150, 200, 250, 300, 350, 400, 450)) +
+            stat_summary(fun = sum, aes(label = ..y.., group = Disease.Site), geom = "text", hjust = -0.3) +
+            scale_fill_gradient(low = "firebrick4", high = "firebrick2") +
+            theme(
+                strip.text = element_text(size = 14, face = "bold", color = "white"),
+                axis.text = element_text(size = 12, color = "black"),
+                plot.title = element_text(size = 18),
+                strip.background = element_rect(fill = "dodgerblue4", color = "White"),
+                axis.title = element_blank(),
+                legend.position = "none"
+            ) +
+            ggtitle("Analytic Cases at RWJBH Sites") +
+            labs(caption = "RWJBH Tumor Registry Reports, 2019-2020")
+    }, height = 800, width = 1200)
+    
+  output$disease_site2 <- renderPlot({  
+    registry_rwj2 <- reactive({
+        master_report %>% 
+                filter(Gender %in% c("Male", "Female")) %>%
+                filter(RWJBH.Site %in% input$rwj_site2, Year %in% input$report_year2, Gender %in% input$gender2, Age %inrange% input$age_range2, Race.Ethnicity %in% input$race)
+    })
+
+        ggplot(registry_rwj2(), mapping = aes(x = fct_rev(fct_infreq(Disease.Site)))) +
+                geom_histogram(stat = "count", color = "black", fill = "firebrick3") +
+                coord_flip() +
+                stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
+                scale_y_continuous(limits = c(0, 550), breaks = c(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550)) +
+                scale_fill_gradient() +
+                theme(
+                    strip.text = element_text(size = 14, face = "bold", color = "white"),
+                    axis.text = element_text(size = 12, color = "black"),
+                    plot.title = element_text(size = 18),
+                    strip.background = element_rect(fill = "dodgerblue4", color = "White"),
+                    axis.title = element_blank(),
+                    legend.position = "none"
+                ) +
+                ggtitle(paste("Analytic Cases at RWJBH Sites - ", input$rwj_site2)) +
+                labs(caption = "RWJBH Tumor Registry Reports, 2019-2020")
+}, height = 1000, width = 1000)
+  
+ 
+    ### Tab 5: Maps   
+    output$countymap1 = renderTmap({
+      tm_basemap("OpenStreetMap") +
+       tm_shape(county_risk)+ 
+            tm_borders("black", lwd = 0.9, alpha = 0.9) +
+            tm_fill(col = c("Obese", "Current.Smoker", "Binge.Drinking", "Mammography"), alpha = 0.7, palette = "Reds", style = "quantile", id = "NAMELSAD", popup.vars = c("county", "Obese", "Current.Smoker", "Binge.Drinking", "Mammography")) +
+            tm_facets(as.layers = TRUE)
+ 
+    })
+    
+    output$air_risk = renderTmap({
+        tm_shape(nj_tracts)+ 
+            tm_borders("black", lwd = 0.5, alpha = 0.9) +
+            tm_fill(col = c("Acetaldehyde", "Benzene", "Formaldehyde", "Naphthalene"), alpha = 0.7, palette = "-plasma", style = "quantile", id = "NAMELSAD10", popup.vars = c("Population", "County", "Acetaldehyde", "Benzene", "Formaldehyde", "Naphthalene")) +
+            tm_facets(as.layers = TRUE) +
+            tm_shape(nj_counties) +
+            tm_borders("black", lwd = 0.85, alpha = 0.9) 
+        
+    })
+    
+}
+
+##################################
+shinyApp(ui = ui, server = server)
