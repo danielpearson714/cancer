@@ -458,7 +458,7 @@ server <- function(input, output) {
       }")),
                     `Glass Slides` = colDef(aggregate = "sum",
                                             footer = JS("function(colInfo) {
-        var total = 0
+        var total = 0 
         colInfo.data.forEach(function(row) {
           total += row[colInfo.column.id]
         })
