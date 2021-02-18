@@ -110,9 +110,6 @@ tract_moe2 <- get_acs(geography = "tract", state = "NJ", geometry = TRUE,
   select(-variable, -moe) %>% 
   rename(population = estimate)
 
-tract_geom <- tract_moe2 %>% 
-  left_join(cumby, by = c("GEOID" = "GEOID", "NAME" = "NAME"))
-
 ##################################### Color Pallette for Risk Factor reactable (Tab 3)
 make_color_pal <- function(colors, bias = 1) {
   get_color <- colorRamp(colors, bias = bias)
