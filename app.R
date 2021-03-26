@@ -48,17 +48,17 @@ nj_tracts <- nj_tracts %>%
     st_transform(4326)
 
 registry_new <- read.csv("All Sites Cleaned - 2019.csv")
-master_report <- read.csv("Master Report.csv")
+master_report <- read.csv("Mock Data (master_report).csv")
 cinj2 <- read.csv("cinj2.csv")
-new_trials <- read.csv(("new_trials.csv"))
+new_trials <- read.csv(("Mock Data (new_trials).csv"))
 new_trials <- new_trials %>% 
-  mutate_at(7, as.numeric)
-brs <- read.csv("BRS.csv")
+  mutate_at(c(2,7), as.numeric)
+brs <- read.csv("Mock Data (BRS).csv")
 
 options(tigris_use_cache = TRUE)
 census_api_key("81cc090027aa172987dc489efcbb5576416671ba")
 
-npl_sites <- read.csv("NPLsuperfunds.csv")
+npl_sites <- read.csv("NPLSuperfunds.csv")
 npl_sites <- st_as_sf(npl_sites, coords = c("LONGITUDE", "LATITUDE"))   
 st_crs(npl_sites) <- 4326
 st_crs(npl_sites)
@@ -356,7 +356,6 @@ server <- function(input, output) {
                    Protocol.Type %in% input$protocol,
                    Phase %in% input$phase,
                    Subject.Tumor.Study.Group %in% input$tsg)
-        
     })
     
     ### Tab 1: Clinical Trials Accrual
@@ -390,6 +389,7 @@ server <- function(input, output) {
       rename(Race_Ethnicity = X)
     brs2 <- brs %>% 
       group_by(SEQ., SPECIMEN_TYPE) %>% 
+      #group_by(SPECIMEN_TYPE) %>% 
       slice_head(n = 1)
     
     
