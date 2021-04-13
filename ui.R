@@ -1,33 +1,3 @@
-## User interface
-
-# UI functions and variables
-createPickerInput <- function(inputId, label, choices, selected = NULL) {
-    pickerInput(inputId  = inputId,
-                label    = label,
-                choices  = choices,
-                selected = selected,
-                multiple = TRUE,
-                options  = list('actions-box' = TRUE))
-}
-
-all_years <- c("2016" = "2016",
-               "2017" = "2017",
-               "2018" = "2018",
-               "2019" = "2019",
-               "2020" = "2020")
-
-recent_years <- c("2019" = "2019",
-                  "2020" = "2020")
-all_sex <- c("Female" = "Female",
-             "Male" = "Male")
-
-all_races <- c("White" = "White",
-               "Black/African American" = "Black/African American",
-               "Asian/Pacific Islander" = "Asian/Pacific Islander",
-               "Hispanic/Latino" = "Hispanic/Latino",
-               "American Indian or Alaska Native" = "American Indian or Alaska Native",
-               "Other/Unknown" = "Other/Unknown")
-
 # Create UI
 fluidPage(theme = my_theme,
           titlePanel(title = div(img(src="appimage.png", height = 150, width = 550))),
