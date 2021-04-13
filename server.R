@@ -19,12 +19,12 @@ server <- function(input, output) {
         ggplot(accrual_data()) +
             geom_histogram(aes(x = Age), fill = "firebrick3", color = "black", binwidth = 1) +
             scale_x_continuous("Patient Age at Enrollment", limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-            scale_y_continuous(NULL, limits = c(0, 70), breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70)) +
+            scale_y_continuous(NULL) +
             ggtitle(paste("Clinical Trials Enrollment (by Disease Site) - ", input$disease_site)) +
             labs(caption = "OnCore Subject Search: 1/5/2021 (Does not include studies where Disease Site is not captured)") +
-            theme(plot.title = element_text(size = 18),
-                  axis.text = element_text(size = 14, color = "black"),
-                  axis.title = element_text(size = 15, color = "black"),
+            theme(plot.title = element_text(size = 20),
+                  axis.text = element_text(size = 16, color = "black"),
+                  axis.title = element_text(size = 17, color = "black"),
                   panel.background = element_rect(fill = "aliceblue"))
     }, height = 600, width = 1000)
     
@@ -149,9 +149,9 @@ server <- function(input, output) {
             geom_point(shape = 21, fill = "firebrick3", color = "black", alpha = 0.85, size = 7) +
             geom_label_repel(aes(label = county), size = 3) +
             ggtitle("Cancer Incidence Rates and Behavioral Risk Factors") +
-            theme(plot.title = element_text(size = 18),
-                  axis.text = element_text(size = 14, color = "black"),
-                  axis.title = element_text(size = 15, color = "black"),
+            theme(plot.title = element_text(size = 20),
+                  axis.text = element_text(size = 16, color = "black"),
+                  axis.title = element_text(size = 17, color = "black"),
                   panel.background = element_rect(fill = "aliceblue"))
     })
     
@@ -240,7 +240,7 @@ server <- function(input, output) {
                 geom_histogram(stat = "count", color = "black", fill = "firebrick3") +
                 coord_flip() +
                 stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
-                scale_y_continuous(limits = c(0, 550), breaks = c(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550)) +
+                scale_y_continuous() +
                 scale_fill_gradient() +
                 theme(
                     strip.text = element_text(size = 14, face = "bold", color = "white"),
@@ -268,6 +268,59 @@ server <- function(input, output) {
       registry_rwj_v2_plot()
       dev.off()
     })
+  
+  box1 <- reactive({master_report %>% 
+      filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
+             RWJBH.Site %in% input$registry1,
+             Disease.Site %in% input$dis1)
+  })
+
+  box2 <- reactive({master_report %>% 
+      filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
+             RWJBH.Site %in% input$registry2,
+             Disease.Site %in% input$dis2)
+  })
+
+  output$boxplot1 <- renderPlot({
+  box1() %>% 
+    ggplot() +
+    geom_boxplot(aes(x = factor(Race.Ethnicity, levels = c("White", "Black", "Hispanic/Latino", "Asian")), y = Age, fill = Race.Ethnicity, group = Race.Ethnicity), shape = 21, position = "dodge", color = "black", size = 1, outlier.shape = 21, outlier.size = 3,  inherit.aes = TRUE, fatten = 1) +
+    scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+    scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
+    labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
+    theme(
+      axis.text = element_text(size = 15),
+      axis.title = element_text(size = 18),
+      panel.background = element_rect(color = "black"),
+      strip.background = element_rect(color = "black"),
+      strip.text = element_text(size = 18, face = "bold"),
+      legend.position = "none",
+      plot.title = element_text(size = 18, face = c("bold"))
+    ) +
+    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)")
+
+  }, height = 800, width = 1000)
+
+
+  output$boxplot2 <- renderPlot({
+    box2() %>% 
+      ggplot() +
+      geom_boxplot(aes(x = factor(Race.Ethnicity, levels = c("White", "Black", "Hispanic/Latino", "Asian")), y = Age, fill = Race.Ethnicity, group = Race.Ethnicity), shape = 21, position = "dodge", color = "black", size = 1, outlier.shape = 21, outlier.size = 3,  inherit.aes = TRUE, fatten = 1) +
+      scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+      scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
+      labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
+      theme(
+        axis.text = element_text(size = 15),
+        axis.title = element_text(size = 18),
+        panel.background = element_rect(color = "black"),
+        strip.background = element_rect(color = "black"),
+        strip.text = element_text(size = 18, face = "bold"),
+        legend.position = "none",
+        plot.title = element_text(size = 18, face = c("bold"))
+      ) +
+      ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)")
+
+  }, height = 800, width = 1000)
   
     ### Tab 5: Maps   
     output$countymap1 = renderTmap({
@@ -340,6 +393,7 @@ server <- function(input, output) {
         addLegend("bottomright", 
                   pal = newpal,
                   values = decision(),
+                  title = input$county_vars,
                   labFormat = function(type, cuts, p) {
                     n = length(cuts)
                     paste0(cuts[-n], " &ndash; ", cuts[-1])
@@ -379,8 +433,18 @@ server <- function(input, output) {
                       color = "black",
                       weight = 1.5,
                       dashArray = "",
-                      bringToFront = TRUE
-                    )) %>%
+                      bringToFront = FALSE),
+                    popup=paste(nj_tracts$NAMELSAD, "<br>",
+                                "County", nj_tracts$County, "<br>",
+                                "Population:", nj_tracts$Population, "<br>",
+                                "1,3-Butadiene", nj_tracts$X1.3.Butadiene, "<br>",
+                                "Acetaldehyde:", nj_tracts$Acetaldehyde, "<br>",
+                                "Aniline:", nj_tracts$Aniline, "<br>",
+                                "Benzene:", nj_tracts$Benzene, "<br>",
+                                "Ethlyene Oxide:", nj_tracts$Ethylene.Oxide, "<br>",
+                                "Formaldehyde:", nj_tracts$Formaldehyde, "<br>",
+                                "Naphthalene:", nj_tracts$Naphthalene)
+                    ) %>%
         addPolylines(data = county_risk2,
                     color = "black",
                     weight = 1,
@@ -389,12 +453,22 @@ server <- function(input, output) {
                          color = "blue",
                          stroke = FALSE,
                          fillOpacity = 0.5,
-                         group = "NPL Superfund Sites") %>% 
+                         group = "NPL Superfund Sites",
+                         popup=paste("Site Name:", npl_sites$SITE.NAME, "<br>",
+                                     "Address:", npl_sites$ADDRESS, "<br>",
+                                     "Federal Facility (Y/N):", npl_sites$FEDERAL.FACILITY)) %>% 
         addCircleMarkers(data = pp_sites,
                          color = "red",
                          stroke = FALSE,
                          fillOpacity = 0.5,
-                         group = "Power Plant Sites") %>% 
+                         group = "Power Plant Sites",
+                         radius = pp_sites$TOTAL_MW / 50, 
+                         popup=paste("Plant Name:", pp_sites$PLANT_NAME, "<br>",
+                                     "Operator:", pp_sites$X.1, "<br>",
+                                     "City:", pp_sites$CITY, "<br>",
+                                     "Plant Type:", pp_sites$PRIMSOURCE, "<br>",
+                                     "Megawatts:", pp_sites$TOTAL_MW)
+                                     ) %>% 
         addLayersControl(baseGroups = "Air Pollutant Risk",
                          overlayGroups = c("Power Plant Sites", "NPL Superfund Sites"),
                          options = layersControlOptions(collapsed = FALSE)) %>% 

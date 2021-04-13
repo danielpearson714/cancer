@@ -1,10 +1,8 @@
 lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats",
          "ggplot2", "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
 
-# unneeded libraries?
-# shinythemes, tmaptools, knitr, ggrepel, extrafont, extrafontdb, devtools, tigris, csv, usethis, sp, tidycensus, stringr, paletteer, RColorBrewer, ggradar2, tibble, viridis, htmltools, htmlwidgets
-
 # map settings
+options(bitmapType="cairo")
 options(tigris_use_cache = TRUE)
 census_api_key("81cc090027aa172987dc489efcbb5576416671ba")
 
@@ -20,7 +18,7 @@ make_color_pal <- function(colors, bias = 1) {
   get_color <- colorRamp(colors, bias = bias)
   function(x) rgb(get_color(x), maxColorValue = 255)
 }
-good_color <- make_color_pal(c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab"), bias = 2)
+good_color <- make_color_pal(c("#FFCDD2FF", "#EF9A9AFF", "#E57373FF", "#F44336FF", "#D32F2FFF"), bias = 2)
 
 newpal  <- colorQuantile("Reds", n = 5, domain = NULL)
 newpal2 <- colorQuantile("plasma", n = 5, domain = NULL, reverse = TRUE)
@@ -132,7 +130,7 @@ st_crs(pp_sites)
 
 # input choice lists
 site_list <- as.list(sort(unique(new_trials$Disease.Site)))
-rwj_list <- as.list(sort(unique(registry_new$RWJBH.Site)))
+rwj_list <- as.list(sort(unique(master_report$RWJBH.Site)))
 proto_list <- as.list(sort(unique(new_trials$Protocol.Type)))
 phase_list <- as.list(sort(unique(new_trials$Phase)))
 tsg_list <- as.list(sort(unique(new_trials$Subject.Tumor.Study.Group)))
@@ -140,6 +138,7 @@ data4_list <- as.list(sort(unique(new_trials$Data.Table.4.Report.Type)))
 clin_list <- as.list(sort(unique(master_report$Clin_Stage)))
 path_list <- as.list(sort(unique(master_report$Path_Stage)))
 trial_list <- as.list(sort(unique(new_trials$X)))
+dis_list <- as.list(sort(unique(master_report$Disease.Site)))
 risk <- dashboard_risk %>% 
     select(-county, -NAME, -County_ID)
 risk_list <- as.list(sort(colnames(risk)))
