@@ -69,7 +69,7 @@ st_crs(pp_sites) <- 4326
 st_crs(pp_sites)
 ################################# input choice lists
 site_list <- as.list(sort(unique(new_trials$Disease.Site)))
-rwj_list <- as.list(sort(unique(registry_new$RWJBH.Site)))
+rwj_list <- as.list(sort(unique(master_report$RWJBH.Site)))
 proto_list <- as.list(sort(unique(new_trials$Protocol.Type)))
 phase_list <- as.list(sort(unique(new_trials$Phase)))
 tsg_list <- as.list(sort(unique(new_trials$Subject.Tumor.Study.Group)))
@@ -77,6 +77,7 @@ data4_list <- as.list(sort(unique(new_trials$Data.Table.4.Report.Type)))
 clin_list <- as.list(sort(unique(master_report$Clin_Stage)))
 path_list <- as.list(sort(unique(master_report$Path_Stage)))
 trial_list <- as.list(sort(unique(new_trials$X)))
+dis_list <- as.list(sort(unique(master_report$Disease.Site)))
 risk <- dashboard_risk %>% 
     select(-county, -NAME, -County_ID)
 risk_list <- as.list(sort(colnames(risk)))
@@ -87,7 +88,7 @@ county_risk2 <- county_risk %>%
 
 brf_list <- as.list(sort(colnames(county_risk2 %>% 
                                     select(2:24))))
-################################## ACS Data (map is not yet on app)
+################################## ACS Data
 tract_moe <- get_acs(geography = "tract", state = "NJ", geometry = FALSE, 
                  variables = c(median_income = "B19013_001",
                                spanish_speaking = "B06007_003",
@@ -116,7 +117,7 @@ make_color_pal <- function(colors, bias = 1) {
   function(x) rgb(get_color(x), maxColorValue = 255)
 }
 
-good_color <- make_color_pal(c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab"), bias = 2)
+good_color <- make_color_pal(c("#FFCDD2FF", "#EF9A9AFF", "#E57373FF", "#F44336FF", "#D32F2FFF"), bias = 2)
 
 
 ##################################### bs_lib custom theme
@@ -124,6 +125,9 @@ my_theme <- bs_theme(
   bg = "white", fg = "midnightblue", primary = "darkred",
   base_font = font_google("Roboto")
 )
+
+##################################### Add Year column to trials data (Tab 1)
+
 
 ####################################### UI
 
@@ -145,22 +149,30 @@ ui <- fluidPage(theme = my_theme,
                                                      choices = site_list,
                                                      multiple = TRUE,
                                                      options = list('actions-box' = TRUE),
-                                                     selected = "Adrenal Glands"),
-                                         checkboxGroupInput(inputId = "data4",
+                                                     selected = site_list),
+                                         pickerInput(inputId = "data4",
                                                             label = "Data Table 4 Type",
                                                             choices = data4_list,
+                                                            multiple = TRUE,
+                                                            options = list('actions-box' = TRUE),
                                                             selected = "Interventional"),
-                                         checkboxGroupInput(inputId = "protocol",
+                                         pickerInput(inputId = "protocol",
                                                             label = "Protocol Type",
                                                             choices = proto_list,
+                                                            multiple = TRUE,
+                                                            options = list('actions-box' = TRUE),
                                                             selected = "Treatment"),
-                                         checkboxGroupInput(inputId = "phase",
+                                         pickerInput(inputId = "phase",
                                                             label = "Phase",
                                                             choices = phase_list,
+                                                            multiple = TRUE,
+                                                            options = list('actions-box' = TRUE),
                                                             selected = phase_list),
-                                         checkboxGroupInput(inputId = "tsg",
+                                         pickerInput(inputId = "tsg",
                                                             label = "Subject Tumor Study Group",
                                                             choices = tsg_list,
+                                                            multiple = TRUE,
+                                                            options = list('actions-box' = TRUE),
                                                             selected = tsg_list)),
                             mainPanel(
                             fluidRow(
@@ -213,7 +225,7 @@ ui <- fluidPage(theme = my_theme,
                                  reactableOutput("brs2"))),
                         
  ################################## Tab 3     
-                      navbarMenu("Cancer and Risk Factors",
+                      navbarMenu("Cancer Incidence, Screening and Risk Factors",
                         tabPanel(title = "Cancer and Risk Factors", fluid = TRUE,
                                  fluidRow(
                                    column(3,
@@ -233,6 +245,8 @@ ui <- fluidPage(theme = my_theme,
                                    column(4,
                                  reactableOutput("risk_react", width = "400px", height = "800px"))
                                  ))),
+                        
+                        
                         
                         tabPanel(title = "Top-12 Cancers (Radar Chart)",
                                  pickerInput(inputId = "county_select",
@@ -272,9 +286,11 @@ ui <- fluidPage(theme = my_theme,
                         tabPanel(title = "Analytic Cases by Disease Site v2", fluid = TRUE,
                                  fluidRow(
                                    column(3,
-                                                selectInput(inputId = "rwj_site2",
+                                                pickerInput(inputId = "rwj_site2",
                                                             label = "Choose RWJBH Registry",
                                                             choices = rwj_list,
+                                                            multiple = TRUE,
+                                                            options = list('actions-box' = TRUE),
                                                             selected = "New Brunswick")),
                                      
                                      column(1,
@@ -306,9 +322,46 @@ ui <- fluidPage(theme = my_theme,
                                                         value = c(0, 100)))),
                                      plotOutput("disease_site2", height = "100%", width = "100%"),
                                      downloadBttn("case_report", label = "Generate Report")
-                                 )
-                        )
-                        ,
+                                 ),
+                        
+                        tabPanel(title = "Age Distribution by Race/Ethnicity",
+                                 fluidRow(
+                                column(6,
+                                 pickerInput(inputId = "registry1",
+                                             label = "Choose registry site",
+                                             choices = rwj_list,
+                                             selected = rwj_list,
+                                             multiple = TRUE,
+                                             options = list('actions-box' = TRUE)
+                                 ),
+                                 pickerInput(inputId = "dis1",
+                                             label = "Choose disease site",
+                                             choices = dis_list,
+                                             selected = dis_list,
+                                             multiple = TRUE,
+                                             options = list('actions-box' = TRUE)
+                                 ),
+                                 plotOutput("boxplot1")),
+                                column(6,
+                                       pickerInput(inputId = "registry2",
+                                                   label = "Choose registry site",
+                                                   choices = rwj_list,
+                                                   selected = rwj_list,
+                                                   multiple = TRUE,
+                                                   options = list('actions-box' = TRUE)
+                                       ),
+                                       pickerInput(inputId = "dis2",
+                                                   label = "Choose disease site",
+                                                   choices = dis_list,
+                                                   selected = dis_list,
+                                                   multiple = TRUE,
+                                                   options = list('actions-box' = TRUE)
+                                       ),
+                                           
+                                       plotOutput("boxplot2")
+                        
+                        )))),
+                        
 ########################################## Tab 5                        
                         navbarMenu("Maps",
                         
@@ -332,7 +385,6 @@ ui <- fluidPage(theme = my_theme,
                                                 choices = c(
                                                   "X1.3.Butadiene" = "X1.3.Butadiene",
                                                   "Acetaldehyde" = "Acetaldehyde",
-                                                  "Aniline" = "Aniline",
                                                   "Benzene" = "Benzene",
                                                   "Ethylene.Oxide" = "Ethylene.Oxide",
                                                   "Formaldehyde" = "Formaldehyde",
@@ -366,12 +418,12 @@ server <- function(input, output) {
         ggplot(cinj_react) +
             geom_histogram(aes(x = Age), fill = "firebrick3", color = "black", binwidth = 1) +
             scale_x_continuous("Patient Age at Enrollment", limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-            scale_y_continuous(NULL, limits = c(0, 70), breaks = c(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70)) +
+            scale_y_continuous(NULL) +
             ggtitle(paste("Clinical Trials Enrollment (by Disease Site) - ", input$disease_site)) +
             labs(caption = "OnCore Subject Search: 1/5/2021 (Does not include studies where Disease Site is not captured)") +
-            theme(plot.title = element_text(size = 18),
-                  axis.text = element_text(size = 14, color = "black"),
-                  axis.title = element_text(size = 15, color = "black"),
+            theme(plot.title = element_text(size = 20),
+                  axis.text = element_text(size = 16, color = "black"),
+                  axis.title = element_text(size = 17, color = "black"),
                   panel.background = element_rect(fill = "aliceblue"))
     }, height = 600, width = 1000)
     
@@ -455,7 +507,7 @@ server <- function(input, output) {
       }")),
                     `Glass Slides` = colDef(aggregate = "sum",
                                             footer = JS("function(colInfo) {
-        var total = 0 
+        var total = 0
         colInfo.data.forEach(function(row) {
           total += row[colInfo.column.id]
         })
@@ -634,9 +686,9 @@ server <- function(input, output) {
                        shape = 21, fill = "firebrick3", color = "black", alpha = 0.85, size = 7) +
             geom_label_repel(aes(label = county), size = 3) +
             ggtitle("Cancer Incidence Rates and Behavioral Risk Factors") +
-            theme(plot.title = element_text(size = 18),
-                  axis.text = element_text(size = 14, color = "black"),
-                  axis.title = element_text(size = 15, color = "black"),
+            theme(plot.title = element_text(size = 20),
+                  axis.text = element_text(size = 16, color = "black"),
+                  axis.title = element_text(size = 17, color = "black"),
                   panel.background = element_rect(fill = "aliceblue"))
     })
     
@@ -860,7 +912,7 @@ server <- function(input, output) {
                 geom_histogram(stat = "count", color = "black", fill = "firebrick3") +
                 coord_flip() +
                 stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
-                scale_y_continuous(limits = c(0, 550), breaks = c(0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550)) +
+                scale_y_continuous() +
                 scale_fill_gradient() +
                 theme(
                     strip.text = element_text(size = 14, face = "bold", color = "white"),
@@ -888,6 +940,63 @@ server <- function(input, output) {
       print(vals$case_plot)
       dev.off()
     })
+
+
+  
+  box1 <- reactive({master_report %>% 
+      filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
+             RWJBH.Site %in% input$registry1,
+             Disease.Site %in% input$dis1)
+  })
+  
+  box2 <- reactive({master_report %>% 
+      filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
+             RWJBH.Site %in% input$registry2,
+             Disease.Site %in% input$dis2)
+  })
+  
+  output$boxplot1 <- renderPlot({
+  
+  box1() %>% 
+    ggplot() +
+    geom_boxplot(aes(x = factor(Race.Ethnicity, levels = c("White", "Black", "Hispanic/Latino", "Asian")), y = Age, fill = Race.Ethnicity, group = Race.Ethnicity), shape = 21, position = "dodge", color = "black", size = 1, outlier.shape = 21, outlier.size = 3,  inherit.aes = TRUE, fatten = 1) +
+    scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+    scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
+    labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
+    theme(
+      axis.text = element_text(size = 15),
+      axis.title = element_text(size = 18),
+      panel.background = element_rect(color = "black"),
+      strip.background = element_rect(color = "black"),
+      strip.text = element_text(size = 18, face = "bold"),
+      legend.position = "none",
+      plot.title = element_text(size = 18, face = c("bold"))
+    ) +
+    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)")
+    
+  }, height = 800, width = 1000)
+  
+  
+  output$boxplot2 <- renderPlot({
+    
+    box2() %>% 
+      ggplot() +
+      geom_boxplot(aes(x = factor(Race.Ethnicity, levels = c("White", "Black", "Hispanic/Latino", "Asian")), y = Age, fill = Race.Ethnicity, group = Race.Ethnicity), shape = 21, position = "dodge", color = "black", size = 1, outlier.shape = 21, outlier.size = 3,  inherit.aes = TRUE, fatten = 1) +
+      scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+      scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
+      labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
+      theme(
+        axis.text = element_text(size = 15),
+        axis.title = element_text(size = 18),
+        panel.background = element_rect(color = "black"),
+        strip.background = element_rect(color = "black"),
+        strip.text = element_text(size = 18, face = "bold"),
+        legend.position = "none",
+        plot.title = element_text(size = 18, face = c("bold"))
+      ) +
+      ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)")
+    
+  }, height = 800, width = 1000)
   
     ### Tab 5: Maps   
     output$countymap1 = renderTmap({
@@ -948,8 +1057,11 @@ server <- function(input, output) {
         setView(lat = 40.0583,
                 lng = -74.4057,
                 zoom = 8) %>% 
-        addPolygons(data = county_risk2, 
-                    fillColor = ~newpal(decision()))
+        addPolygons(data = county_risk2,
+                    color = "black",
+                    weight = 1.2,
+                    fillColor = NULL,
+                    fillOpacity = 0)
     })
     
     observeEvent(input$county_vars, {
@@ -971,6 +1083,7 @@ server <- function(input, output) {
         addLegend("bottomright", 
                   pal = newpal,
                   values = decision(),
+                  title = input$county_vars,
                   labFormat = function(type, cuts, p) {
                     n = length(cuts)
                     paste0(cuts[-n], " &ndash; ", cuts[-1])
@@ -1022,8 +1135,18 @@ server <- function(input, output) {
                       color = "black",
                       weight = 1.5,
                       dashArray = "",
-                      bringToFront = TRUE
-                    )) %>%
+                      bringToFront = FALSE),
+                    popup=paste(nj_tracts$NAMELSAD, "<br>",
+                                "County", nj_tracts$County, "<br>",
+                                "Population:", nj_tracts$Population, "<br>",
+                                "1,3-Butadiene", nj_tracts$X1.3.Butadiene, "<br>",
+                                "Acetaldehyde:", nj_tracts$Acetaldehyde, "<br>",
+                                "Aniline:", nj_tracts$Aniline, "<br>",
+                                "Benzene:", nj_tracts$Benzene, "<br>",
+                                "Ethlyene Oxide:", nj_tracts$Ethylene.Oxide, "<br>",
+                                "Formaldehyde:", nj_tracts$Formaldehyde, "<br>",
+                                "Naphthalene:", nj_tracts$Naphthalene)
+                    ) %>%
         addPolylines(data = county_risk2,
                     color = "black",
                     weight = 1,
@@ -1032,12 +1155,23 @@ server <- function(input, output) {
                          color = "blue",
                          stroke = FALSE,
                          fillOpacity = 0.5,
-                         group = "NPL Superfund Sites") %>% 
+                         group = "NPL Superfund Sites",
+                         popup=paste("Site Name:", npl_sites$SITE.NAME, "<br>",
+                                     "Address:", npl_sites$ADDRESS, "<br>",
+                                     "Federal Facility (Y/N):", npl_sites$FEDERAL.FACILITY)
+        ) %>% 
         addCircleMarkers(data = pp_sites,
                          color = "red",
                          stroke = FALSE,
                          fillOpacity = 0.5,
-                         group = "Power Plant Sites") %>% 
+                         group = "Power Plant Sites",
+                         radius = pp_sites$TOTAL_MW / 50, 
+                         popup=paste("Plant Name:", pp_sites$PLANT_NAME, "<br>",
+                                     "Operator:", pp_sites$X.1, "<br>",
+                                     "City:", pp_sites$CITY, "<br>",
+                                     "Plant Type:", pp_sites$PRIMSOURCE, "<br>",
+                                     "Megawatts:", pp_sites$TOTAL_MW)
+                                     ) %>% 
         addLayersControl(baseGroups = "Air Pollutant Risk",
                          overlayGroups = c("Power Plant Sites", "NPL Superfund Sites"),
                          options = layersControlOptions(collapsed = FALSE)) %>% 
@@ -1054,3 +1188,4 @@ server <- function(input, output) {
 }
 ##################################
 shinyApp(ui = ui, server = server)
+
