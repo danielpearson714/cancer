@@ -1,5 +1,5 @@
-lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats",
-         "ggplot2", "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
+lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "shinydashboard", "viridis", "ggplot2", 
+         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
 
 # map settings
 options(bitmapType="cairo")

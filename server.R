@@ -26,7 +26,8 @@ server <- function(input, output) {
                   axis.text = element_text(size = 16, color = "black"),
                   axis.title = element_text(size = 17, color = "black"),
                   panel.background = element_rect(fill = "aliceblue"))
-    }, height = 600, width = 1000)
+    #}, height = 600, width = 1000)
+    })
     
     output$n_value <- renderText({
       paste("n =", accrual_data() %>% n_distinct())
