@@ -26,10 +26,10 @@ fluidPage(theme = my_theme,
                                              column(2, checkboxGroupInput(inputId  = "race_ethnicity",
                                                                           label    = "Race/Ethnicity",
                                                                           choices  = all_races,
-                                                                          selected = all_races)),
+                                                                          selected = all_races))),
                                     fluidRow(column(9, plotOutput("accrual")),
                                              column(3, span(textOutput("n_value"), style = "font-size: 36px; color: darkred; font-style:bold, text-align: center")))
-                                ))))),
+                                )))),
                # Tab 2
                navbarMenu("Biospecimens",
                 tabPanel(title = "Total Samples", "Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)",
