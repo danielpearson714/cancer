@@ -373,6 +373,18 @@
       "Repository": "CRAN",
       "Hash": "3eb6477d01eb5bbdc03f7d5f70f2733e"
     },
+    "ggradar": {
+      "Package": "ggradar",
+      "Version": "0.2",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "ggradar",
+      "RemoteUsername": "ricardo-bion",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "63e5cefc841f4b1ceac9aeb33aae6ff6bed6d568",
+      "Hash": "674e57791fad055e8f5f8757209bfee1"
+    },
     "ggrepel": {
       "Package": "ggrepel",
       "Version": "0.9.1",

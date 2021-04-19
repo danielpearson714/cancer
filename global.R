@@ -1,3 +1,6 @@
+source("plots.R")
+source("tables.R")
+
 lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", 
          "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
 
@@ -41,6 +44,15 @@ all_races <- c("White" = "White",
                "American Indian or Alaska Native" = "American Indian or Alaska Native",
                "Other/Unknown" = "Other/Unknown")
 
+specimen_types <- c("Biomarker",
+                    "Blood",
+                    "Body Fluid",
+                    "Bone Marrow",
+                    "Glass Slides",
+                    "Outside Paraffin Blocks",
+                    "Tissue",
+                    "Urine")
+
 # Color Pallette for Risk Factor reactable (Tab 3)
 make_color_pal <- function(colors, bias = 1) {
   get_color <- colorRamp(colors, bias = bias)
@@ -56,66 +68,6 @@ my_theme <- bs_theme(
   bg = "white", fg = "midnightblue", primary = "darkred",
   base_font = font_google("Roboto")
 )
-
-# leaflet
-create_basic_leaflet <- function(data) {
-    leaflet(data) %>% 
-            addTiles() %>% 
-            setView(lat = 40.0583,
-                    lng = -74.4057,
-                    zoom = 8)
-}
-
-create_leaflet <- function(data, color_data = NULL) {
-    result <- create_basic_leaflet(data)
-    if (is.null(color_data)) {
-        result %>% 
-            addPolygons(data = data,
-                        color = "black",
-                        weight = 1.2,
-                        fillColor = NULL,
-                        fillOpacity = 0)
-    } else {
-        result %>% 
-            addPolygons(data = data, 
-                        fillColor = ~newpal(color_data))
-    }
-}
-
-create_coldef <- function(col_value, col_name = NULL) {
-    colDef(name = col_name,
-           style = function(value) {
-            value
-            normalized <- (value - min(col_value)) / (max(col_value) - min(col_value))
-            color <- good_color(normalized)
-            list(background = color)
-          })
-}
-
-create_coldef_sum <- function(colname = NULL) {
-    if (is.null(colname)) {
-        colDef(aggregate = "sum",
-               footer = JS("function(colInfo) {
-                            var total = 0
-                            colInfo.data.forEach(function(row) {
-                              total += row[colInfo.column.id]
-                            })
-                            return '' + total.toFixed(0)
-                          }")
-        )   
-    } else {
-        colDef(aggregate = "sum",
-               name = colname,
-               footer = JS("function(colInfo) {
-                            var total = 0
-                            colInfo.data.forEach(function(row) {
-                              total += row[colInfo.column.id]
-                            })
-                            return '' + total.toFixed(0)
-                          }")
-        )   
-    }
-}
 
 # Data loading
 nj_counties <- tigris::counties("NJ", class = "sf")
