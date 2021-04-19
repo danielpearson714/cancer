@@ -157,19 +157,18 @@ st_crs(pp_sites) <- 4326
 st_crs(pp_sites)
 
 # input choice lists
-site_list <- as.list(sort(unique(new_trials$Disease.Site)))
-rwj_list <- as.list(sort(unique(master_report$RWJBH.Site)))
+site_list  <- as.list(sort(unique(new_trials$Disease.Site)))
+rwj_list   <- as.list(sort(unique(master_report$RWJBH.Site)))
 proto_list <- as.list(sort(unique(new_trials$Protocol.Type)))
 phase_list <- as.list(sort(unique(new_trials$Phase)))
-tsg_list <- as.list(sort(unique(new_trials$Subject.Tumor.Study.Group)))
+tsg_list   <- as.list(sort(unique(new_trials$Subject.Tumor.Study.Group)))
 data4_list <- as.list(sort(unique(new_trials$Data.Table.4.Report.Type)))
-clin_list <- as.list(sort(unique(master_report$Clin_Stage)))
-path_list <- as.list(sort(unique(master_report$Path_Stage)))
+clin_list  <- as.list(sort(unique(master_report$Clin_Stage)))
+path_list  <- as.list(sort(unique(master_report$Path_Stage)))
 trial_list <- as.list(sort(unique(new_trials$X)))
-dis_list <- as.list(sort(unique(master_report$Disease.Site)))
-risk <- dashboard_risk %>% 
-    select(-county, -NAME, -County_ID)
-risk_list <- as.list(sort(colnames(risk)))
+dis_list   <- as.list(sort(unique(master_report$Disease.Site)))
+risk       <- dashboard_risk %>% select(-county, -NAME, -County_ID)
+risk_list  <- as.list(sort(colnames(risk)))
 
 county_list2 <- as.list(sort(unique(dashboard_risk$county)))
 county_risk2 <- county_risk %>% 
