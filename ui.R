@@ -1,34 +1,35 @@
 # Create UI
-dashboardPage(#theme = my_theme,
-          #titlePanel(title = div(img(src="appimage.png", height = 150, width = 550))),
-        dashboardHeader(),
-        dashboardSidebar(createPickerInput("disease_site", "Disease Site", site_list),
+fluidPage(theme = my_theme,
+          titlePanel(title = div(img(src="appimage.png", height = 150, width = 550))),
+          navbarPage("Catchment Area Research Dashboard",
+            tabsetPanel(
+                # Tab 1                        
+                navbarMenu("Clinical Trials",
+                    tabPanel(title = "Clinical Trials Enrollment at CINJ",
+                             sidebarLayout(
+                                sidebarPanel(width = 3,
+                                 createPickerInput("disease_site", "Disease Site", site_list),
                                  createPickerInput("data4", "Data Table 4 Type", data4_list, selected = "Interventional"),
                                  createPickerInput("protocol", "Protocol Type", proto_list, selected = "Treatment"),
                                  createPickerInput("phase", "Phase", phase_list, selected = phase_list),
                                  createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list)),
-        dashboardBody(tabsetPanel(
-               # Tab 1                        
-               navbarMenu("Clinical Trials",
-                    tabPanel(title = "Clinical Trials Enrollment at CINJ",
-                             tags$p(),
-                             fluidRow(column(2, createPickerInput("trial_site", "Choose RWJBH Site", trial_list, selected = "CINJ")),
-                                     column(1, checkboxGroupInput(inputId  = "year",
-                                                                  label    = "Year",
-                                                                  choices  = all_years,
-                                                                  selected = all_years)),
-                                     column(1, checkboxGroupInput(inputId  = "gender",
-                                                                  label    = "Gender",
-                                                                  choices  = all_sex,
-                                                                  selected = all_sex)),
-                                     column(2, checkboxGroupInput(inputId  = "race_ethnicity",
-                                                                  label    = "Race/Ethnicity",
-                                                                  choices  = all_races,
-                                                                  selected = all_races)),
-                             fluidRow(column(12, plotOutput("accrual"))))
-                                      #column(3, span(textOutput("n_value"), style = "font-size: 36px; color: darkred; font-style:bold, text-align: center"))))
-                    )
-               ),
+                                mainPanel(
+                                    fluidRow(column(2, createPickerInput("trial_site", "Choose RWJBH Site", trial_list, selected = "CINJ")),
+                                             column(1, checkboxGroupInput(inputId  = "year",
+                                                                          label    = "Year",
+                                                                          choices  = all_years,
+                                                                          selected = all_years)),
+                                             column(1, checkboxGroupInput(inputId  = "gender",
+                                                                          label    = "Gender",
+                                                                          choices  = all_sex,
+                                                                          selected = all_sex)),
+                                             column(2, checkboxGroupInput(inputId  = "race_ethnicity",
+                                                                          label    = "Race/Ethnicity",
+                                                                          choices  = all_races,
+                                                                          selected = all_races)),
+                                    fluidRow(column(9, plotOutput("accrual")),
+                                             column(3, span(textOutput("n_value"), style = "font-size: 36px; color: darkred; font-style:bold, text-align: center")))
+                                ))))),
                # Tab 2
                navbarMenu("Biospecimens",
                 tabPanel(title = "Total Samples", "Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)",
@@ -139,4 +140,4 @@ dashboardPage(#theme = my_theme,
                     )
             ) # end tabsetPanel
         ) # end navbarPage
-)
+) # end fluidPage
