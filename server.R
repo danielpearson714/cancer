@@ -103,7 +103,6 @@ server <- function(input, output) {
       create_diagnosis_boxplot(box1())
     }, height = 800, width = 1000)
   
-  
     output$boxplot2 <- renderPlot({
       create_diagnosis_boxplot(box2())
     }, height = 800, width = 1000)
@@ -123,8 +122,6 @@ server <- function(input, output) {
     })
     
     output$countymap2 = renderLeaflet({
-        req(input$county_vars)
-        
         create_leaflet(county_risk2, decision())
     })
     
@@ -161,15 +158,14 @@ server <- function(input, output) {
     })
     
     output$pollution = renderLeaflet({
-      req(input$air_risk2)
-
       create_leaflet(nj_tracts)
     })
     
     observeEvent(input$air_risk2, {
       leafletProxy("pollution") %>%
         clearShapes() %>%
-        addPolygons(data = nj_tracts, 
+        clearMarkers() %>%
+        addPolygons(data = nj_tracts,
                     fillColor = ~newpal2(decision2()),
                     color = "black",
                     opacity = 1,
@@ -196,7 +192,7 @@ server <- function(input, output) {
         addPolylines(data = county_risk2,
                     color = "black",
                     weight = 1,
-                    fillOpacity = 0) %>% 
+                    fillOpacity = 0) %>%
         addCircleMarkers(data = npl_sites,
                          color = "blue",
                          stroke = FALSE,
@@ -204,25 +200,25 @@ server <- function(input, output) {
                          group = "NPL Superfund Sites",
                          popup=paste("Site Name:", npl_sites$SITE.NAME, "<br>",
                                      "Address:", npl_sites$ADDRESS, "<br>",
-                                     "Federal Facility (Y/N):", npl_sites$FEDERAL.FACILITY)) %>% 
+                                     "Federal Facility (Y/N):", npl_sites$FEDERAL.FACILITY)) %>%
         addCircleMarkers(data = pp_sites,
                          color = "red",
                          stroke = FALSE,
                          fillOpacity = 0.5,
                          group = "Power Plant Sites",
-                         radius = pp_sites$TOTAL_MW / 50, 
+                         radius = pp_sites$TOTAL_MW / 50,
                          popup=paste("Plant Name:", pp_sites$PLANT_NAME, "<br>",
                                      "Operator:", pp_sites$X.1, "<br>",
                                      "City:", pp_sites$CITY, "<br>",
                                      "Plant Type:", pp_sites$PRIMSOURCE, "<br>",
                                      "Megawatts:", pp_sites$TOTAL_MW)
-                                     ) %>% 
+                                     ) %>%
         addLayersControl(baseGroups = "Air Pollutant Risk",
                          overlayGroups = c("Power Plant Sites", "NPL Superfund Sites"),
-                         options = layersControlOptions(collapsed = FALSE)) %>% 
-        addLegend("bottomright", 
-                  pal = newpal2, 
-                  opacity = 1, 
+                         options = layersControlOptions(collapsed = FALSE)) %>%
+        addLegend("bottomright",
+                  pal = newpal2,
+                  opacity = 1,
                   title = "Estimated Cancer Risk (per 1M)",
                   values = decision2(),
                   labFormat = function(type, cuts, p) {

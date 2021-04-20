@@ -1,5 +1,5 @@
-source("plots.R")
-source("tables.R")
+source("supporting/plots.R")
+source("supporting/tables.R")
 
 lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", 
          "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
