@@ -1,8 +1,8 @@
 source("supporting/plots.R")
 source("supporting/tables.R")
 
-lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", 
-         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet"), require, character.only = TRUE)
+lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", "shinydashboard",
+         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly"), require, character.only = TRUE)
 
 # map settings
 options(bitmapType="cairo")
@@ -16,16 +16,32 @@ read_csv_file <- function(filename) {
     read.csv(file.path(data_path, filename))
 }
 
+ui_tooltip <- function(id, label = "", text = "") {
+    if (is.null(text) || is.na(text) || (text == "")) {
+        warning("ui_tooltip() called without tooltip text.")
+    }
+    result <- shiny::span(
+        class = "input-label-with-tt",
+        label,
+        shiny::img(id = id,
+                   src =    "tooltip.png",
+                   height = "16px",
+                   width =  "16px"),
+        shinyBS::bsTooltip(id = id, text, placement = "top"))
+    return(result)
+}
+
 # UI functions and variables
 createPickerInput <- function(inputId, label, choices, selected = NULL) {
     pickerInput(inputId  = inputId,
-                label    = label,
+                label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
                 choices  = choices,
                 selected = selected,
                 multiple = TRUE,
                 options  = list('actions-box' = TRUE))
 }
 
+app_title <- "Catchment Area Research Dashboard"
 all_years <- c("2016" = "2016",
                "2017" = "2017",
                "2018" = "2018",
@@ -52,6 +68,43 @@ specimen_types <- c("Biomarker",
                     "Outside Paraffin Blocks",
                     "Tissue",
                     "Urine")
+
+get_custom_html <- function() {
+  HTML('.bodyTitle { 
+      font-size: 20px;
+      line-height: 50px;
+      text-align: left;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      padding-left: 25%;
+      overflow: hidden;
+      color: white;
+      }
+      /* main sidebar */
+      .skin-blue .main-sidebar {
+                            background-color: gray;
+                            }
+
+      /* active selected tab in the sidebarmenu */
+      .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+                            background-color: gray;
+                            }
+
+      /* other links in the sidebarmenu */
+      .skin-blue .main-sidebar .sidebar .sidebar-menu a{
+                            background-color: gray;
+                            color: #000000;
+                            }
+
+      /* other links in the sidebarmenu when hovered */
+       .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+                            background-color: gray;
+                            }
+      /* toggle button when hovered  */                    
+       .skin-blue .main-header .navbar .sidebar-toggle:hover{
+                            background-color: gray;
+                            }
+      ')
+}
 
 # Color Pallette for Risk Factor reactable (Tab 3)
 make_color_pal <- function(colors, bias = 1) {

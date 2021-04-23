@@ -15,12 +15,8 @@ server <- function(input, output) {
                    Subject.Tumor.Study.Group %in% input$tsg)
     })
     
-    output$accrual <- renderPlot({
+    output$accrual <- renderPlotly({
         create_accrual_plot(accrual_data(), input$disease_site)
-    }, height = 600, width = 1000)
-    
-    output$n_value <- renderText({
-      paste("n =", accrual_data() %>% n_distinct())
     })
     
     ### Tab 2: Biospecimen Tables

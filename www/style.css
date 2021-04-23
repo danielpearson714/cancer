@@ -1,0 +1,27 @@
+.input-label-with-tt {
+    margin: 5px;
+    font-weight: bold;
+}
+#disease_site {
+    margin-top: 5%;
+}
+#year{
+    margin-left: 5px;
+}
+#gender{
+    margin-left: 5px;
+}
+#race_ethnicity{
+    margin-left: 5px;
+}
+#appimage {
+    position: fixed;
+    bottom: 50px;
+    margin-left:15px;
+}
+.marginright {
+    margin-right: 50%;
+}
+.shiny-input-container:first-of-type {
+    margin-top:10%;
+}
