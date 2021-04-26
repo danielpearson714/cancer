@@ -16,7 +16,9 @@ server <- function(input, output) {
     })
     
     output$accrual <- renderPlotly({
-        create_accrual_plot(accrual_data(), input$disease_site)
+      req(nrow(accrual_data()) > 0)
+      
+      create_accrual_plot(accrual_data(), input$disease_site)
     })
     
     ### Tab 2: Biospecimen Tables

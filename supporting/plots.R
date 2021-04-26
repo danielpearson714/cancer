@@ -5,9 +5,9 @@ title_font <- list(
   size = 16,
   color = 'black')
 
-get_annotations <- function(source_text, y_pos = -0.12) {
-  list(x = 1, y = y_pos, text = source_text, showarrow = F, xref='paper', yref='paper',
-      xanchor = 'right', yanchor = 'auto', xshift = 10, yshift = 0, font = list(size = 12, color = "black"))
+get_annotations <- function(source_text, x_pos = 1, y_pos = -0.16) {
+  list(x = x_pos, y = y_pos, text = source_text, showarrow = F, xref='paper', yref='paper', xanchor = 'right', 
+       yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 9, color = "black"))
 }
 
 add_plot_config <- function(plot) {
@@ -66,7 +66,8 @@ add_plot_config <- function(plot) {
            modeBarButtonsToAdd = list(dl_button))
 }
 
-add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', yaxis_title = '', width = NULL, height = NULL, source_text = "", source_ypos = -0.1, x_tick_angle = 0) {
+add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', yaxis_title = '', width = NULL, height = NULL, 
+                                source_text = "", source_xpos = 1, source_ypos = -0.16, x_tick_angle = 0) {
   plot %>%
     layout(title = list(text = paste0(title,
                                       '<br>',
@@ -78,34 +79,23 @@ add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', ya
            xaxis = list(title = xaxis_title,
                         tickvals = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
                         tickangle = x_tick_angle),
-           yaxis = list(title = yaxis_title),
-           annotations = get_annotations(source_text, y_pos = source_ypos)) %>%
+           yaxis = list(title = yaxis_title,
+                        rangemode = "tozero"),
+           margin = list(b=80),
+           annotations = get_annotations(source_text, x_pos = source_xpos, y_pos = source_ypos)) %>%
     add_plot_config()
 }
 
 create_histogram <- function(data, var, name = '', title = '', subtitle = '', xaxis_title = '', yaxis_title = '', source_text = '', color,
-                             showlegend = TRUE, source_ypos = -0.1, bar_gap = 0.1, nbin = 100) {
+                             showlegend = TRUE, source_xpos = 1, source_ypos = -0.16, bar_gap = 0.1, nbin = 100) {
   values <- data %>% pull(var)
   plot_ly(x = ~values, type = "histogram", name = name, marker = list(color = color), nbinsx = nbin) %>%
-    add_plot_properties(title = title, subtitle = subtitle, xaxis_title = xaxis_title, yaxis_title = yaxis_title, source_text = source_text, source_ypos = source_ypos) %>%
+    add_plot_properties(title = title, subtitle = subtitle, xaxis_title = xaxis_title, yaxis_title = yaxis_title, 
+                        source_text = source_text, source_xpos = source_xpos, source_ypos = source_ypos) %>%
     layout(bargap = bar_gap)
 }
 
 create_accrual_plot <- function(data, disease_site) {
-  # p <- ggplot(data) +
-  #    geom_histogram(aes(x = Age), fill = "firebrick3", color = "black", binwidth = 1) +
-  #    scale_x_continuous("Patient Age at Enrollment", limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
-  #    scale_y_continuous(NULL) +
-  #    #ggtitle(paste("Clinical Trials Enrollment (by Disease Site) - ", disease_site)) +
-  #    labs(caption = "OnCore Subject Search: 1/5/2021 (Does not include studies where Disease Site is not captured)") +
-  #    theme(plot.title = element_text(hjust = 0.5),
-  #          axis.text = element_text(size = 16, color = "black"),
-  #          axis.title = element_text(size = 17, color = "black"),
-  #          panel.background = element_rect(fill = "aliceblue")) +
-  #    theme_bw()
-  # ggplotly(p) %>% 
-  #   layout(title = paste("Clinical Trials Enrollment (by Disease Site) - ", disease_site))
-  #plot_ly(data, y=y, x=x, histfunc='sum', type = "histogram")
   title <- ifelse(length(disease_site) == 1, paste("Clinical Trials Enrollment - ", disease_site), "Clinical Trials Enrollment (by Disease Site)")
   create_histogram(data, var = "Age", title = title, subtitle = paste("N =", data %>% n_distinct()),
                    xaxis_title = "Patient Age at Enrollment", yaxis_title = "Count",
