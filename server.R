@@ -19,6 +19,10 @@ server <- function(input, output) {
                                          label = "Choose y-axis",
                                          data = risk,
                                          selected = "Overall.Cancer.Mortality"))
+      } else if (tabset == "total_samples") {  
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)")))
+      } else if (tabset == "unique_samples") {  
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Unique Samples as of 11/24/2020)")))
       } else if (tabset == "top12_cancers") {  
         result <- tagList(createPickerInput("county_select", "Choose NJ county", county_list2, selected = "ATLANTIC"))
       } else if (tabset == "analytic_cases") {
@@ -60,11 +64,16 @@ server <- function(input, output) {
                           createPickerInput("dis1", "Choose disease site", dis_list, selected = dis_list),
                           createPickerInput("registry2", "Choose registry site", rwj_list, selected = rwj_list),
                           createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list))
+      } else if (tabset == "county_map") {  
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "county_map_v2") {  
         result <- tagList(varSelectInput(inputId  = "county_vars",
                                             label    = "Choose variable",
                                             data     = county_risk2 %>% select(2:24),
-                                            selected = "Obese"))
+                                            selected = "Obese"),
+                          tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
+      } else if (tabset == "air_pollutant_map") {  
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
       } else if (tabset == "air_pollutant_map_v2") {  
         result <- tagList(selectInput(inputId = "air_risk2",
                                       label = "Choose air pollutant",
@@ -74,7 +83,8 @@ server <- function(input, output) {
                                                  "Ethylene.Oxide" = "Ethylene.Oxide",
                                                  "Formaldehyde" = "Formaldehyde",
                                                  "Naphthalene" = "Naphthalene"),
-                                      selected = "Acetaldehyde"))
+                                      selected = "Acetaldehyde"),
+                          tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
       }
       result
     })
@@ -111,6 +121,8 @@ server <- function(input, output) {
     
     ### Tab 3: Cancer & Risk Factors
     output$cancer_risk <- renderPlot({
+        req(c(input$x_axis, input$y_axis))
+      
         create_cancer_risk_plot(dashboard_risk, input$x_axis, input$y_axis)
     })
     
@@ -122,7 +134,8 @@ server <- function(input, output) {
     })
     
     output$county_radar <- renderPlot({
-        input$county_select
+        req(input$county_select)
+      
         data <- dashboard_risk %>% 
           select(county, Prostate.Cancer, Breast.Cancer, Lung.Cancer, Colorectal.Cancer, Bladder.Cancer, Kidney.Cancer, Bladder.Cancer, Melanoma, NH.Lymphoma, Uterine.Cancer, Kidney.Cancer, Leukemia, Pancreatic.Cancer, Thyroid.Cancer) %>%
           mutate_at(vars(-county), rescale) %>% 
@@ -133,6 +146,8 @@ server <- function(input, output) {
 
     ### Tab 4: Analytic Cases
     output$disease_site <- renderPlot({
+        req(c(input$rwj_site, input$report_year))
+      
         data <- master_report %>% 
             filter(Disease.Site != "", Gender %in% c("Male", "Female")) %>%
             group_by(RWJBH.Site, Disease.Site, Gender, Year) %>% 
@@ -143,6 +158,8 @@ server <- function(input, output) {
     })
  
     registry_rwj_v2_plot <- reactive({
+        req(c(input$rwj_site2, input$report_year2, input$gender2, input$race, input$age_range2))
+      
         df <- master_report %>% 
                 filter(Gender %in% c("Male", "Female")) %>%
                 filter(RWJBH.Site %in% input$rwj_site2, Year %in% input$report_year2, Gender %in% input$gender2, Age %inrange% input$age_range2, Race.Ethnicity %in% input$race)
