@@ -1,5 +1,84 @@
 server <- function(input, output) {
     
+    ## Sidebar
+    output$sidebarItems <- renderUI({
+      result <- tagList()
+      tabset <- input$tabset
+      if (tabset == "clinical_trials") {
+        result <- tagList(createPickerInput("disease_site", "Disease Site", site_list),
+                          createPickerInput("data4", "Data Table 4 Type", data4_list, selected = "Interventional"),
+                          createPickerInput("protocol", "Protocol Type", proto_list, selected = "Treatment"),
+                          createPickerInput("phase", "Phase", phase_list, selected = phase_list),
+                          createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list))
+      } else if (tabset == "cancer_risk_factors") {  
+        result <- tagList(varSelectInput(inputId = "x_axis",
+                                         label = "Choose x-axis",
+                                         data = risk,
+                                         selected = "Overall.Cancer.Incidence"),
+                          varSelectInput(inputId = "y_axis",
+                                         label = "Choose y-axis",
+                                         data = risk,
+                                         selected = "Overall.Cancer.Mortality"))
+      } else if (tabset == "top12_cancers") {  
+        result <- tagList(createPickerInput("county_select", "Choose NJ county", county_list2, selected = "ATLANTIC"))
+      } else if (tabset == "analytic_cases") {
+        result <- tagList(selectInput(inputId = "rwj_site",
+                                      label = "Choose RWJBH Registry",
+                                      choices = rwj_list,
+                                      selected = "New Brunswick"),
+                          checkboxGroupInput(inputId = "report_year",
+                                    label = "Year",
+                                    choices = recent_years,
+                                    selected = recent_years[1]),
+                          sliderInput(inputId = "age_range",
+                                      label = "Select age range:",
+                                      min = 0,
+                                      max = 100,
+                                      value = c(0, 100)))
+      } else if (tabset == "analytic_cases_v2"){
+        result <- tagList(createPickerInput("rwj_site2", "Choose RWJBH Registry", rwj_list, selected = "New Brunswick"),
+                                      checkboxGroupInput(inputId  = "report_year2",
+                                                                   label    = "Select Year(s)",
+                                                                   choices  = recent_years,
+                                                                   selected = recent_years),
+                                      checkboxGroupInput(inputId  = "gender2",
+                                                                   label    =  "Select Gender(s)",
+                                                                   choices  = all_sex,
+                                                                   selected = all_sex),
+                                      checkboxGroupInput(inputId = "race",
+                                                               label = "Select Race/Ethnicity",
+                                                               choices = all_races2,
+                                                               selected = all_races2),
+                                      sliderInput(inputId = "age_range2",
+                                                           label = "Select age range:",
+                                                           min = 0,
+                                                           max = 100,
+                                                           value = c(0, 100)),
+                          downloadBttn("case_report", label = "Generate Report"))
+      } else if (tabset == "age_distribution") {  
+        result <- tagList(createPickerInput("registry1", "Choose registry site", rwj_list, selected = rwj_list),
+                          createPickerInput("dis1", "Choose disease site", dis_list, selected = dis_list),
+                          createPickerInput("registry2", "Choose registry site", rwj_list, selected = rwj_list),
+                          createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list))
+      } else if (tabset == "county_map_v2") {  
+        result <- tagList(varSelectInput(inputId  = "county_vars",
+                                            label    = "Choose variable",
+                                            data     = county_risk2 %>% select(2:24),
+                                            selected = "Obese"))
+      } else if (tabset == "air_pollutant_map_v2") {  
+        result <- tagList(selectInput(inputId = "air_risk2",
+                                      label = "Choose air pollutant",
+                                      choices = c("X1.3.Butadiene" = "X1.3.Butadiene",
+                                                 "Acetaldehyde" = "Acetaldehyde",
+                                                 "Benzene" = "Benzene",
+                                                 "Ethylene.Oxide" = "Ethylene.Oxide",
+                                                 "Formaldehyde" = "Formaldehyde",
+                                                 "Naphthalene" = "Naphthalene"),
+                                      selected = "Acetaldehyde"))
+      }
+      result
+    })
+    
     ### Tab 1: Clinical Trials Accrual
     accrual_data <- reactive({
         new_trials %>% 
@@ -61,7 +140,7 @@ server <- function(input, output) {
             filter(RWJBH.Site %in% input$rwj_site, Year %in% input$report_year)
         
         create_cases_plot(data)
-    }, height = 800, width = 1200)
+    })
  
     registry_rwj_v2_plot <- reactive({
         df <- master_report %>% 
@@ -73,7 +152,7 @@ server <- function(input, output) {
     
     output$disease_site2 <- renderPlot({ 
         registry_rwj_v2_plot()
-      }, height = 1000, width = 1000)
+      })
   
     output$case_report <- downloadHandler(
       # For PDF output, change this to "report.pdf"
@@ -99,11 +178,11 @@ server <- function(input, output) {
 
     output$boxplot1 <- renderPlot({
       create_diagnosis_boxplot(box1())
-    }, height = 800, width = 1000)
+    })
   
     output$boxplot2 <- renderPlot({
       create_diagnosis_boxplot(box2())
-    }, height = 800, width = 1000)
+    })
   
     ### Tab 5: Maps   
     output$countymap1 = renderTmap({

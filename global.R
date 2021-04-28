@@ -60,6 +60,12 @@ all_races <- c("White" = "White",
                "American Indian or Alaska Native" = "American Indian or Alaska Native",
                "Other/Unknown" = "Other/Unknown")
 
+all_races2 <- c("White" = "White",
+                "Black" = "Black",
+                "Asian" = "Asian",
+                "Hispanic/Latino" = "Hispanic/Latino",
+                "Other/Unknown" = "Other/Unknown")
+
 specimen_types <- c("Biomarker",
                     "Blood",
                     "Body Fluid",
@@ -68,6 +74,7 @@ specimen_types <- c("Biomarker",
                     "Outside Paraffin Blocks",
                     "Tissue",
                     "Urine")
+sidebar_width <- 250
 
 get_custom_html <- function() {
   HTML('.bodyTitle { 
