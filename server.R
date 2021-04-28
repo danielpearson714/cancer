@@ -11,14 +11,14 @@ server <- function(input, output) {
                           createPickerInput("phase", "Phase", phase_list, selected = phase_list),
                           createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list))
       } else if (tabset == "cancer_risk_factors") {  
-        result <- tagList(varSelectInput(inputId = "x_axis",
-                                         label = "Choose x-axis",
-                                         data = risk,
-                                         selected = "Overall.Cancer.Incidence"),
-                          varSelectInput(inputId = "y_axis",
-                                         label = "Choose y-axis",
-                                         data = risk,
-                                         selected = "Overall.Cancer.Mortality"))
+        result <- tagList(createVarSelectInput(inputId = "x_axis",
+                                               label = "Choose x-axis",
+                                               data = risk,
+                                               selected = "Overall.Cancer.Incidence"),
+                          createVarSelectInput(inputId = "y_axis",
+                                               label = "Choose y-axis",
+                                               data = risk,
+                                               selected = "Overall.Cancer.Mortality"))
       } else if (tabset == "total_samples") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)")))
       } else if (tabset == "unique_samples") {  
@@ -26,10 +26,10 @@ server <- function(input, output) {
       } else if (tabset == "top12_cancers") {  
         result <- tagList(createPickerInput("county_select", "Choose NJ county", county_list2, selected = "ATLANTIC"))
       } else if (tabset == "analytic_cases") {
-        result <- tagList(selectInput(inputId = "rwj_site",
-                                      label = "Choose RWJBH Registry",
-                                      choices = rwj_list,
-                                      selected = "New Brunswick"),
+        result <- tagList(createSelectInput(inputId = "rwj_site",
+                                            label = "Choose RWJBH Registry",
+                                            choices = rwj_list,
+                                            selected = "New Brunswick"),
                           checkboxGroupInput(inputId = "report_year",
                                     label = "Year",
                                     choices = recent_years,
@@ -67,23 +67,23 @@ server <- function(input, output) {
       } else if (tabset == "county_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "county_map_v2") {  
-        result <- tagList(varSelectInput(inputId  = "county_vars",
-                                            label    = "Choose variable",
-                                            data     = county_risk2 %>% select(2:24),
-                                            selected = "Obese"),
+        result <- tagList(createVarSelectInput(inputId  = "county_vars",
+                                               label    = "Choose variable",
+                                               data     = county_risk2 %>% select(2:24),
+                                               selected = "Obese"),
                           tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "air_pollutant_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
       } else if (tabset == "air_pollutant_map_v2") {  
-        result <- tagList(selectInput(inputId = "air_risk2",
-                                      label = "Choose air pollutant",
-                                      choices = c("X1.3.Butadiene" = "X1.3.Butadiene",
-                                                 "Acetaldehyde" = "Acetaldehyde",
-                                                 "Benzene" = "Benzene",
-                                                 "Ethylene.Oxide" = "Ethylene.Oxide",
-                                                 "Formaldehyde" = "Formaldehyde",
-                                                 "Naphthalene" = "Naphthalene"),
-                                      selected = "Acetaldehyde"),
+        result <- tagList(createSelectInput(inputId = "air_risk2",
+                                            label = "Choose air pollutant",
+                                            choices = c("X1.3.Butadiene" = "X1.3.Butadiene",
+                                                        "Acetaldehyde" = "Acetaldehyde",
+                                                        "Benzene" = "Benzene",
+                                                        "Ethylene.Oxide" = "Ethylene.Oxide",
+                                                        "Formaldehyde" = "Formaldehyde",
+                                                        "Naphthalene" = "Naphthalene"),
+                                            selected = "Acetaldehyde"),
                           tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
       }
       result

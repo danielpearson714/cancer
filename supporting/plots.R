@@ -69,27 +69,25 @@ add_plot_config <- function(plot) {
 add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', yaxis_title = '', width = NULL, height = NULL, 
                                 source_text = "", source_xpos = 1, source_ypos = -0.16, x_tick_angle = 0) {
   plot %>%
-    layout(title = list(text = paste0(title,
-                                      '<br>',
-                                      '<sup>',
-                                      subtitle,
-                                      '</sup>'),
-                        font = title_font,
-                        y = 0.96),
+    layout(title = paste0(title,
+                          '<br>',
+                          '<sup>',
+                          subtitle,
+                          '</sup>'),
+           titlefont = title_font,
            xaxis = list(title = xaxis_title,
                         tickvals = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
                         tickangle = x_tick_angle),
            yaxis = list(title = yaxis_title,
                         rangemode = "tozero"),
-           margin = list(b=80),
+           margin = list(t=40, b=100),
            annotations = get_annotations(source_text, x_pos = source_xpos, y_pos = source_ypos)) %>%
     add_plot_config()
 }
 
-create_histogram <- function(data, var, name = '', title = '', subtitle = '', xaxis_title = '', yaxis_title = '', source_text = '', color,
+create_histogram <- function(data, var, title, subtitle, name = '', xaxis_title = '', yaxis_title = '', source_text = '', color,
                              showlegend = TRUE, source_xpos = 1, source_ypos = -0.16, bar_gap = 0.1, nbin = 100) {
-  values <- data %>% pull(var)
-  plot_ly(x = ~values, type = "histogram", name = name, marker = list(color = color), nbinsx = nbin) %>%
+  plot_ly(data, x = as.formula(paste0('~', var)), type = "histogram", name = name, marker = list(color = color), nbinsx = nbin) %>%
     add_plot_properties(title = title, subtitle = subtitle, xaxis_title = xaxis_title, yaxis_title = yaxis_title, 
                         source_text = source_text, source_xpos = source_xpos, source_ypos = source_ypos) %>%
     layout(bargap = bar_gap)

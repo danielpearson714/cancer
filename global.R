@@ -41,6 +41,27 @@ createPickerInput <- function(inputId, label, choices, selected = NULL) {
                 options  = list('actions-box' = TRUE))
 }
 
+createCheckboxGroupInput <- function(inputId, label, choices) {
+    checkboxGroupInput(inputId  = inputId,
+                       label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+                       choices  = choices,
+                       selected = choices)
+}
+
+createVarSelectInput <- function(inputId, label, data, selected) {
+    varSelectizeInput(inputId  = inputId,
+                      label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+                      data     = data,
+                      selected = selected)
+}
+  
+createSelectInput <- function(inputId, label, choices, selected) {
+    selectizeInput(inputId  = inputId,
+                   label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+                   choices  = choices,
+                   selected = selected)
+}
+
 app_title <- "Catchment Area Research Dashboard"
 all_years <- c("2016" = "2016",
                "2017" = "2017",
@@ -144,12 +165,12 @@ nj_tracts <- nj_tracts %>%
     left_join(risk, by = c("GEOID" = "Tract")) %>% 
     st_transform(4326)
 
-registry_new <- read_csv_file("All Sites Cleaned - 2019.csv")
+registry_new  <- read_csv_file("All Sites Cleaned - 2019.csv")
 master_report <- read_csv_file("Mock Data (master_report).csv")
-cinj2 <- read_csv_file("cinj2.csv")
-new_trials <- read_csv_file(("Mock Data (new_trials).csv"))
-new_trials <- new_trials %>% 
-  mutate_at(c(2,7), as.numeric)
+cinj2         <- read_csv_file("cinj2.csv")
+new_trials    <- read_csv_file(("Mock Data (new_trials).csv")) %>% 
+  mutate_at(c(2,7), as.numeric) %>%
+  filter(Age >= 0)
 
 brs <- read_csv_file("Mock Data (BRS).csv") %>% 
       rename(Race_Ethnicity = X)
