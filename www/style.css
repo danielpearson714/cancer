@@ -16,9 +16,13 @@
 }
 #appimage {
     position: fixed;
-    bottom: 50px;
+    bottom: 30px;
     margin-left:15px;
 }
+#case_report_bttn {
+    margin-left:20%;
+}
+
 .marginright {
     margin-right: 50%;
 }

@@ -55,7 +55,7 @@ server <- function(input, output) {
                                                         min = 0,
                                                         max = 100,
                                                         value = c(0, 100)),
-                          downloadBttn("case_report", label = "Generate Report"))
+                          downloadBttn("case_report", label = "Generate Report", size = "sm"))
       } else if (tabset == "age_distribution") {  
         result <- tagList(HTML("<h4><center>Plot1</center></h4>"),
                           createPickerInput("registry1", "Choose registry site", rwj_list, selected = rwj_list),
@@ -177,7 +177,7 @@ server <- function(input, output) {
       
       content = function(file){
         pdf(file, width = 12, height = 10)
-        registry_rwj_v2_plot()
+        print(registry_rwj_v2_plot())
         dev.off()
     })
   
