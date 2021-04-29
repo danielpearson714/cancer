@@ -41,11 +41,11 @@ createPickerInput <- function(inputId, label, choices, selected = NULL) {
                 options  = list('actions-box' = TRUE))
 }
 
-createCheckboxGroupInput <- function(inputId, label, choices) {
+createCheckboxGroupInput <- function(inputId, label, choices, selected = choices) {
     checkboxGroupInput(inputId  = inputId,
                        label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
                        choices  = choices,
-                       selected = choices)
+                       selected = selected)
 }
 
 createVarSelectInput <- function(inputId, label, data, selected) {
@@ -60,6 +60,14 @@ createSelectInput <- function(inputId, label, choices, selected) {
                    label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
                    choices  = choices,
                    selected = selected)
+}
+
+createSliderInput <- function(inputId, label, min, max, value) {
+    sliderInput(inputId = inputId,
+                label   = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+                min     = min,
+                max     = max,
+                value   = value)
 }
 
 app_title <- "Catchment Area Research Dashboard"

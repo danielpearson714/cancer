@@ -45,7 +45,7 @@ dashboardPage(skin = ("blue"),
                 tabPanel(title = "Cancer and Risk Factors",
                          value = "cancer_risk_factors",
                          tags$div(class = "topspacing"),
-                         fluidRow(column(9, tags$p(), tags$p(), plotOutput("cancer_risk", height = plot_height)),
+                         fluidRow(column(9, tags$p(), tags$p(), plotlyOutput("cancer_risk", height = plot_height)),
                                   column(3, reactableOutput("risk_react", height = plot_height)))
                 ),
                 tabPanel(title = "Top-12 Cancers (Radar Chart)",

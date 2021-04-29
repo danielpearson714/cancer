@@ -93,6 +93,16 @@ create_histogram <- function(data, var, title, subtitle, name = '', xaxis_title 
     layout(bargap = bar_gap)
 }
 
+create_scatter_plot <- function(data, x_val, y_val, title, subtitle = '', xaxis_title = x_val, yaxis_title = y_val, color = c("#cd2626")) {
+  plot_ly(data = data, x = as.formula(paste0('~', x_val)), y = as.formula(paste0('~', y_val)), 
+          type = "scatter", mode = "markers", marker = list(color = color, size = 20, line = list(color = 'black', width = 1)),
+          text = ~paste("County: ", county)) %>%
+    layout(title = title,
+           titlefont = title_font,
+           margin = list(t=40)) %>% 
+    add_plot_config()
+}
+
 create_accrual_plot <- function(data, disease_site) {
   title <- ifelse(length(disease_site) == 1, paste("Clinical Trials Enrollment - ", disease_site), "Clinical Trials Enrollment (by Disease Site)")
   create_histogram(data, var = "Age", title = title, subtitle = paste("N =", data %>% n_distinct()),
@@ -102,14 +112,7 @@ create_accrual_plot <- function(data, disease_site) {
 }
 
 create_cancer_risk_plot <- function(data, x_val, y_val) {
-  ggplot(data = data, aes_string(x = x_val, y = y_val)) +
-         geom_point(shape = 21, fill = "firebrick3", color = "black", alpha = 0.85, size = 7) +
-         geom_label_repel(aes(label = county), size = 3) +
-         ggtitle("Cancer Incidence Rates and Behavioral Risk Factors") +
-         theme(plot.title = element_text(size = 20),
-               axis.text = element_text(size = 16, color = "black"),
-               axis.title = element_text(size = 17, color = "black"),
-               panel.background = element_rect(fill = "aliceblue"))
+  create_scatter_plot(data, x_val, y_val, title = "Cancer Incidence Rates and Behavioral Risk Factors")
 }
 
 create_diagnosis_boxplot <- function(data) {

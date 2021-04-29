@@ -30,38 +30,38 @@ server <- function(input, output) {
                                             label = "Choose RWJBH Registry",
                                             choices = rwj_list,
                                             selected = "New Brunswick"),
-                          checkboxGroupInput(inputId = "report_year",
-                                    label = "Year",
-                                    choices = recent_years,
-                                    selected = recent_years[1]),
-                          sliderInput(inputId = "age_range",
-                                      label = "Select age range:",
-                                      min = 0,
-                                      max = 100,
-                                      value = c(0, 100)))
+                          createCheckboxGroupInput(inputId = "report_year",
+                                                   label = "Year",
+                                                   choices = recent_years,
+                                                   selected = recent_years[1]),
+                          createSliderInput(inputId = "age_range",
+                                            label = "Select age range:",
+                                            min = 0,
+                                            max = 100,
+                                            value = c(0, 100)))
       } else if (tabset == "analytic_cases_v2"){
         result <- tagList(createPickerInput("rwj_site2", "Choose RWJBH Registry", rwj_list, selected = "New Brunswick"),
-                                      checkboxGroupInput(inputId  = "report_year2",
-                                                                   label    = "Select Year(s)",
-                                                                   choices  = recent_years,
-                                                                   selected = recent_years),
-                                      checkboxGroupInput(inputId  = "gender2",
-                                                                   label    =  "Select Gender(s)",
-                                                                   choices  = all_sex,
-                                                                   selected = all_sex),
-                                      checkboxGroupInput(inputId = "race",
+                                      createCheckboxGroupInput(inputId  = "report_year2",
+                                                               label    = "Select Year(s)",
+                                                               choices  = recent_years),
+                                      createCheckboxGroupInput(inputId  = "gender2",
+                                                               label    =  "Select Gender(s)",
+                                                               choices  = all_sex),
+                                      createCheckboxGroupInput(inputId = "race",
                                                                label = "Select Race/Ethnicity",
-                                                               choices = all_races2,
-                                                               selected = all_races2),
-                                      sliderInput(inputId = "age_range2",
-                                                           label = "Select age range:",
-                                                           min = 0,
-                                                           max = 100,
-                                                           value = c(0, 100)),
+                                                               choices = all_races2),
+                                      createSliderInput(inputId = "age_range2",
+                                                        label = "Select age range:",
+                                                        min = 0,
+                                                        max = 100,
+                                                        value = c(0, 100)),
                           downloadBttn("case_report", label = "Generate Report"))
       } else if (tabset == "age_distribution") {  
-        result <- tagList(createPickerInput("registry1", "Choose registry site", rwj_list, selected = rwj_list),
+        result <- tagList(HTML("<h4><center>Plot1</center></h4>"),
+                          createPickerInput("registry1", "Choose registry site", rwj_list, selected = rwj_list),
                           createPickerInput("dis1", "Choose disease site", dis_list, selected = dis_list),
+                          tags$hr(),
+                          HTML("<h4><center>Plot2</center></h4>"),
                           createPickerInput("registry2", "Choose registry site", rwj_list, selected = rwj_list),
                           createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list))
       } else if (tabset == "county_map") {  
@@ -120,7 +120,7 @@ server <- function(input, output) {
     })
     
     ### Tab 3: Cancer & Risk Factors
-    output$cancer_risk <- renderPlot({
+    output$cancer_risk <- renderPlotly({
         req(c(input$x_axis, input$y_axis))
       
         create_cancer_risk_plot(dashboard_risk, input$x_axis, input$y_axis)
