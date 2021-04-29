@@ -51,7 +51,7 @@ dashboardPage(skin = ("blue"),
                 tabPanel(title = "Top-12 Cancers (Radar Chart)",
                          value = "top12_cancers",
                          tags$div(class = "topspacing"),
-                         plotOutput("county_radar"))),
+                         plotOutput("county_radar", height = plot_height))),
                 # Tab 4                        
                 navbarMenu("RWJBH Tumor Registries",
                     tabPanel(title = "Analytic Cases by Disease Site",
