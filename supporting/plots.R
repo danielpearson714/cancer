@@ -156,7 +156,7 @@ create_leaflet <- function(data, color_data = NULL) {
 
 create_openstreetmap <- function(data) {
   tm_basemap("OpenStreetMap") +
-       tm_shape(data)+ 
+       tm_shape(data) + 
             tm_borders("black", lwd = 0.9, alpha = 0.9) +
             tm_fill(col = c("Obese", "Current.Smoker", "Binge.Drinking", "Mammography"), alpha = 0.7, palette = "Reds", style = "quantile", id = "NAMELSAD", 
                     popup.vars = c("county", "Obese", "Current.Smoker", "Binge.Drinking", "Mammography")) +

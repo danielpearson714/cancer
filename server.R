@@ -201,7 +201,7 @@ server <- function(input, output) {
       create_diagnosis_boxplot(box2())
     })
   
-    ### Tab 5: Maps   
+    ### Tab 5: Maps  
     output$countymap1 = renderTmap({
       create_openstreetmap(county_risk)
     })
@@ -216,6 +216,7 @@ server <- function(input, output) {
     })
     
     output$countymap2 = renderLeaflet({
+        req(input$county_vars)
         create_leaflet(county_risk2, decision())
     })
     
@@ -238,7 +239,7 @@ server <- function(input, output) {
         addLegend("bottomright", 
                   pal = newpal,
                   values = decision(),
-                  title = input$county_vars,
+                  title = as.character(input$county_vars),
                   labFormat = function(type, cuts, p) {
                     n = length(cuts)
                     paste0(cuts[-n], " &ndash; ", cuts[-1])
