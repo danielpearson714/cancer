@@ -686,6 +686,13 @@
       "Repository": "CRAN",
       "Hash": "463642747f81879e6752485aefb831cf"
     },
+    "plotly": {
+      "Package": "plotly",
+      "Version": "4.6.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e7cbca3d04a7019a5aa9d50b7489bf13"
+    },
     "png": {
       "Package": "png",
       "Version": "0.1-7",
@@ -909,6 +916,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "f895dafd39733c4a70d425f605a832e7"
+    },
+    "shinydashboard": {
+      "Package": "shinydashboard",
+      "Version": "0.7.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "133639dc106955eee4ffb8ec73edac37"
     },
     "shinyWidgets": {
       "Package": "shinyWidgets",
