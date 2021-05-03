@@ -96,7 +96,7 @@ create_cases_plot <- function(data) {
          geom_col(aes(), color = "black", fill = "firebrick3", position = "stack") +
          coord_flip() +
          scale_x_reordered() +
-         scale_y_continuous(limits = c(0, 450), breaks = c(0, 50, 100, 150, 200, 250, 300, 350, 400, 450)) +
+         scale_y_continuous(limits = c(0, 450), breaks = seq(0, 450, 50), expand = c(0, 0)) +
          stat_summary(fun = sum, aes(label = ..y.., group = Disease.Site), geom = "text", hjust = -0.3) +
          scale_fill_gradient(low = "firebrick4", high = "firebrick2") +
          theme(
@@ -115,7 +115,7 @@ create_cases2_plot <- function(data, rwj_site, report_year, gender, race, age_ra
          geom_histogram(stat = "count", color = "black", fill = "firebrick3") +
          coord_flip() +
          stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
-         scale_y_continuous() +
+         scale_y_continuous(expand = c(0,0)) +
          scale_fill_gradient() +
          theme(
             strip.text = element_text(size = 14, face = "bold", color = "white"),

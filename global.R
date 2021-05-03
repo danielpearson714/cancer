@@ -104,7 +104,7 @@ specimen_types <- c("Biomarker",
                     "Tissue",
                     "Urine")
 sidebar_width <- 250
-plot_height   <- "80vh"
+plot_height   <- "85vh"
 
 get_custom_html <- function() {
   HTML('.bodyTitle { 
