@@ -9,7 +9,10 @@ server <- function(input, output) {
                           createPickerInput("data4", "Data Table 4 Type", data4_list, selected = "Interventional"),
                           createPickerInput("protocol", "Protocol Type", proto_list, selected = "Treatment"),
                           createPickerInput("phase", "Phase", phase_list, selected = phase_list),
-                          createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list))
+                          createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list),
+                          tags$hr(),
+                          HTML("<h4><center>Plot settings</center></h4>"),
+                          createCheckboxInput("axis_type", "Log scale"))
       } else if (tabset == "cancer_risk_factors") {  
         result <- tagList(createVarSelectInput(inputId = "x_axis",
                                                label = "Choose x-axis",
@@ -66,11 +69,17 @@ server <- function(input, output) {
                           createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list))
       } else if (tabset == "county_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
-      } else if (tabset == "county_map_v2") {  
-        result <- tagList(createVarSelectInput(inputId  = "county_vars",
-                                               label    = "Choose variable",
-                                               data     = county_risk2 %>% select(2:24),
-                                               selected = "Obese"),
+      } else if (tabset == "county_map_v2") {
+        result <- tagList(createSelectInput("county_vars", "Choose variable", choices = list(
+                            'Risk Factor (%)' = c(`Obese` = 'Obese', `Current Smoker` = 'Current.Smoker', `Binge Drinking` = 'Binge.Drinking'),
+                            'Cancer Screening (%)' = c(`Mammography` = 'Mammography', `Pap smear` = 'Pap.Smear', `Colorectal` = 'Colorectal', `PSA Test` = 'PSA.Test'),
+                            'Cancer Incidence (Rate)' = c(`Overall Cancer Incidence` = 'Overall.Cancer.Incidence', `Breast Cancer` = 'Breast.Cancer', `Prostate Cancer` = 'Prostate.Cancer',
+                                                          `Lung Cancer` = 'Lung.Cancer', `Liver Cancer` = 'Liver.Cancer', `Thyroid Cancer` = 'Thyroid.Cancer', 
+                                                          `Kidney Cancer` = 'Kidney.Cancer', `Colorectal Cancer` = 'Colorectal.Cancer', `Esophageal Cancer` = 'Esophageal.Cancer', 
+                                                          `Uterine Cancer` = 'Uterine.Cancer', `Pancreatic Cancer` = 'Pancreatic.Cancer', `NH Lymphoma` = 'NH.Lymphoma', 
+                                                          `Leukemia` = 'Leukemia', `Melanoma` = 'Melanoma', `Bladder Cancer` = 'Bladder.Cancer'),
+                            'Cancer Mortality (Rate)' = c(`Overall Cancer Mortality` = 'Overall.Cancer.Mortality')),
+                          selected = "Obese"),
                           tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "air_pollutant_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
@@ -107,7 +116,7 @@ server <- function(input, output) {
     output$accrual <- renderPlotly({
       req(nrow(accrual_data()) > 0)
       
-      create_accrual_plot(accrual_data(), input$disease_site)
+      create_accrual_plot(accrual_data(), input$disease_site, input$axis_type)
     })
     
     ### Tab 2: Biospecimen Tables

@@ -17,8 +17,15 @@ add_plot_config <- function(plot) {
                                       "toggleSpikelines", "pan2d", "zoom2d", "select2d", "lasso2d"))
 }
 
+# to remove warning at the console
+create_plotly_output <- function(plot) {
+  plot$elementId <- NULL
+  plot
+}
+
 add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', yaxis_title = '', width = NULL, height = NULL, 
-                                source_text = "", source_xpos = 1, source_ypos = -0.16, x_tick_angle = 0) {
+                                source_text = "", source_xpos = 1, source_ypos = -0.16, x_tick_angle = 0, log_scale = FALSE) {
+  yaxis_type <- ifelse(isTRUE(log_scale), "log", "linear")
   plot %>%
     layout(title = paste0(title,
                           '<br>',
@@ -29,18 +36,20 @@ add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', ya
            xaxis = list(title = xaxis_title,
                         tickvals = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100),
                         tickangle = x_tick_angle),
-           yaxis = list(title = yaxis_title,
+           yaxis = list(type = yaxis_type,
+                        title = yaxis_title,
                         rangemode = "tozero"),
            margin = list(t=40, b=100),
            annotations = get_annotations(source_text, x_pos = source_xpos, y_pos = source_ypos)) %>%
-    add_plot_config()
+    add_plot_config() %>% 
+    create_plotly_output()
 }
 
 create_histogram <- function(data, var, title, subtitle, name = '', xaxis_title = '', yaxis_title = '', source_text = '', color,
-                             showlegend = TRUE, source_xpos = 1, source_ypos = -0.16, bar_gap = 0.1, nbin = 100) {
+                             showlegend = TRUE, source_xpos = 1, source_ypos = -0.16, bar_gap = 0.1, nbin = 100,  log_scale = FALSE) {
   plot_ly(data, x = as.formula(paste0('~', var)), type = "histogram", name = name, marker = list(color = color), nbinsx = nbin) %>%
     add_plot_properties(title = title, subtitle = subtitle, xaxis_title = xaxis_title, yaxis_title = yaxis_title, 
-                        source_text = source_text, source_xpos = source_xpos, source_ypos = source_ypos) %>%
+                        source_text = source_text, source_xpos = source_xpos, source_ypos = source_ypos, log_scale = log_scale) %>%
     layout(bargap = bar_gap)
 }
 
@@ -51,15 +60,16 @@ create_scatter_plot <- function(data, x_val, y_val, title, subtitle = '', xaxis_
     layout(title = title,
            titlefont = title_font,
            margin = list(t=40)) %>% 
-    add_plot_config()
+    add_plot_config() %>%
+    create_plotly_output()
 }
 
-create_accrual_plot <- function(data, disease_site) {
+create_accrual_plot <- function(data, disease_site, log_scale) {
   title <- ifelse(length(disease_site) == 1, paste("Clinical Trials Enrollment - ", disease_site), "Clinical Trials Enrollment (by Disease Site)")
   create_histogram(data, var = "Age", title = title, subtitle = paste("N =", data %>% n_distinct()),
                    xaxis_title = "Patient Age at Enrollment", yaxis_title = "Count",
                    source_text = "OnCore Subject Search: 1/5/2021 (Does not include studies where Disease Site is not captured)",
-                   color = c("#cd2626"))
+                   color = c("#cd2626"), log_scale = log_scale)
 }
 
 create_cancer_risk_plot <- function(data, x_val, y_val) {

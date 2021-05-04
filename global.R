@@ -41,6 +41,13 @@ createPickerInput <- function(inputId, label, choices, selected = NULL) {
                 options  = list('actions-box' = TRUE))
 }
 
+createCheckboxInput <- function(inputId, label, value = FALSE) {
+  checkboxInput(inputId  = inputId,
+                label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+                value = value,
+                width = "60%")
+}
+
 createCheckboxGroupInput <- function(inputId, label, choices, selected = choices) {
     checkboxGroupInput(inputId  = inputId,
                        label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
@@ -55,7 +62,7 @@ createVarSelectInput <- function(inputId, label, data, selected) {
                       selected = selected)
 }
   
-createSelectInput <- function(inputId, label, choices, selected) {
+createSelectInput <- function(inputId, label, choices, selected = choices) {
     selectizeInput(inputId  = inputId,
                    label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
                    choices  = choices,
