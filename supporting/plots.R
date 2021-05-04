@@ -73,21 +73,36 @@ create_diagnosis_boxplot <- function(data) {
     scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
     labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
+    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)") +
     theme(
-      axis.text = element_text(size = 15),
-      axis.title = element_text(size = 18),
-      panel.background = element_rect(color = "black"),
+      panel.background = element_rect(fill = "white", colour = "white", size = 2, linetype = "solid"),
+      panel.grid.major = element_line(size = 0.10, linetype = 'solid', colour = "black"),
+      panel.grid.minor = element_line(),
+      axis.text = element_text(size = 12),
+      axis.title = element_text(size = 16),
       strip.background = element_rect(color = "black"),
-      strip.text = element_text(size = 18, face = "bold"),
+      strip.text = element_text(size = 14, face = "bold"),
       legend.position = "none",
       plot.subtitle = element_text(hjust = 0.5),
-      plot.title = element_text(hjust = 0.5, size = 18, face = c("bold"))) +
-    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)")
+      plot.title = element_text(hjust = 0.5, size = 18, face = c("bold")))
 }
 
 create_radar_plot <- function(data) {
   ggradar(data) + 
     theme(plot.title = element_text("Top 12 Cancers in New Jersey - County Incidence Relative to State"))
+}
+
+cases_theme <- function() {
+  theme(
+    panel.background = element_rect(fill = "white", colour = "white", size = 2, linetype = "solid"),
+    panel.grid.major = element_line(size = 0.10, linetype = 'solid', colour = "black"), 
+    panel.grid.minor = element_line(),
+    strip.text = element_text(size = 14, face = "bold", color = "white"),
+    axis.text = element_text(size = 12, color = "black"),
+    plot.title = element_text(size = 18, hjust = 0.5),
+    strip.background = element_rect(fill = "dodgerblue4", color = "White"),
+    axis.title = element_blank(),
+    legend.position = "none")
 }
 
 create_cases_plot <- function(data) {
@@ -99,15 +114,9 @@ create_cases_plot <- function(data) {
          scale_y_continuous(limits = c(0, 450), breaks = seq(0, 450, 50), expand = c(0, 0)) +
          stat_summary(fun = sum, aes(label = ..y.., group = Disease.Site), geom = "text", hjust = -0.3) +
          scale_fill_gradient(low = "firebrick4", high = "firebrick2") +
-         theme(
-            strip.text = element_text(size = 14, face = "bold", color = "white"),
-            axis.text = element_text(size = 12, color = "black"),
-            plot.title = element_text(size = 18, hjust = 0.5),
-            strip.background = element_rect(fill = "dodgerblue4", color = "White"),
-            axis.title = element_blank(),
-            legend.position = "none") +
          ggtitle("Analytic Cases at RWJBH Sites") +
-         labs(caption = "RWJBH Tumor Registry Reports, 2019-2020")
+         labs(caption = "RWJBH Tumor Registry Reports, 2019-2020") +
+         cases_theme()
 }
 
 create_cases2_plot <- function(data, rwj_site, report_year, gender, race, age_range) {
@@ -117,16 +126,9 @@ create_cases2_plot <- function(data, rwj_site, report_year, gender, race, age_ra
          stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
          scale_y_continuous(expand = c(0,0)) +
          scale_fill_gradient() +
-         theme(
-            strip.text = element_text(size = 14, face = "bold", color = "white"),
-            axis.text = element_text(size = 12, color = "black"),
-            plot.title = element_text(size = 18, hjust = 0.5),
-            plot.subtitle = element_text(hjust = 0.5),
-            strip.background = element_rect(fill = "dodgerblue4", color = "White"),
-            axis.title = element_blank(),
-            legend.position = "none") +
          ggtitle(paste("Analytic Cases at RWJBH Sites -", rwj_site), subtitle = paste(c("[Year:", report_year, "] - [Gender:", gender, "] - [Race/Ethnicity:", race, "] - [Age range:", age_range, "]"), collapse = " ", sep = "")) +
-         labs(caption = "RWJBH Tumor Registry Reports, 2019-2020")
+         labs(caption = "RWJBH Tumor Registry Reports, 2019-2020") +
+         cases_theme()
 }
 
 # leaflet
