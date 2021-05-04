@@ -217,7 +217,15 @@ path_list  <- as.list(sort(unique(master_report$Path_Stage)))
 trial_list <- as.list(sort(unique(new_trials$X)))
 dis_list   <- as.list(sort(unique(master_report$Disease.Site)))
 risk       <- dashboard_risk %>% select(-county, -NAME, -County_ID)
-risk_list  <- as.list(sort(colnames(risk)))
+risk_list  <- list(
+  'Risk Factor (%)'         = c(`Obese` = 'Obese', `Current Smoker` = 'Current.Smoker', `Binge Drinking` = 'Binge.Drinking'),
+  'Cancer Screening (%)'    = c(`Mammography` = 'Mammography', `Pap smear` = 'Pap.Smear', `Colorectal` = 'Colorectal', `PSA Test` = 'PSA.Test'),
+  'Cancer Incidence (Rate)' = c(`Overall Cancer Incidence` = 'Overall.Cancer.Incidence', `Breast Cancer` = 'Breast.Cancer', `Prostate Cancer` = 'Prostate.Cancer',
+                                `Lung Cancer` = 'Lung.Cancer', `Liver Cancer` = 'Liver.Cancer', `Thyroid Cancer` = 'Thyroid.Cancer', 
+                                `Kidney Cancer` = 'Kidney.Cancer', `Colorectal Cancer` = 'Colorectal.Cancer', `Esophageal Cancer` = 'Esophageal.Cancer', 
+                                `Uterine Cancer` = 'Uterine.Cancer', `Pancreatic Cancer` = 'Pancreatic.Cancer', `NH Lymphoma` = 'NH.Lymphoma', 
+                                `Leukemia` = 'Leukemia', `Melanoma` = 'Melanoma', `Bladder Cancer` = 'Bladder.Cancer'),
+  'Cancer Mortality (Rate)' = c(`Overall Cancer Mortality` = 'Overall.Cancer.Mortality'))
 
 county_list2 <- as.list(sort(unique(dashboard_risk$county)))
 county_risk2 <- county_risk %>% 

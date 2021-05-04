@@ -14,14 +14,14 @@ server <- function(input, output) {
                           HTML("<h4><center>Plot settings</center></h4>"),
                           createCheckboxInput("axis_type", "Log scale"))
       } else if (tabset == "cancer_risk_factors") {  
-        result <- tagList(createVarSelectInput(inputId = "x_axis",
-                                               label = "Choose x-axis",
-                                               data = risk,
-                                               selected = "Overall.Cancer.Incidence"),
-                          createVarSelectInput(inputId = "y_axis",
-                                               label = "Choose y-axis",
-                                               data = risk,
-                                               selected = "Overall.Cancer.Mortality"))
+        result <- tagList(createSelectInput(inputId = "x_axis", 
+                                            label = "Choose x-axis", 
+                                            choices = risk_list, 
+                                            selected = "Overall.Cancer.Incidence"),
+                          createSelectInput(inputId = "y_axis", 
+                                            label = "Choose y-axis", 
+                                            choices = risk_list, 
+                                            selected = "Overall.Cancer.Mortality"))
       } else if (tabset == "total_samples") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Total Patient Samples as of 11/24/2020)")))
       } else if (tabset == "unique_samples") {  
@@ -70,16 +70,7 @@ server <- function(input, output) {
       } else if (tabset == "county_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "county_map_v2") {
-        result <- tagList(createSelectInput("county_vars", "Choose variable", choices = list(
-                            'Risk Factor (%)' = c(`Obese` = 'Obese', `Current Smoker` = 'Current.Smoker', `Binge Drinking` = 'Binge.Drinking'),
-                            'Cancer Screening (%)' = c(`Mammography` = 'Mammography', `Pap smear` = 'Pap.Smear', `Colorectal` = 'Colorectal', `PSA Test` = 'PSA.Test'),
-                            'Cancer Incidence (Rate)' = c(`Overall Cancer Incidence` = 'Overall.Cancer.Incidence', `Breast Cancer` = 'Breast.Cancer', `Prostate Cancer` = 'Prostate.Cancer',
-                                                          `Lung Cancer` = 'Lung.Cancer', `Liver Cancer` = 'Liver.Cancer', `Thyroid Cancer` = 'Thyroid.Cancer', 
-                                                          `Kidney Cancer` = 'Kidney.Cancer', `Colorectal Cancer` = 'Colorectal.Cancer', `Esophageal Cancer` = 'Esophageal.Cancer', 
-                                                          `Uterine Cancer` = 'Uterine.Cancer', `Pancreatic Cancer` = 'Pancreatic.Cancer', `NH Lymphoma` = 'NH.Lymphoma', 
-                                                          `Leukemia` = 'Leukemia', `Melanoma` = 'Melanoma', `Bladder Cancer` = 'Bladder.Cancer'),
-                            'Cancer Mortality (Rate)' = c(`Overall Cancer Mortality` = 'Overall.Cancer.Mortality')),
-                          selected = "Obese"),
+        result <- tagList(createSelectInput("county_vars", "Choose variable", choices = risk_list, selected = "Obese"),
                           tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "air_pollutant_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
