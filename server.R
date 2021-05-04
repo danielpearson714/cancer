@@ -260,6 +260,7 @@ server <- function(input, output) {
       leafletProxy("pollution") %>%
         clearShapes() %>%
         clearMarkers() %>%
+        clearControls() %>%
         addPolygons(data = nj_tracts,
                     fillColor = ~newpal2(decision2()),
                     color = "black",
