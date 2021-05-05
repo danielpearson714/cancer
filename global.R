@@ -1,7 +1,7 @@
 source("supporting/plots.R")
 source("supporting/tables.R")
 
-lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", "shinydashboard",
+lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", "shinydashboard", "shinydashboardPlus",
          "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly"), require, character.only = TRUE)
 
 # map settings
@@ -44,8 +44,7 @@ createPickerInput <- function(inputId, label, choices, selected = NULL) {
 createCheckboxInput <- function(inputId, label, value = FALSE) {
   checkboxInput(inputId  = inputId,
                 label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
-                value = value,
-                width = "60%")
+                value = value)
 }
 
 createCheckboxGroupInput <- function(inputId, label, choices, selected = choices) {

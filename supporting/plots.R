@@ -5,7 +5,7 @@ title_font <- list(
   size = 16,
   color = 'black')
 
-get_annotations <- function(source_text, x_pos = 1, y_pos = -0.16) {
+get_annotations <- function(source_text, x_pos = 1, y_pos = -0.12) {
   list(x = x_pos, y = y_pos, text = source_text, showarrow = F, xref='paper', yref='paper', xanchor = 'right', 
        yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 9, color = "black"))
 }
@@ -24,7 +24,7 @@ create_plotly_output <- function(plot) {
 }
 
 add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', yaxis_title = '', width = NULL, height = NULL, 
-                                source_text = "", source_xpos = 1, source_ypos = -0.16, x_tick_angle = 0, log_scale = FALSE) {
+                                source_text = "", x_tick_angle = 0, log_scale = FALSE) {
   yaxis_type <- ifelse(isTRUE(log_scale), "log", "linear")
   plot %>%
     layout(title = paste0(title,
@@ -39,17 +39,17 @@ add_plot_properties <- function(plot, title, subtitle = '', xaxis_title = '', ya
            yaxis = list(type = yaxis_type,
                         title = yaxis_title,
                         rangemode = "tozero"),
-           margin = list(t=40, b=100),
-           annotations = get_annotations(source_text, x_pos = source_xpos, y_pos = source_ypos)) %>%
+           margin = list(t=40, b=120),
+           annotations = get_annotations(source_text)) %>%
     add_plot_config() %>% 
     create_plotly_output()
 }
 
 create_histogram <- function(data, var, title, subtitle, name = '', xaxis_title = '', yaxis_title = '', source_text = '', color,
-                             showlegend = TRUE, source_xpos = 1, source_ypos = -0.16, bar_gap = 0.1, nbin = 100,  log_scale = FALSE) {
+                             showlegend = TRUE, bar_gap = 0.1, nbin = 100,  log_scale = FALSE) {
   plot_ly(data, x = as.formula(paste0('~', var)), type = "histogram", name = name, marker = list(color = color), nbinsx = nbin) %>%
     add_plot_properties(title = title, subtitle = subtitle, xaxis_title = xaxis_title, yaxis_title = yaxis_title, 
-                        source_text = source_text, source_xpos = source_xpos, source_ypos = source_ypos, log_scale = log_scale) %>%
+                        source_text = source_text, log_scale = log_scale) %>%
     layout(bargap = bar_gap)
 }
 
@@ -129,16 +129,30 @@ create_cases_plot <- function(data) {
          cases_theme()
 }
 
-create_cases2_plot <- function(data, rwj_site, report_year, gender, race, age_range) {
-  ggplot(data, mapping = aes(x = fct_rev(fct_infreq(Disease.Site)))) +
-         geom_histogram(stat = "count", color = "black", fill = "firebrick3") +
-         coord_flip() +
-         stat_count(binwidth=1, geom="text", aes(label=..count..), hjust =-0.3) +
-         scale_y_continuous(expand = c(0,0)) +
-         scale_fill_gradient() +
-         ggtitle(paste("Analytic Cases at RWJBH Sites -", rwj_site), subtitle = paste(c("[Year:", report_year, "] - [Gender:", gender, "] - [Race/Ethnicity:", race, "] - [Age range:", age_range, "]"), collapse = " ", sep = "")) +
-         labs(caption = "RWJBH Tumor Registry Reports, 2019-2020") +
-         cases_theme()
+create_cases2_plot <- function(data, rwj_site, report_year, gender, race, age_range, log_scale = FALSE) {
+  df <- data %>% 
+    group_by(Disease.Site) %>% 
+    summarise(count = n()) %>% 
+    arrange(count)
+  
+  xaxis_type <- ifelse(isTRUE(log_scale), "log", "linear")
+  title      <- paste("Analytic Cases at RWJBH Sites -", rwj_site)
+  subtitle   <- paste(c("[Year:", report_year, "] - [Gender:", gender, "] - [Race/Ethnicity:", race, "] - [Age range:", age_range, "]"), collapse = " ", sep = "")
+  caption    <-  "RWJBH Tumor Registry Reports, 2019-2020"
+  plot_ly(df, y = ~reorder(Disease.Site, count), x = ~count, type = 'bar', orientation = 'h', marker = list(color = '#cd2626'))  %>% 
+    layout(title = paste0(title,
+                          '<br>',
+                          '<sup>',
+                          subtitle,
+                          '</sup>'),
+           titlefont = title_font,
+           xaxis = list(type = xaxis_type,
+                        title = "Count"),
+           yaxis = list(title = ""),
+           margin = list(t=60, l=150, b=100),
+           annotations = get_annotations(caption)) %>%
+    add_plot_config() %>%
+    create_plotly_output()
 }
 
 # leaflet

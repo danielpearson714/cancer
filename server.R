@@ -9,10 +9,7 @@ server <- function(input, output) {
                           createPickerInput("data4", "Data Table 4 Type", data4_list, selected = "Interventional"),
                           createPickerInput("protocol", "Protocol Type", proto_list, selected = "Treatment"),
                           createPickerInput("phase", "Phase", phase_list, selected = phase_list),
-                          createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list),
-                          tags$hr(),
-                          HTML("<h4><center>Plot settings</center></h4>"),
-                          createCheckboxInput("axis_type", "Log scale"))
+                          createPickerInput("tsg", "Subject Tumor Study Group", tsg_list, selected = tsg_list))
       } else if (tabset == "cancer_risk_factors") {  
         result <- tagList(createSelectInput(inputId = "x_axis", 
                                             label = "Choose x-axis", 
@@ -164,10 +161,10 @@ server <- function(input, output) {
                 filter(Gender %in% c("Male", "Female")) %>%
                 filter(RWJBH.Site %in% input$rwj_site2, Year %in% input$report_year2, Gender %in% input$gender2, Age %inrange% input$age_range2, Race.Ethnicity %in% input$race)
         
-        create_cases2_plot(df, input$rwj_site2, input$report_year2, input$gender2, input$race, input$age_range2)
+        create_cases2_plot(df, input$rwj_site2, input$report_year2, input$gender2, input$race, input$age_range2, input$axis_type)
     })
     
-    output$disease_site2 <- renderPlot({ 
+    output$disease_site2 <- renderPlotly({ 
         registry_rwj_v2_plot()
       })
   

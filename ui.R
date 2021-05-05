@@ -2,6 +2,7 @@
 dashboardPage(skin = ("blue"),
         dashboardHeader(titleWidth = sidebar_width),
         dashboardSidebar(width = sidebar_width,
+                         minified = FALSE,
                          tags$div(class = "menutopspacing"),
                          uiOutput("sidebarItems"),
                          div(id = "appimage", img(src="appimage.png", height = 75))),
@@ -61,7 +62,7 @@ dashboardPage(skin = ("blue"),
                     tabPanel(title = "Analytic Cases by Disease Site v2",
                              value = "analytic_cases_v2",
                              tags$div(class = "topspacing"),
-                             plotOutput("disease_site2", height = plot_height)
+                             plotlyOutput("disease_site2", height = plot_height)
                     ),
                     tabPanel(title = "Age Distribution by Race/Ethnicity",
                              value = "age_distribution",
@@ -93,5 +94,9 @@ dashboardPage(skin = ("blue"),
                     )
             ) # end tabsetPanel
         ), # end dashboardBody
+        controlbar = dashboardControlbar(id = "controlBar",
+                                         HTML("<h4><center>Plot settings</center></h4>"),
+                                         fluidRow(column(1), 
+                                                  column(10, createCheckboxInput("axis_type", "Log scale")))),
         title = app_title
 )#end dashboardPage
