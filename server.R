@@ -220,6 +220,15 @@ server <- function(input, output) {
         create_leaflet(county_risk2, decision())
     })
     
+    get_county_labels <- function(county_var) {
+      lab_df <- county_risk2 %>% select(c("county", all_of(county_var)))
+      st_geometry(lab_df) <- NULL
+      lapply(seq(nrow(lab_df)), function(i) {
+        paste0("<b>County</b>: ", lab_df[i, "county"], "<br>", 
+               "<b>", county_var, "</b>: ", lab_df[i, county_var]) 
+      })
+    }
+    
     observeEvent(input$county_vars, {
       leafletProxy("countymap2") %>%
         clearShapes() %>% 
@@ -235,7 +244,8 @@ server <- function(input, output) {
                       weight = 2,
                       dashArray = "",
                       bringToFront = TRUE
-                    )) %>% 
+                    ),
+                    label = lapply(get_county_labels(input$county_vars), HTML)) %>% 
         addLegend("bottomright", 
                   pal = newpal,
                   values = decision(),
@@ -256,6 +266,45 @@ server <- function(input, output) {
       create_leaflet(nj_tracts)
     })
     
+    get_air_risk_county_labels <- function() {
+      lab_df <- nj_tracts
+      st_geometry(lab_df) <- NULL
+      lapply(seq(nrow(lab_df)), function(i) { 
+        paste("<b>Census Tract:</b>", lab_df[i, "NAME"], "<br>",
+              "<b>County:</b>", lab_df[i, "County"], "<br>",
+              "<b>Population:</b>", lab_df[i, "Population"], "<br>",
+              "<b>1,3-Butadiene:</b>", lab_df[i, "X1.3.Butadiene"], "<br>",
+              "<b>Acetaldehyde:</b>", lab_df[i, "Acetaldehyde"], "<br>",
+              "<b>Aniline:</b>", lab_df[i, "Aniline"], "<br>",
+              "<b>Benzene:</b>", lab_df[i, "Benzene"], "<br>",
+              "<b>Ethlyene Oxide:</b>", lab_df[i, "Ethylene.Oxide"], "<br>",
+              "<b>Formaldehyde:</b>", lab_df[i, "Formaldehyde"], "<br>",
+              "<b>Naphthalene:</b>", lab_df[i, "Naphthalene"])
+      })
+    }
+    
+    get_air_risk_site_labels <- function() {
+      lab_df <- npl_sites
+      st_geometry(lab_df) <- NULL
+      lapply(seq(nrow(lab_df)), function(i) { 
+        paste("<b>Site Name:</b>", lab_df[i, "SITE.NAME"], "<br>",
+              "<b>Address:</b>", lab_df[i, "ADDRESS"], "<br>",
+              "<b>Federal Facility (Y/N)</b>", lab_df[i, "FEDERAL.FACILITY"])
+      })
+    }
+    
+    get_air_risk_plant_labels <- function() {
+      lab_df <- pp_sites
+      st_geometry(lab_df) <- NULL
+      lapply(seq(nrow(lab_df)), function(i) { 
+        paste("<b>Plant Name:</b>", lab_df[i, "PLANT_NAME"], "<br>",
+              "<b>Operator:</b>", lab_df[i, "X.1"], "<br>",
+              "<b>City:</b>", lab_df[i, "CITY"], "<br>",
+              "<b>Plant Type:</b>", lab_df[i, "PRIMSOURCE"], "<br>",
+              "<b>Megawatts:</b>", lab_df[i, "TOTAL_MW"])
+      })
+    }
+    
     observeEvent(input$air_risk2, {
       leafletProxy("pollution") %>%
         clearShapes() %>%
@@ -274,17 +323,7 @@ server <- function(input, output) {
                       weight = 1.5,
                       dashArray = "",
                       bringToFront = FALSE),
-                    popup=paste(nj_tracts$NAMELSAD, "<br>",
-                                "County", nj_tracts$County, "<br>",
-                                "Population:", nj_tracts$Population, "<br>",
-                                "1,3-Butadiene", nj_tracts$X1.3.Butadiene, "<br>",
-                                "Acetaldehyde:", nj_tracts$Acetaldehyde, "<br>",
-                                "Aniline:", nj_tracts$Aniline, "<br>",
-                                "Benzene:", nj_tracts$Benzene, "<br>",
-                                "Ethlyene Oxide:", nj_tracts$Ethylene.Oxide, "<br>",
-                                "Formaldehyde:", nj_tracts$Formaldehyde, "<br>",
-                                "Naphthalene:", nj_tracts$Naphthalene)
-                    ) %>%
+                    label = lapply(get_air_risk_county_labels(), HTML)) %>%
         addPolylines(data = county_risk2,
                     color = "black",
                     weight = 1,
@@ -294,21 +333,14 @@ server <- function(input, output) {
                          stroke = FALSE,
                          fillOpacity = 0.5,
                          group = "NPL Superfund Sites",
-                         popup=paste("Site Name:", npl_sites$SITE.NAME, "<br>",
-                                     "Address:", npl_sites$ADDRESS, "<br>",
-                                     "Federal Facility (Y/N):", npl_sites$FEDERAL.FACILITY)) %>%
+                         label = lapply(get_air_risk_site_labels(), HTML)) %>%
         addCircleMarkers(data = pp_sites,
                          color = "red",
                          stroke = FALSE,
                          fillOpacity = 0.5,
                          group = "Power Plant Sites",
                          radius = pp_sites$TOTAL_MW / 50,
-                         popup=paste("Plant Name:", pp_sites$PLANT_NAME, "<br>",
-                                     "Operator:", pp_sites$X.1, "<br>",
-                                     "City:", pp_sites$CITY, "<br>",
-                                     "Plant Type:", pp_sites$PRIMSOURCE, "<br>",
-                                     "Megawatts:", pp_sites$TOTAL_MW)
-                                     ) %>%
+                         label = lapply(get_air_risk_plant_labels(), HTML)) %>%
         addLayersControl(baseGroups = "Air Pollutant Risk",
                          overlayGroups = c("Power Plant Sites", "NPL Superfund Sites"),
                          options = layersControlOptions(collapsed = FALSE)) %>%
