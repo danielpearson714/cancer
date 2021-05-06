@@ -345,6 +345,13 @@
       "Repository": "CRAN",
       "Hash": "74628ea7a3be5ee8a7b5bb0a8e84882e"
     },
+    "fresh": {
+      "Package": "fresh",
+      "Version": "0.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fa54367040deb4537da49b7ac0ee5770"
+    },
     "fs": {
       "Package": "fs",
       "Version": "1.5.0",
@@ -924,6 +931,13 @@
       "Repository": "CRAN",
       "Hash": "133639dc106955eee4ffb8ec73edac37"
     },
+    "shinydashboardPlus": {
+      "Package": "shinydashboardPlus",
+      "Version": "2.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1abe63cd90fe33d3ca211525a0b39af9"
+    },
     "shinyWidgets": {
       "Package": "shinyWidgets",
       "Version": "0.6.0",
@@ -1098,6 +1112,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "55e157e2aa88161bdb0754218470d204"
+    },
+    "waiter": {
+      "Package": "waiter",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a8742a4d14e77d6464614b47a1e9921e"
     },
     "waldo": {
       "Package": "waldo",
