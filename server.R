@@ -242,7 +242,7 @@ server <- function(input, output) {
                       dashArray = "",
                       bringToFront = TRUE
                     ),
-                    label = lapply(get_county_labels(input$county_vars), HTML)) %>% 
+                    popup = lapply(get_county_labels(input$county_vars), HTML)) %>% 
         addLegend("bottomright", 
                   pal = newpal,
                   values = decision(),
@@ -320,7 +320,7 @@ server <- function(input, output) {
                       weight = 1.5,
                       dashArray = "",
                       bringToFront = FALSE),
-                    label = lapply(get_air_risk_county_labels(), HTML)) %>%
+                    popup = lapply(get_air_risk_county_labels(), HTML)) %>%
         addPolylines(data = county_risk2,
                     color = "black",
                     weight = 1,
@@ -330,14 +330,14 @@ server <- function(input, output) {
                          stroke = FALSE,
                          fillOpacity = 0.5,
                          group = "NPL Superfund Sites",
-                         label = lapply(get_air_risk_site_labels(), HTML)) %>%
+                         popup = lapply(get_air_risk_site_labels(), HTML)) %>%
         addCircleMarkers(data = pp_sites,
                          color = "red",
                          stroke = FALSE,
                          fillOpacity = 0.5,
                          group = "Power Plant Sites",
                          radius = pp_sites$TOTAL_MW / 50,
-                         label = lapply(get_air_risk_plant_labels(), HTML)) %>%
+                         popup = lapply(get_air_risk_plant_labels(), HTML)) %>%
         addLayersControl(baseGroups = "Air Pollutant Risk",
                          overlayGroups = c("Power Plant Sites", "NPL Superfund Sites"),
                          options = layersControlOptions(collapsed = FALSE)) %>%
