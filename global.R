@@ -76,6 +76,21 @@ createSliderInput <- function(inputId, label, min, max, value) {
                 value   = value)
 }
 
+createYearInput <- function(inputId, selected = recent_years) {
+  createCheckboxGroupInput(inputId  = inputId,
+                           label    = "Select Year(s)",
+                           choices  = recent_years,
+                           selected = selected)
+}
+
+filter_age_distribution_data <- function(data, registry, disease_site, year) {
+  data %>% 
+    filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
+           RWJBH.Site %in% registry,
+           Disease.Site %in% disease_site,
+           Year %in% year)
+}
+
 app_title <- "Catchment Area Research Dashboard"
 all_years <- c("2016" = "2016",
                "2017" = "2017",

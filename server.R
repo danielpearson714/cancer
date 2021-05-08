@@ -30,10 +30,7 @@ server <- function(input, output) {
                                             label = "Choose RWJBH Registry",
                                             choices = rwj_list,
                                             selected = "New Brunswick"),
-                          createCheckboxGroupInput(inputId = "report_year",
-                                                   label = "Year",
-                                                   choices = recent_years,
-                                                   selected = recent_years[1]),
+                          createYearInput(inputId  = "report_year", selected = recent_years[1]),
                           createSliderInput(inputId = "age_range",
                                             label = "Select age range:",
                                             min = 0,
@@ -41,9 +38,7 @@ server <- function(input, output) {
                                             value = c(0, 100)))
       } else if (tabset == "analytic_cases_v2"){
         result <- tagList(createPickerInput("rwj_site2", "Choose RWJBH Registry", rwj_list, selected = "New Brunswick"),
-                                      createCheckboxGroupInput(inputId  = "report_year2",
-                                                               label    = "Select Year(s)",
-                                                               choices  = recent_years),
+                                      createYearInput(inputId  = "report_year2"),
                                       createCheckboxGroupInput(inputId  = "gender2",
                                                                label    =  "Select Gender(s)",
                                                                choices  = all_sex),
@@ -60,10 +55,12 @@ server <- function(input, output) {
         result <- tagList(HTML("<h4><center>Plot1</center></h4>"),
                           createPickerInput("registry1", "Choose registry site", rwj_list, selected = rwj_list),
                           createPickerInput("dis1", "Choose disease site", dis_list, selected = dis_list),
+                          createYearInput(inputId  = "age_distribution_year1"),
                           tags$hr(),
                           HTML("<h4><center>Plot2</center></h4>"),
                           createPickerInput("registry2", "Choose registry site", rwj_list, selected = rwj_list),
-                          createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list))
+                          createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list),
+                          createYearInput(inputId  = "age_distribution_year2"))
       } else if (tabset == "county_map") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
       } else if (tabset == "county_map_v2") {
@@ -177,17 +174,21 @@ server <- function(input, output) {
         print(registry_rwj_v2_plot())
         dev.off()
     })
-  
-    box1 <- reactive({master_report %>% 
-        filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
-               RWJBH.Site %in% input$registry1,
-               Disease.Site %in% input$dis1)
+    
+    box1 <- reactive({
+      req(c(input$registry1, input$dis1, input$age_distribution_year1))
+      filter_age_distribution_data(master_report,
+                                   input$registry1, 
+                                   input$dis1, 
+                                   input$age_distribution_year1)
     })
   
-    box2 <- reactive({master_report %>% 
-        filter(!Race.Ethnicity %in% c("NA", "Unknown/Other", "Other/Unknown", "Native American"),
-               RWJBH.Site %in% input$registry2,
-               Disease.Site %in% input$dis2)
+    box2 <- reactive({
+      req(c(input$registry2, input$dis2, input$age_distribution_year2))
+      filter_age_distribution_data(master_report,
+                                   input$registry2, 
+                                   input$dis2, 
+                                   input$age_distribution_year2)
     })
 
     output$boxplot1 <- renderPlot({
