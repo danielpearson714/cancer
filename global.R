@@ -2,7 +2,7 @@ source("supporting/plots.R")
 source("supporting/tables.R")
 
 lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", "shinydashboard", "shinydashboardPlus",
-         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly"), require, character.only = TRUE)
+         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly", "fresh"), require, character.only = TRUE)
 
 # map settings
 options(bitmapType="cairo")

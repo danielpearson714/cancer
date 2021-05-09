@@ -1,5 +1,20 @@
 # Create UI
-dashboardPage(skin = ("blue"),
+
+theme <- create_theme(
+        adminlte_color(
+                light_blue = "#1D5F88"),
+        adminlte_sidebar(
+                dark_bg = "#7F7F7F",
+                dark_color = "black"
+        ),
+        bs4dash_layout(
+                sidebar_width = "260px"
+        )
+)
+
+dashboardPage(
+        skin = "blue",
+        freshTheme = theme,
         dashboardHeader(titleWidth = sidebar_width),
         dashboardSidebar(width = sidebar_width,
                          minified = FALSE,

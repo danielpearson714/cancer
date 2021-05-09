@@ -76,14 +76,15 @@ create_cancer_risk_plot <- function(data, x_val, y_val) {
   create_scatter_plot(data, x_val, y_val, title = "Cancer Incidence Rates and Behavioral Risk Factors")
 }
 
-create_diagnosis_boxplot <- function(data) {
+create_diagnosis_boxplot <- function(data, year) {
+  subtitle   <- paste(c("RWJBarnabas Analytic Cases", "[Year:", year, "]"), collapse = " ", sep = "")
   data %>% 
     ggplot() +
     geom_boxplot(aes(x = factor(Race.Ethnicity, levels = c("White", "Black", "Hispanic/Latino", "Asian")), y = Age, fill = Race.Ethnicity, group = Race.Ethnicity), shape = 21, position = "dodge", color = "black", size = 1, outlier.shape = 21, outlier.size = 3,  inherit.aes = TRUE, fatten = 1) +
     scale_y_continuous(limits = c(0, 100), breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
     scale_fill_viridis(discrete = TRUE, option = "C", begin = 0, end = 0.8) +
     labs(x = "Race/Ethnicity", y = "Age at Diagnosis", caption = "RWJBH Tumor Registry Reports (2019 and 2020 Q1)") +
-    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = "RWJBarnabas Analytic Cases (2019 and Q1 2020)") +
+    ggtitle("Age at Diagnosis by Race/Ethnicity" , subtitle = subtitle) +
     theme(
       panel.background = element_rect(fill = "white", colour = "white", size = 2, linetype = "solid"),
       panel.grid.major = element_line(size = 0.10, linetype = 'solid', colour = "black"),

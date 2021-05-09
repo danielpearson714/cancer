@@ -192,11 +192,11 @@ server <- function(input, output) {
     })
 
     output$boxplot1 <- renderPlot({
-      create_diagnosis_boxplot(box1())
+      create_diagnosis_boxplot(box1(), input$age_distribution_year1)
     })
   
     output$boxplot2 <- renderPlot({
-      create_diagnosis_boxplot(box2())
+      create_diagnosis_boxplot(box2(), input$age_distribution_year2)
     })
   
     ### Tab 5: Maps  
