@@ -8,7 +8,7 @@ theme <- create_theme(
                 dark_color = "black"
         ),
         bs4dash_layout(
-                sidebar_width = "260px"
+                sidebar_width = sidebar_width
         )
 )
 
