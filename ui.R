@@ -110,9 +110,12 @@ dashboardPage(
             ) # end tabsetPanel
         ), # end dashboardBody
         controlbar = dashboardControlbar(id = "controlBar",
+                                         width = sidebar_width,
                                          overlay = FALSE,
-                                         HTML("<h4><center>Plot settings</center></h4>"),
-                                         fluidRow(column(1), 
-                                                  column(10, createCheckboxInput("axis_type", "Log scale")))),
+                                         tags$div(id = "controlbar_content",
+                                                  HTML("<h4><center>Plot settings</center></h4>"),
+                                                  tags$hr(),
+                                                  fluidRow(column(1), 
+                                                           column(10, createCheckboxInput("axis_type", "Log scale"))))),
         title = app_title
 )#end dashboardPage
