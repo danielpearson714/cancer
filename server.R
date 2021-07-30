@@ -1,5 +1,5 @@
 server <- function(input, output) {
-    
+
     ## Sidebar
     output$sidebarItems <- renderUI({
       result <- tagList()
@@ -24,7 +24,8 @@ server <- function(input, output) {
       } else if (tabset == "unique_samples") {  
         result <- tagList(tags$div(class = "tabDescription", tags$em("Available Biospecimen Samples by Race/Ethnicity & Gender - Protocol 001006 (Unique Samples as of 11/24/2020)")))
       } else if (tabset == "top12_cancers") {  
-        result <- tagList(createPickerInput("county_select", "Choose NJ county", county_list2, selected = "ATLANTIC"))
+        result <- tagList(createPickerInput("county_select", "Choose NJ county", county_list2, selected = "ATLANTIC"),
+                          tags$div(class = "tabDescription", tags$em("This radar chart identifies cancer incidence ranks within each county in New jersey, ranked from 1 (best) to 21 (worst). Low-incidence (1) begins in the center of the circle, and gets higher (21) as points approach the circle's outer edge. This plot may be useful to compare cancer incidence rates across regions and selected counties.")))
       } else if (tabset == "analytic_cases") {
         result <- tagList(createSelectInput(inputId = "rwj_site",
                                             label = "Choose RWJBH Registry",
@@ -62,12 +63,65 @@ server <- function(input, output) {
                           createPickerInput("dis2", "Choose disease site", dis_list, selected = dis_list),
                           createYearInput(inputId  = "age_distribution_year2"))
       } else if (tabset == "county_map") {  
-        result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County (2017). Risk factor and screening data: NJSHAD Behavioral Risk Factor Survey. Cancer rates: New Jersey State Cancer Registry.")))
       } else if (tabset == "county_map_v2") {
         result <- tagList(createSelectInput("county_vars", "Choose variable", choices = risk_list, selected = "Obese"),
-                          tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County")))
+                          tags$div(class = "tabDescription", tags$em("Cancer-Related Risk Factors by County. Risk factor and screening data: NJSHAD Behavioral Risk Factor Survey. Cancer rates: New Jersey State Cancer Registry.")))
+      } else if (tabset == "cancer_trends") {
+        result <- tagList(createPickerInput2(inputId = "disease_trend",
+                                            label = "Disease Site:",
+                                            choices = cpc_site_list,
+                                            selected = "All Cancer Sites Combined"),
+                          createPickerInput2(inputId = "state_trend",
+                                            label = "State:",
+                                            choices = cpc_state_list,
+                                            selected = "New Jersey"),
+                          createPickerInput2(inputId = "gender_trend",
+                                            label = "Gender:",
+                                            choices = cpc_sex_list,
+                                            selected = "Male and Female"),
+                          tags$div(class = "tabDescription", tags$em("Cancer Incidence & Mortality Trends by Race/Ethnicity (1999-2017). Data: CDC United States Cancer Statistics (USCS)")))
+        
+      } else if (tabset == "county_girafe") {
+        result <- tagList(createPickerInput2(inputId = "state_girafe",
+                                             label = "State:",
+                                             choices = c("New Jersey", "New York"),
+                                             selected = "New Jersey"),
+                          createPickerInput2(inputId = "disease_site_girafe",
+                                             label = "Disease Site:",
+                                             choices = girafe_site_list,
+                                             selected = "All Cancer Sites Combined"),
+                          createPickerInput2(inputId = "event_girafe",
+                                             label = "Rate Type:",
+                                             choices = girafe_event_list,
+                                             selected = "Incidence"),
+                          createPickerInput2(inputId = "gender_girafe",
+                                             label = "Gender:",
+                                             choices = girafe_gender_list,
+                                             selected = "Male and Female"),
+                          createPickerInput2(inputId = "race_girafe",
+                                             label = "Race/Ethnicity:",
+                                             choices = girafe_race_list,
+                                             selected = "All Races"),
+                          tags$div(class = "tabDescription", tags$em("Age-Adjusted Cancer Incidence and Mortality Rates, by County (2014-2018)")))
+        
+      } else if (tabset == "county_brfs") {
+        result <- tagList(createPickerInput2(inputId = "risk_brfs",
+                                             label = "Risk Factor:",
+                                             choices = brfs_risk_list,
+                                             selected = "Obese"),
+                          createPickerInput2(inputId = "gender_brfs",
+                                             label = "Gender:",
+                                             choices = brfs_gender_list,
+                                             selected = "Male and Female"),
+                          createPickerInput2(inputId = "race_brfs",
+                                             label = "Race/Ethnicity:",
+                                             choices = brfs_race_list,
+                                             selected = "All Races"),
+                          tags$div(class = "tabDescription", tags$em("Age-Adjusted Percentages - Behavioral or Modifiable Risk Factors, New Jersey by County (2013-2017)")))
+      
       } else if (tabset == "air_pollutant_map") {  
-        result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
+        result <- tagList(tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment). Esitmated cancer risk can be defined as the probablity of contracting cancer of the course of a lifetime, assuming continuous exposure to pollutant. Air toxics are pollutants known to cause or suspected of causing cancer or other serious health effects.")))
       } else if (tabset == "air_pollutant_map_v2") {  
         result <- tagList(createSelectInput(inputId = "air_risk2",
                                             label = "Choose air pollutant",
@@ -78,10 +132,11 @@ server <- function(input, output) {
                                                         "Formaldehyde" = "Formaldehyde",
                                                         "Naphthalene" = "Naphthalene"),
                                             selected = "Acetaldehyde"),
-                          tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment)")))
+                          tags$div(class = "tabDescription", tags$em("Estimated Cancer Risk per 1M Residents, by Air Toxin (2014 National Air Toxics Assessment). Esitmated cancer risk can be defined as the probablity of contracting cancer of the course of a lifetime, assuming continuous exposure to pollutant. Air toxics are pollutants known to cause or suspected of causing cancer or other serious health effects.")))
       }
       result
     })
+  
     
     ### Tab 1: Clinical Trials Accrual
     accrual_data <- reactive({
@@ -126,6 +181,136 @@ server <- function(input, output) {
         select(county, input$x_axis, input$y_axis) %>% 
         create_risk_table()
     })
+    
+    cpc1 <- reactive({
+      cpc_area %>% 
+        filter(SITE %in% c(input$disease_trend),
+               SEX %in% c(input$gender_trend),
+               AREA %in% c(input$state_trend))
+    })
+    
+    output$trend_plot1 <- renderGirafe({
+      cpc1 <- cpc1() %>% 
+        filter(RACE %in% c("White", "Black", "Hispanic", "Asian/Pacific Islander"),
+               YEAR != "2014-2018") %>% 
+        mutate(YEAR = as.numeric(YEAR)) %>% 
+        mutate(AGE_ADJUSTED_RATE = as.numeric(AGE_ADJUSTED_RATE))
+      
+        girafe_trend <- ggplot(cpc1) +
+        facet_wrap(~EVENT_TYPE) +
+        geom_line(aes(x = YEAR, y = AGE_ADJUSTED_RATE, color = RACE), size = 1) +
+        geom_point_interactive(aes(x = YEAR, y = AGE_ADJUSTED_RATE, color = RACE, tooltip = AGE_ADJUSTED_RATE, data_id = AGE_ADJUSTED_RATE), shape = 19, size = 3.5) +
+        scale_x_continuous(limits = c(1999, 2018), breaks = c(1999, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2018)) +
+        scale_color_viridis(NULL, discrete = TRUE, option = "C", begin = 0, end = 0.9) +
+        labs(x = "Year", y = "Age-Adjusted Rate") +
+        theme(
+          legend.position = "bottom",
+          legend.text = element_text(size = 18),
+          legend.title = element_text(size = 18),
+          axis.title = element_text(size = 17, color = "black"),
+          axis.text.y = element_text(size = 16, color = "black"),
+          axis.text.x = element_text(size = 13, color = "black"),
+          plot.title = element_text(size = 18, color = "black"),
+          panel.border = element_rect(color = "black", fill = NA),
+          strip.background = element_rect(color = "black"),
+          strip.text = element_text(size = 18)
+        ) +
+        ggtitle("Age-Adjusted Incidence and Mortality Rates (1999-2018)", subtitle = paste(input$disease_trend, "|", input$gender_trend, "|", input$state_trend))
+        
+        girafe(ggobj = girafe_trend, width = 10)
+        
+    })
+    
+    #########Girafe incidence plot############
+    
+    county_cancer_rates <- reactive({
+      county_geom %>% 
+        filter(STATE %in% c(input$state_girafe),
+               SITE %in% c(input$disease_site_girafe),
+               SEX %in% c(input$gender_girafe),
+               RACE %in% c(input$race_girafe),
+               EVENT_TYPE %in% c(input$event_girafe))
+    })
+    
+    output$girafe_plot1 <- renderGirafe({
+     county_cancer_rates <- county_cancer_rates()
+      
+      county_girafe_plot <- county_cancer_rates %>% 
+        ggplot(aes(x = AGE_ADJUSTED_RATE, y = reorder(NAME, AGE_ADJUSTED_RATE), 
+                   fill = AGE_ADJUSTED_RATE)) +
+        geom_errorbarh(aes(xmin = AGE_ADJUSTED_CI_LOWER, xmax = AGE_ADJUSTED_CI_UPPER)) +
+        geom_point_interactive(color = "black", size = 3.5, shape = 21,
+                               aes(data_id = NAME, tooltip = AGE_ADJUSTED_RATE)) +
+        scale_fill_distiller(palette = "Reds", direction = 1) + 
+        labs(y = "County",
+             x = "Age-Adjusted Rate",
+             fill = "Age-Adjusted Rate (2014-2018)") + 
+        theme_minimal() +
+        ggtitle("Age-Adjusted Incidence and Mortality Rates (per 100k residents)", subtitle = paste(input$event_girafe, "|",input$disease_site_girafe, "|", input$gender_girafe, "|", input$race_girafe))
+      
+      county_girafe_map <- county_cancer_rates %>% 
+        ggplot(aes(fill = AGE_ADJUSTED_RATE)) + 
+        geom_sf_interactive(aes(data_id = NAME, tooltip = NAME),  color = "black") + 
+        scale_fill_distiller(palette = "Reds",
+                             direction = 1, 
+                             guide = FALSE) + 
+        theme_void()
+      
+      girafe(ggobj = county_girafe_map + county_girafe_plot, width_svg = 10, height_svg = 4,
+             options = list(
+               opts_selection(
+                 type = "multiple", only_shiny = FALSE,
+                 css = "fill:goldenrod;stroke:black;"))) %>%
+        girafe_options(opts_hover(css = "fill:goldenrod;"))
+      
+      
+    })
+    
+    
+    #########BRFS Girafe rate plot############
+    
+    county_brfs_rates <- reactive({
+      county_geom2 %>% 
+        filter(risk_factor %in% c(input$risk_brfs),
+               SEX %in% c(input$gender_brfs),
+               RACE %in% c(input$race_brfs))
+    })
+    
+    output$girafe_plot2 <- renderGirafe({
+      county_brfs_rates <- county_brfs_rates()
+      
+      county_brfs_plot <- county_brfs_rates %>% 
+        ggplot(aes(x = AGE_ADJUSTED_RATE, y = reorder(NAME, AGE_ADJUSTED_RATE), 
+                   fill = AGE_ADJUSTED_RATE)) +
+        geom_errorbarh(aes(xmin = AGE_ADJUSTED_CI_LOWER, xmax = AGE_ADJUSTED_CI_UPPER)) +
+        geom_point_interactive(color = "black", size = 3.5, shape = 21,
+                               aes(data_id = NAME, tooltip = AGE_ADJUSTED_RATE)) +
+        scale_fill_distiller(palette = "Blues", direction = 1) + 
+        labs(y = "County",
+             x = paste(input$risk_brfs, "Rate"),
+             fill = "Age-Adjusted Rate (2014-2018)") + 
+        theme_minimal() +
+        ggtitle("Percent of Residents - Behavioral Risk Factors (NJBRFS 2013-2017)", subtitle = paste(input$risk_brfs, "|", input$race_brfs, "|", input$gender_brfs))
+      
+      county_brfs_map <- county_brfs_rates %>% 
+        ggplot(aes(fill = AGE_ADJUSTED_RATE)) + 
+        geom_sf_interactive(aes(data_id = NAME, tooltip = NAME),  color = "black") + 
+        scale_fill_distiller(palette = "Blues",
+                             direction = 1, 
+                             guide = FALSE) + 
+        theme_void()
+      
+      girafe(ggobj = county_brfs_map + county_brfs_plot, width_svg = 10, height_svg = 4,
+             options = list(
+               opts_selection(
+                 type = "multiple", only_shiny = FALSE,
+                 css = "fill:goldenrod;stroke:black;"))) %>%
+        girafe_options(opts_hover(css = "fill:goldenrod;"))
+      
+      
+    })
+    
+    ########radar plot########
     
     output$county_radar <- renderPlot({
         req(input$county_select)
@@ -322,7 +507,7 @@ server <- function(input, output) {
                       dashArray = "",
                       bringToFront = FALSE),
                     popup = lapply(get_air_risk_county_labels(), HTML)) %>%
-        addPolylines(data = county_risk2,
+        addPolylines(data = nj_counties,
                     color = "black",
                     weight = 1,
                     fillOpacity = 0) %>%

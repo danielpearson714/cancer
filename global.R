@@ -2,7 +2,7 @@ source("supporting/plots.R")
 source("supporting/tables.R")
 
 lapply(c("shinyWidgets", "bslib", "reactable", "tidyr", "data.table", "dplyr", "forcats", "viridis", "ggplot2", "shinydashboard", "shinydashboardPlus",
-         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly", "fresh"), require, character.only = TRUE)
+         "ggrepel", "sf", "tidycensus", "ggradar", "scales", "tidytext", "tmap", "leaflet", "shinyBS", "plotly", "fresh", "ggiraph", "readr", "stringr", "patchwork"), require, character.only = TRUE)
 
 # map settings
 options(bitmapType="cairo")
@@ -39,6 +39,14 @@ createPickerInput <- function(inputId, label, choices, selected = NULL) {
                 selected = selected,
                 multiple = TRUE,
                 options  = list('actions-box' = TRUE))
+}
+
+createPickerInput2 <- function(inputId, label, choices, selected = NULL) {
+  pickerInput(inputId  = inputId,
+              label    = ui_tooltip(paste0(inputId, 'Tooltip'), label, label),
+              choices  = choices,
+              selected = selected,
+              multiple = FALSE)
 }
 
 createCheckboxInput <- function(inputId, label, value = FALSE) {
@@ -91,7 +99,7 @@ filter_age_distribution_data <- function(data, registry, disease_site, year) {
            Year %in% year)
 }
 
-app_title <- "Catchment Area Research Dashboard"
+app_title <- "STRIDE at Rutgers Cancer Institute of New Jersey"
 all_years <- c("2016" = "2016",
                "2017" = "2017",
                "2018" = "2018",
@@ -182,32 +190,84 @@ my_theme <- bs_theme(
 
 # Data loading
 nj_counties <- tigris::counties("NJ", class = "sf")
+ny_counties <- tigris::counties("NY", class = "sf")
+nj_counties <- bind_rows(nj_counties, ny_counties)
 dashboard_risk <- read_csv_file("dashboard_risk.csv")
 county_risk <- nj_counties %>% 
     left_join(dashboard_risk, by = c("GEOID" = "County_ID")) %>% 
     st_transform(4326)
 
-nj_tracts <- tigris::tracts("NJ", class = "sf", )
+nj_tracts <- tigris::tracts("NJ", class = "sf" )
 risk <- read_csv_file("pollutantrisk.csv") %>% 
     mutate_at(5, as.character)
 nj_tracts <- nj_tracts %>% 
     left_join(risk, by = c("GEOID" = "Tract")) %>% 
     st_transform(4326)
 
+ny_tracts <- tigris::tracts("NY", class = "sf" )
+risk <- read_csv_file("pollutantrisk_ny.csv") %>% 
+  mutate_at(5, as.character)
+ny_tracts <- ny_tracts %>% 
+  left_join(risk, by = c("GEOID" = "Tract")) %>% 
+  st_transform(4326)
+
+nj_tracts <- bind_rows(nj_tracts, ny_tracts)
+
+##### Girafe county cancer plots
+counti <- read_csv_file("counti.csv")
+counti2 <- counti %>% 
+  mutate(NAME = word(NAME, 1)) %>% 
+  mutate(NAME = replace(NAME, NAME == "Cape", "Cape May")) %>% 
+  mutate(NAME = replace(NAME, NAME == "New", "New York"))
+vt_income <- get_acs(
+  geography = "county",
+  variables = "B19013_001",
+  state = c("NJ", "NY"),
+  year = 2019,
+  geometry = TRUE
+) %>%
+  filter(!GEOID %in% c("36031", "36113")) %>% 
+  mutate(NAME = str_remove(NAME, " County, New Jersey")) %>% 
+  mutate(NAME = str_remove(NAME, " County, New York")) %>% 
+  mutate(var_name = "Median Household Income")
+
+county_geom <- vt_income %>% 
+  select(NAME, geometry) %>% 
+  left_join(counti2, by = c("NAME" = "NAME")) %>% 
+  st_transform(4326) %>% 
+  mutate(AGE_ADJUSTED_RATE = as.numeric(AGE_ADJUSTED_RATE),
+         AGE_ADJUSTED_CI_LOWER = as.numeric(AGE_ADJUSTED_CI_LOWER),
+         AGE_ADJUSTED_CI_UPPER = as.numeric(AGE_ADJUSTED_CI_UPPER))
+########################
+
+#####BRFS data#######
+brfs_stride <- read.csv("brfs_stride.csv")
+
+county_geom2 <- vt_income %>% 
+  select(NAME, geometry) %>% 
+  left_join(brfs_stride, by = c("NAME" = "NAME")) %>% 
+  st_transform(4326) %>% 
+  mutate(AGE_ADJUSTED_RATE = as.numeric(AGE_ADJUSTED_RATE),
+         AGE_ADJUSTED_CI_LOWER = as.numeric(AGE_ADJUSTED_CI_LOWER),
+         AGE_ADJUSTED_CI_UPPER = as.numeric(AGE_ADJUSTED_CI_UPPER))
+
 registry_new  <- read_csv_file("All Sites Cleaned - 2019.csv")
-master_report <- read_csv_file("Mock Data (master_report).csv")
+master_report <- read_csv_file("Master Report.csv")
 cinj2         <- read_csv_file("cinj2.csv")
-new_trials    <- read_csv_file(("Mock Data (new_trials).csv")) %>% 
+new_trials    <- read_csv_file(("new_trials.csv")) %>% 
   mutate_at(c(2,7), as.numeric) %>%
   filter(Age >= 0)
 
-brs <- read_csv_file("Mock Data (BRS).csv") %>% 
+brs <- read_csv_file("BRS.csv") %>% 
       rename(Race_Ethnicity = X)
 
 brs2 <- brs %>% 
       group_by(SEQ., SPECIMEN_TYPE) %>% 
       #group_by(SPECIMEN_TYPE) %>% 
       slice_head(n = 1)
+
+cpc_area <- read_csv_file("cpc_area.csv")
+
     
 npl_sites <- read_csv_file("NPLSuperfunds.csv")
 npl_sites <- st_as_sf(npl_sites, coords = c("LONGITUDE", "LATITUDE"))   
@@ -220,6 +280,16 @@ st_crs(pp_sites) <- 4326
 st_crs(pp_sites)
 
 # input choice lists
+girafe_gender_list <- as.list(sort(unique(county_geom$SEX)))
+girafe_event_list <- as.list(sort(unique(county_geom$EVENT_TYPE)))
+girafe_race_list<- as.list(sort(unique(county_geom$RACE)))
+girafe_site_list <- as.list(sort(unique(county_geom$SITE)))
+brfs_gender_list <- as.list(sort(unique(county_geom2$SEX)))
+brfs_risk_list <- as.list(sort(unique(county_geom2$risk_factor)))
+brfs_race_list<- as.list(sort(unique(county_geom2$RACE)))
+cpc_site_list <- as.list(sort(unique(cpc_area$SITE)))
+cpc_state_list <- as.list(sort(unique(cpc_area$AREA)))
+cpc_sex_list <- as.list(sort(unique(cpc_area$SEX)))
 site_list  <- as.list(sort(unique(new_trials$Disease.Site)))
 rwj_list   <- as.list(sort(unique(master_report$RWJBH.Site)))
 proto_list <- as.list(sort(unique(new_trials$Protocol.Type)))
