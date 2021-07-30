@@ -1,0 +1,1585 @@
+NAME,nameID,RACE,raceID,sampleSize,AGE_ADJUSTED_RATE,AGE_ADJUSTED_CI_LOWER,AGE_ADJUSTED_CI_UPPER,moe,rse,risk_factor,SEX
+Total,.,All Races,.,"49,565",0.268,0.261,0.274,0.007,0.012,Obese,Male and Female
+Total,.,Asian/Pacific Islander,1,"1,820",0.093,0.076,0.113,0.018,0.100,Obese,Male and Female
+Total,.,Black,2,"5,893",**,**,**,0.019,0.026,Obese,Male and Female
+Total,.,White,3,"35,037",0.256,0.248,0.265,0.009,0.017,Obese,Male and Female
+Total,.,Other,4,"1,171",0.276,0.239,0.316,0.039,0.072,Obese,Male and Female
+Total,.,Hispanic,5,"5,644",0.313,0.295,0.331,0.018,0.029,Obese,Male and Female
+Atlantic,1,All Races,.,"2,223",0.277,0.252,0.304,0.026,0.048,Obese,Male and Female
+Atlantic,1,Asian/Pacific Islander,1,55,0.127,0.064,0.238,0.085,0.338,Obese,Male and Female
+Atlantic,1,Black,2,297,0.306,0.241,0.379,0.069,0.115,Obese,Male and Female
+Atlantic,1,White,3,"1,577",0.278,0.246,0.313,0.033,0.061,Obese,Male and Female
+Atlantic,1,Other,4,60,0.314,0.203,0.452,0.127,0.206,Obese,Male and Female
+Atlantic,1,Hispanic,5,234,0.286,0.222,0.360,0.070,0.124,Obese,Male and Female
+Bergen,2,All Races,.,"2,329",0.208,0.185,0.232,0.024,0.058,Obese,Male and Female
+Bergen,2,Asian/Pacific Islander,1,176,0.060,0.031,0.113,0.039,0.333,Obese,Male and Female
+Bergen,2,Black,2,141,0.375,0.269,0.494,0.114,0.156,Obese,Male and Female
+Bergen,2,White,3,"1,610",0.217,0.188,0.249,0.031,0.073,Obese,Male and Female
+Bergen,2,Other,4,57,0.160,0.082,0.289,0.102,0.327,Obese,Male and Female
+Bergen,2,Hispanic,5,345,0.266,0.210,0.331,0.061,0.117,Obese,Male and Female
+Burlington,3,All Races,.,"2,324",0.278,0.252,0.305,0.027,0.049,Obese,Male and Female
+Burlington,3,Asian/Pacific Islander,1,51,0.134,0.085,0.206,0.060,0.228,Obese,Male and Female
+Burlington,3,Black,2,304,0.367,0.299,0.441,0.072,0.100,Obese,Male and Female
+Burlington,3,White,3,"1,800",0.263,0.232,0.295,0.031,0.061,Obese,Male and Female
+Burlington,3,Other,4,71,0.485,0.365,0.606,0.123,0.130,Obese,Male and Female
+Burlington,3,Hispanic,5,98,0.271,0.188,0.374,0.094,0.176,Obese,Male and Female
+Camden,4,All Races,.,"2,534",0.333,0.303,0.363,0.030,0.046,Obese,Male and Female
+Camden,4,Asian/Pacific Islander,1,48,**,**,**,0.124,0.347,Obese,Male and Female
+Camden,4,Black,2,397,0.448,0.379,0.519,0.070,0.080,Obese,Male and Female
+Camden,4,White,3,"1,796",0.275,0.241,0.313,0.036,0.068,Obese,Male and Female
+Camden,4,Other,4,49,**,**,**,0.134,0.214,Obese,Male and Female
+Camden,4,Hispanic,5,244,0.434,0.351,0.522,0.086,0.102,Obese,Male and Female
+Cape May,5,All Races,.,"2,051",0.289,0.256,0.324,0.034,0.061,Obese,Male and Female
+Cape May,5,Asian/Pacific Islander,1,6,**,**,**,0.000,.,Obese,Male and Female
+Cape May,5,Black,2,71,0.295,0.184,0.436,0.128,0.221,Obese,Male and Female
+Cape May,5,White,3,"1,880",0.280,0.244,0.320,0.038,0.069,Obese,Male and Female
+Cape May,5,Other,4,36,**,**,**,0.158,0.202,Obese,Male and Female
+Cape May,5,Hispanic,5,58,0.421,0.297,0.555,0.132,0.160,Obese,Male and Female
+Cumberland,6,All Races,.,"2,090",**,**,**,0.030,0.043,Obese,Male and Female
+Cumberland,6,Asian/Pacific Islander,1,22,**,**,**,0.104,0.683,Obese,Male and Female
+Cumberland,6,Black,2,289,0.375,0.312,0.443,0.066,0.089,Obese,Male and Female
+Cumberland,6,White,3,"1,422",0.332,0.293,0.373,0.040,0.062,Obese,Male and Female
+Cumberland,6,Other,4,74,0.364,0.259,0.484,0.114,0.160,Obese,Male and Female
+Cumberland,6,Hispanic,5,283,0.424,0.356,0.496,0.070,0.085,Obese,Male and Female
+Essex,7,All Races,.,"4,358",0.294,0.275,0.315,0.020,0.035,Obese,Male and Female
+Essex,7,Asian/Pacific Islander,1,102,0.167,0.097,0.271,0.086,0.263,Obese,Male and Female
+Essex,7,Black,2,"1,846",0.372,0.339,0.406,0.034,0.046,Obese,Male and Female
+Essex,7,White,3,"1,538",0.210,0.180,0.243,0.031,0.076,Obese,Male and Female
+Essex,7,Other,4,131,0.251,0.169,0.356,0.094,0.190,Obese,Male and Female
+Essex,7,Hispanic,5,741,0.324,0.277,0.373,0.048,0.076,Obese,Male and Female
+Gloucester,8,All Races,.,"2,145",0.319,0.287,0.353,0.033,0.053,Obese,Male and Female
+Gloucester,8,Asian/Pacific Islander,1,16,**,**,**,0.000,.,Obese,Male and Female
+Gloucester,8,Black,2,145,0.471,0.348,0.598,0.128,0.138,Obese,Male and Female
+Gloucester,8,White,3,"1,868",0.305,0.271,0.341,0.035,0.059,Obese,Male and Female
+Gloucester,8,Other,4,37,**,**,**,0.151,0.195,Obese,Male and Female
+Gloucester,8,Hispanic,5,79,0.338,0.234,0.460,0.115,0.173,Obese,Male and Female
+Hudson,9,All Races,.,"3,166",0.267,0.244,0.291,0.023,0.044,Obese,Male and Female
+Hudson,9,Asian/Pacific Islander,1,272,0.070,0.038,0.125,0.042,0.306,Obese,Male and Female
+Hudson,9,Black,2,431,0.374,0.308,0.445,0.069,0.095,Obese,Male and Female
+Hudson,9,White,3,"1,315",0.233,0.196,0.274,0.039,0.085,Obese,Male and Female
+Hudson,9,Other,4,124,0.163,0.091,0.274,0.090,0.283,Obese,Male and Female
+Hudson,9,Hispanic,5,"1,024",0.329,0.290,0.371,0.040,0.062,Obese,Male and Female
+Hunterdon,10,All Races,.,"2,126",0.195,0.169,0.224,0.027,0.072,Obese,Male and Female
+Hunterdon,10,Asian/Pacific Islander,1,33,**,**,**,0.037,0.930,Obese,Male and Female
+Hunterdon,10,Black,2,30,**,**,**,0.100,0.227,Obese,Male and Female
+Hunterdon,10,White,3,"1,971",0.207,0.178,0.240,0.031,0.076,Obese,Male and Female
+Hunterdon,10,Other,4,20,**,**,**,0.083,0.239,Obese,Male and Female
+Hunterdon,10,Hispanic,5,72,0.094,0.046,0.180,0.064,0.350,Obese,Male and Female
+Mercer,11,All Races,.,"2,148",0.265,0.237,0.294,0.028,0.055,Obese,Male and Female
+Mercer,11,Asian/Pacific Islander,1,122,0.095,0.044,0.192,0.070,0.379,Obese,Male and Female
+Mercer,11,Black,2,367,0.409,0.346,0.476,0.065,0.081,Obese,Male and Female
+Mercer,11,White,3,"1,417",0.234,0.196,0.278,0.041,0.090,Obese,Male and Female
+Mercer,11,Other,4,50,0.345,0.215,0.502,0.147,0.218,Obese,Male and Female
+Mercer,11,Hispanic,5,192,0.236,0.173,0.312,0.070,0.151,Obese,Male and Female
+Middlesex,12,All Races,.,"2,447",0.286,0.261,0.312,0.026,0.046,Obese,Male and Female
+Middlesex,12,Asian/Pacific Islander,1,391,0.134,0.091,0.193,0.051,0.193,Obese,Male and Female
+Middlesex,12,Black,2,197,0.388,0.303,0.481,0.090,0.118,Obese,Male and Female
+Middlesex,12,White,3,"1,462",0.326,0.287,0.367,0.040,0.063,Obese,Male and Female
+Middlesex,12,Other,4,78,0.203,0.114,0.335,0.110,0.277,Obese,Male and Female
+Middlesex,12,Hispanic,5,319,0.362,0.298,0.432,0.068,0.095,Obese,Male and Female
+Monmouth,13,All Races,.,"2,171",**,**,**,0.025,0.056,Obese,Male and Female
+Monmouth,13,Asian/Pacific Islander,1,62,0.050,0.019,0.122,0.046,0.472,Obese,Male and Female
+Monmouth,13,Black,2,100,0.361,0.255,0.482,0.115,0.163,Obese,Male and Female
+Monmouth,13,White,3,"1,810",0.232,0.203,0.262,0.029,0.065,Obese,Male and Female
+Monmouth,13,Other,4,44,**,**,**,0.101,0.180,Obese,Male and Female
+Monmouth,13,Hispanic,5,155,0.222,0.154,0.308,0.077,0.177,Obese,Male and Female
+Morris,14,All Races,.,"2,518",0.190,0.167,0.214,0.024,0.064,Obese,Male and Female
+Morris,14,Asian/Pacific Islander,1,120,0.023,0.006,0.081,0.030,0.663,Obese,Male and Female
+Morris,14,Black,2,68,0.237,0.143,0.367,0.113,0.243,Obese,Male and Female
+Morris,14,White,3,"2,100",0.218,0.189,0.250,0.031,0.072,Obese,Male and Female
+Morris,14,Other,4,53,0.200,0.101,0.358,0.128,0.326,Obese,Male and Female
+Morris,14,Hispanic,5,177,0.147,0.098,0.216,0.058,0.202,Obese,Male and Female
+Ocean,15,All Races,.,"2,244",0.313,0.285,0.343,0.029,0.047,Obese,Male and Female
+Ocean,15,Asian/Pacific Islander,1,15,**,**,**,0.092,0.116,Obese,Male and Female
+Ocean,15,Black,2,63,0.383,0.246,0.541,0.151,0.202,Obese,Male and Female
+Ocean,15,White,3,"2,011",0.305,0.274,0.337,0.032,0.053,Obese,Male and Female
+Ocean,15,Other,4,34,**,**,**,0.144,0.233,Obese,Male and Female
+Ocean,15,Hispanic,5,121,0.384,0.287,0.491,0.103,0.137,Obese,Male and Female
+Passaic,16,All Races,.,"2,094",**,**,**,0.028,0.049,Obese,Male and Female
+Passaic,16,Asian/Pacific Islander,1,57,0.076,0.033,0.167,0.063,0.420,Obese,Male and Female
+Passaic,16,Black,2,245,0.381,0.310,0.457,0.074,0.099,Obese,Male and Female
+Passaic,16,White,3,"1,149",0.289,0.249,0.332,0.041,0.073,Obese,Male and Female
+Passaic,16,Other,4,37,**,**,**,0.147,0.179,Obese,Male and Female
+Passaic,16,Hispanic,5,606,0.302,0.253,0.356,0.051,0.087,Obese,Male and Female
+Salem,17,All Races,.,"2,141",0.382,0.345,0.419,0.037,0.050,Obese,Male and Female
+Salem,17,Asian/Pacific Islander,1,4,**,**,**,0.101,0.328,Obese,Male and Female
+Salem,17,Black,2,251,0.483,0.386,0.583,0.100,0.105,Obese,Male and Female
+Salem,17,White,3,"1,762",0.349,0.311,0.389,0.039,0.057,Obese,Male and Female
+Salem,17,Other,4,47,**,**,**,0.138,0.174,Obese,Male and Female
+Salem,17,Hispanic,5,77,0.382,0.282,0.493,0.107,0.143,Obese,Male and Female
+Somerset,18,All Races,.,"2,126",**,**,**,0.028,0.068,Obese,Male and Female
+Somerset,18,Asian/Pacific Islander,1,167,0.054,0.028,0.100,0.034,0.322,Obese,Male and Female
+Somerset,18,Black,2,113,0.300,0.201,0.421,0.111,0.189,Obese,Male and Female
+Somerset,18,White,3,"1,643",0.227,0.191,0.267,0.038,0.086,Obese,Male and Female
+Somerset,18,Other,4,49,**,**,**,0.128,0.294,Obese,Male and Female
+Somerset,18,Hispanic,5,154,0.284,0.203,0.380,0.089,0.160,Obese,Male and Female
+Sussex,19,All Races,.,"2,002",0.253,0.225,0.284,0.029,0.059,Obese,Male and Female
+Sussex,19,Asian/Pacific Islander,1,19,**,**,**,0.071,0.789,Obese,Male and Female
+Sussex,19,Black,2,50,0.267,0.163,0.405,0.123,0.235,Obese,Male and Female
+Sussex,19,White,3,"1,790",0.249,0.218,0.282,0.032,0.065,Obese,Male and Female
+Sussex,19,Other,4,36,**,**,**,0.155,0.429,Obese,Male and Female
+Sussex,19,Hispanic,5,107,0.326,0.227,0.444,0.110,0.172,Obese,Male and Female
+Union,20,All Races,.,"2,252",0.259,0.234,0.286,0.026,0.051,Obese,Male and Female
+Union,20,Asian/Pacific Islander,1,65,0.145,0.078,0.254,0.087,0.306,Obese,Male and Female
+Union,20,Black,2,437,0.380,0.322,0.441,0.060,0.081,Obese,Male and Female
+Union,20,White,3,"1,219",0.193,0.164,0.226,0.031,0.082,Obese,Male and Female
+Union,20,Other,4,56,0.344,0.214,0.502,0.148,0.219,Obese,Male and Female
+Union,20,Hispanic,5,475,0.289,0.237,0.347,0.055,0.098,Obese,Male and Female
+Warren,21,All Races,.,"2,076",0.264,0.233,0.297,0.032,0.062,Obese,Male and Female
+Warren,21,Asian/Pacific Islander,1,17,**,**,**,0.093,0.204,Obese,Male and Female
+Warren,21,Black,2,51,0.452,0.320,0.592,0.140,0.158,Obese,Male and Female
+Warren,21,White,3,"1,897",0.260,0.227,0.297,0.035,0.069,Obese,Male and Female
+Warren,21,Other,4,28,**,**,**,0.157,0.252,Obese,Male and Female
+Warren,21,Hispanic,5,83,0.263,0.166,0.389,0.112,0.218,Obese,Male and Female
+Total,.,All Races,.,"21,644",0.285,0.275,0.295,0.010,0.017,Obese,Male
+Total,.,Asian/Pacific Islander,1,"1,069",0.112,0.088,0.141,0.026,0.121,Obese,Male
+Total,.,Black,2,"2,070",0.328,0.299,0.357,0.029,0.045,Obese,Male
+Total,.,White,3,"15,504",0.295,0.282,0.307,0.012,0.022,Obese,Male
+Total,.,Other,4,550,0.245,0.198,0.298,0.050,0.104,Obese,Male
+Total,.,Hispanic,5,"2,451",0.305,0.280,0.331,0.026,0.043,Obese,Male
+Atlantic,1,All Races,.,994,0.287,0.251,0.325,0.037,0.066,Obese,Male
+Atlantic,1,Asian/Pacific Islander,1,36,**,**,**,0.148,0.366,Obese,Male
+Atlantic,1,Black,2,119,0.316,0.219,0.433,0.108,0.174,Obese,Male
+Atlantic,1,White,3,712,0.308,0.262,0.358,0.048,0.080,Obese,Male
+Atlantic,1,Other,4,22,**,**,**,0.182,0.240,Obese,Male
+Atlantic,1,Hispanic,5,105,0.216,0.147,0.307,0.080,0.189,Obese,Male
+Bergen,2,All Races,.,"1,091",**,**,**,0.033,0.076,Obese,Male
+Bergen,2,Asian/Pacific Islander,1,112,0.067,0.031,0.140,0.051,0.387,Obese,Male
+Bergen,2,Black,2,57,0.263,0.148,0.424,0.140,0.272,Obese,Male
+Bergen,2,White,3,737,0.253,0.210,0.301,0.046,0.092,Obese,Male
+Bergen,2,Other,4,24,**,**,**,0.186,0.415,Obese,Male
+Bergen,2,Hispanic,5,161,0.253,0.178,0.346,0.084,0.170,Obese,Male
+Burlington,3,All Races,.,977,0.269,0.232,0.309,0.039,0.073,Obese,Male
+Burlington,3,Asian/Pacific Islander,1,30,**,**,**,0.114,0.319,Obese,Male
+Burlington,3,Black,2,104,0.262,0.178,0.367,0.095,0.185,Obese,Male
+Burlington,3,White,3,772,0.264,0.224,0.310,0.043,0.083,Obese,Male
+Burlington,3,Other,4,29,**,**,**,0.209,0.287,Obese,Male
+Burlington,3,Hispanic,5,42,**,**,**,0.125,0.240,Obese,Male
+Camden,4,All Races,.,"1,071",0.369,0.324,0.417,0.047,0.065,Obese,Male
+Camden,4,Asian/Pacific Islander,1,28,**,**,**,0.159,0.337,Obese,Male
+Camden,4,Black,2,150,0.430,0.333,0.532,0.100,0.119,Obese,Male
+Camden,4,White,3,772,0.328,0.273,0.387,0.057,0.089,Obese,Male
+Camden,4,Other,4,23,**,**,**,0.138,0.226,Obese,Male
+Camden,4,Hispanic,5,98,0.466,0.353,0.582,0.116,0.127,Obese,Male
+Cape May,5,All Races,.,864,0.327,0.278,0.379,0.051,0.079,Obese,Male
+Cape May,5,Asian/Pacific Islander,1,4,**,**,**,0.000,.,Obese,Male
+Cape May,5,Black,2,27,**,**,**,0.168,0.280,Obese,Male
+Cape May,5,White,3,786,0.317,0.266,0.372,0.053,0.085,Obese,Male
+Cape May,5,Other,4,22,**,**,**,0.157,0.202,Obese,Male
+Cape May,5,Hispanic,5,25,**,**,**,0.162,0.302,Obese,Male
+Cumberland,6,All Races,.,890,0.350,0.308,0.394,0.043,0.063,Obese,Male
+Cumberland,6,Asian/Pacific Islander,1,11,**,**,**,0.075,0.918,Obese,Male
+Cumberland,6,Black,2,108,0.305,0.225,0.399,0.087,0.146,Obese,Male
+Cumberland,6,White,3,603,0.336,0.282,0.394,0.056,0.085,Obese,Male
+Cumberland,6,Other,4,34,**,**,**,0.152,0.163,Obese,Male
+Cumberland,6,Hispanic,5,134,0.438,0.344,0.537,0.098,0.114,Obese,Male
+Essex,7,All Races,.,"1,690",0.277,0.248,0.307,0.030,0.055,Obese,Male
+Essex,7,Asian/Pacific Islander,1,60,0.153,0.076,0.283,0.101,0.338,Obese,Male
+Essex,7,Black,2,587,0.290,0.243,0.342,0.049,0.087,Obese,Male
+Essex,7,White,3,705,0.233,0.192,0.280,0.044,0.096,Obese,Male
+Essex,7,Other,4,57,0.237,0.154,0.345,0.096,0.206,Obese,Male
+Essex,7,Hispanic,5,281,0.371,0.295,0.455,0.081,0.111,Obese,Male
+Gloucester,8,All Races,.,934,0.353,0.307,0.403,0.049,0.070,Obese,Male
+Gloucester,8,Asian/Pacific Islander,1,8,**,**,**,0.000,.,Obese,Male
+Gloucester,8,Black,2,50,0.594,0.416,0.750,0.173,0.218,Obese,Male
+Gloucester,8,White,3,815,0.341,0.291,0.394,0.051,0.077,Obese,Male
+Gloucester,8,Other,4,23,**,**,**,0.164,0.307,Obese,Male
+Gloucester,8,Hispanic,5,38,**,**,**,0.162,0.214,Obese,Male
+Hudson,9,All Races,.,"1,364",0.257,0.225,0.291,0.033,0.066,Obese,Male
+Hudson,9,Asian/Pacific Islander,1,159,0.105,0.057,0.184,0.062,0.302,Obese,Male
+Hudson,9,Black,2,144,0.285,0.199,0.390,0.096,0.172,Obese,Male
+Hudson,9,White,3,601,0.238,0.188,0.296,0.054,0.117,Obese,Male
+Hudson,9,Other,4,51,0.083,0.035,0.183,0.069,0.424,Obese,Male
+Hudson,9,Hispanic,5,409,0.319,0.264,0.381,0.059,0.094,Obese,Male
+Hunterdon,10,All Races,.,987,0.232,0.194,0.275,0.040,0.089,Obese,Male
+Hunterdon,10,Asian/Pacific Islander,1,19,**,**,**,0.051,0.923,Obese,Male
+Hunterdon,10,Black,2,12,**,**,**,0.136,0.206,Obese,Male
+Hunterdon,10,White,3,915,0.249,0.206,0.296,0.045,0.093,Obese,Male
+Hunterdon,10,Other,4,10,**,**,**,0.131,0.628,Obese,Male
+Hunterdon,10,Hispanic,5,31,**,**,**,0.071,0.573,Obese,Male
+Mercer,11,All Races,.,935,**,**,**,0.044,0.082,Obese,Male
+Mercer,11,Asian/Pacific Islander,1,62,0.096,0.031,0.261,0.104,0.554,Obese,Male
+Mercer,11,Black,2,139,0.376,0.277,0.487,0.107,0.145,Obese,Male
+Mercer,11,White,3,621,0.264,0.204,0.334,0.065,0.126,Obese,Male
+Mercer,11,Other,4,20,**,**,**,0.147,0.505,Obese,Male
+Mercer,11,Hispanic,5,93,0.239,0.154,0.352,0.100,0.212,Obese,Male
+Middlesex,12,All Races,.,"1,191",**,**,**,0.038,0.062,Obese,Male
+Middlesex,12,Asian/Pacific Islander,1,235,0.163,0.103,0.248,0.072,0.226,Obese,Male
+Middlesex,12,Black,2,74,0.360,0.222,0.525,0.156,0.221,Obese,Male
+Middlesex,12,White,3,679,0.375,0.326,0.427,0.051,0.069,Obese,Male
+Middlesex,12,Other,4,46,**,**,**,0.105,0.196,Obese,Male
+Middlesex,12,Hispanic,5,157,0.361,0.270,0.462,0.097,0.138,Obese,Male
+Monmouth,13,All Races,.,986,0.263,0.229,0.301,0.036,0.070,Obese,Male
+Monmouth,13,Asian/Pacific Islander,1,37,**,**,**,0.084,0.481,Obese,Male
+Monmouth,13,Black,2,38,**,**,**,0.139,0.218,Obese,Male
+Monmouth,13,White,3,809,0.278,0.237,0.323,0.043,0.079,Obese,Male
+Monmouth,13,Other,4,24,**,**,**,0.115,0.181,Obese,Male
+Monmouth,13,Hispanic,5,78,0.230,0.163,0.314,0.076,0.168,Obese,Male
+Morris,14,All Races,.,"1,169",0.235,0.200,0.274,0.037,0.080,Obese,Male
+Morris,14,Asian/Pacific Islander,1,74,0.034,0.009,0.123,0.045,0.685,Obese,Male
+Morris,14,Black,2,32,**,**,**,0.074,0.457,Obese,Male
+Morris,14,White,3,944,0.282,0.238,0.331,0.047,0.084,Obese,Male
+Morris,14,Other,4,34,**,**,**,0.151,0.296,Obese,Male
+Morris,14,Hispanic,5,85,0.144,0.080,0.246,0.082,0.290,Obese,Male
+Ocean,15,All Races,.,988,0.359,0.318,0.403,0.042,0.060,Obese,Male
+Ocean,15,Asian/Pacific Islander,1,9,**,**,**,0.080,0.139,Obese,Male
+Ocean,15,Black,2,29,**,**,**,0.182,0.320,Obese,Male
+Ocean,15,White,3,879,0.365,0.319,0.413,0.047,0.066,Obese,Male
+Ocean,15,Other,4,14,**,**,**,0.163,0.495,Obese,Male
+Ocean,15,Hispanic,5,57,0.395,0.260,0.549,0.148,0.192,Obese,Male
+Passaic,16,All Races,.,901,0.296,0.257,0.338,0.040,0.069,Obese,Male
+Passaic,16,Asian/Pacific Islander,1,36,**,**,**,0.112,0.448,Obese,Male
+Passaic,16,Black,2,84,0.298,0.208,0.406,0.100,0.171,Obese,Male
+Passaic,16,White,3,514,0.327,0.272,0.388,0.058,0.091,Obese,Male
+Passaic,16,Other,4,18,**,**,**,0.106,0.137,Obese,Male
+Passaic,16,Hispanic,5,249,0.253,0.195,0.322,0.064,0.128,Obese,Male
+Salem,17,All Races,.,849,0.393,0.341,0.448,0.054,0.070,Obese,Male
+Salem,17,Asian/Pacific Islander,1,3,**,**,**,0.161,0.328,Obese,Male
+Salem,17,Black,2,70,0.579,0.395,0.743,0.181,0.220,Obese,Male
+Salem,17,White,3,724,0.360,0.307,0.417,0.055,0.078,Obese,Male
+Salem,17,Other,4,22,**,**,**,0.070,0.114,Obese,Male
+Salem,17,Hispanic,5,30,**,**,**,0.175,0.245,Obese,Male
+Somerset,18,All Races,.,951,0.229,0.194,0.268,0.037,0.083,Obese,Male
+Somerset,18,Asian/Pacific Islander,1,89,0.078,0.038,0.151,0.054,0.354,Obese,Male
+Somerset,18,Black,2,46,**,**,**,0.140,0.227,Obese,Male
+Somerset,18,White,3,720,0.270,0.224,0.321,0.048,0.092,Obese,Male
+Somerset,18,Other,4,27,**,**,**,0.062,0.383,Obese,Male
+Somerset,18,Hispanic,5,69,0.278,0.177,0.409,0.117,0.215,Obese,Male
+Sussex,19,All Races,.,916,0.266,0.226,0.310,0.042,0.080,Obese,Male
+Sussex,19,Asian/Pacific Islander,1,8,**,**,**,0.168,0.448,Obese,Male
+Sussex,19,Black,2,22,**,**,**,0.129,0.461,Obese,Male
+Sussex,19,White,3,813,0.269,0.226,0.317,0.046,0.087,Obese,Male
+Sussex,19,Other,4,19,**,**,**,0.171,0.450,Obese,Male
+Sussex,19,Hispanic,5,54,0.368,0.239,0.519,0.144,0.199,Obese,Male
+Union,20,All Races,.,978,0.282,0.244,0.323,0.039,0.071,Obese,Male
+Union,20,Asian/Pacific Islander,1,40,**,**,**,0.145,0.331,Obese,Male
+Union,20,Black,2,160,0.334,0.254,0.424,0.085,0.130,Obese,Male
+Union,20,White,3,548,0.232,0.187,0.285,0.049,0.108,Obese,Male
+Union,20,Other,4,18,**,**,**,0.180,0.315,Obese,Male
+Union,20,Hispanic,5,212,0.351,0.276,0.434,0.080,0.116,Obese,Male
+Warren,21,All Races,.,918,0.294,0.246,0.348,0.051,0.089,Obese,Male
+Warren,21,Asian/Pacific Islander,1,9,**,**,**,0.000,.,Obese,Male
+Warren,21,Black,2,18,**,**,**,0.201,0.290,Obese,Male
+Warren,21,White,3,835,0.311,0.256,0.373,0.059,0.096,Obese,Male
+Warren,21,Other,4,13,**,**,**,0.162,0.310,Obese,Male
+Warren,21,Hispanic,5,43,**,**,**,0.139,0.259,Obese,Male
+Total,.,All Races,.,"27,921",0.250,0.241,0.259,0.009,0.018,Obese,Female
+Total,.,Asian/Pacific Islander,1,751,0.074,0.053,0.104,0.026,0.174,Obese,Female
+Total,.,Black,2,"3,823",0.420,0.396,0.444,0.024,0.030,Obese,Female
+Total,.,White,3,"19,533",0.217,0.205,0.228,0.011,0.027,Obese,Female
+Total,.,Other,4,621,0.294,0.243,0.352,0.055,0.095,Obese,Female
+Total,.,Hispanic,5,"3,193",0.317,0.294,0.342,0.024,0.039,Obese,Female
+Atlantic,1,All Races,.,"1,229",0.268,0.233,0.306,0.037,0.070,Obese,Female
+Atlantic,1,Asian/Pacific Islander,1,19,**,**,**,0.086,0.596,Obese,Female
+Atlantic,1,Black,2,178,0.304,0.223,0.398,0.088,0.148,Obese,Female
+Atlantic,1,White,3,865,0.249,0.207,0.296,0.045,0.092,Obese,Female
+Atlantic,1,Other,4,38,**,**,**,0.133,0.260,Obese,Female
+Atlantic,1,Hispanic,5,129,0.326,0.239,0.426,0.094,0.148,Obese,Female
+Bergen,2,All Races,.,"1,238",**,**,**,0.033,0.088,Obese,Female
+Bergen,2,Asian/Pacific Islander,1,64,0.055,0.017,0.164,0.063,0.582,Obese,Female
+Bergen,2,Black,2,84,0.425,0.299,0.562,0.135,0.162,Obese,Female
+Bergen,2,White,3,873,0.179,0.142,0.223,0.040,0.115,Obese,Female
+Bergen,2,Other,4,33,**,**,**,0.098,0.279,Obese,Female
+Bergen,2,Hispanic,5,184,0.263,0.197,0.343,0.073,0.141,Obese,Female
+Burlington,3,All Races,.,"1,347",0.291,0.256,0.329,0.037,0.064,Obese,Female
+Burlington,3,Asian/Pacific Islander,1,21,**,**,**,0.032,1.029,Obese,Female
+Burlington,3,Black,2,200,0.428,0.337,0.524,0.094,0.113,Obese,Female
+Burlington,3,White,3,"1,028",0.264,0.222,0.311,0.044,0.086,Obese,Female
+Burlington,3,Other,4,42,**,**,**,0.135,0.142,Obese,Female
+Burlington,3,Hispanic,5,56,0.269,0.164,0.408,0.124,0.235,Obese,Female
+Camden,4,All Races,.,"1,463",0.295,0.259,0.333,0.037,0.063,Obese,Female
+Camden,4,Asian/Pacific Islander,1,20,**,**,**,0.132,0.267,Obese,Female
+Camden,4,Black,2,247,0.444,0.356,0.535,0.090,0.104,Obese,Female
+Camden,4,White,3,"1,024",0.219,0.183,0.260,0.038,0.090,Obese,Female
+Camden,4,Other,4,26,**,**,**,0.162,0.168,Obese,Female
+Camden,4,Hispanic,5,146,0.429,0.328,0.537,0.106,0.126,Obese,Female
+Cape May,5,All Races,.,"1,187",0.248,0.205,0.296,0.046,0.094,Obese,Female
+Cape May,5,Asian/Pacific Islander,1,2,**,**,**,0.000,.,Obese,Female
+Cape May,5,Black,2,44,**,**,**,0.131,0.285,Obese,Female
+Cape May,5,White,3,"1,094",0.239,0.192,0.294,0.051,0.109,Obese,Female
+Cape May,5,Other,4,14,**,**,**,0.178,0.197,Obese,Female
+Cape May,5,Hispanic,5,33,**,**,**,0.178,0.195,Obese,Female
+Cumberland,6,All Races,.,"1,200",0.363,0.322,0.405,0.041,0.058,Obese,Female
+Cumberland,6,Asian/Pacific Islander,1,11,**,**,**,0.165,0.858,Obese,Female
+Cumberland,6,Black,2,181,0.457,0.370,0.547,0.089,0.100,Obese,Female
+Cumberland,6,White,3,819,0.329,0.273,0.390,0.059,0.091,Obese,Female
+Cumberland,6,Other,4,40,**,**,**,0.150,0.229,Obese,Female
+Cumberland,6,Hispanic,5,149,0.408,0.323,0.499,0.089,0.112,Obese,Female
+Essex,7,All Races,.,"2,668",**,**,**,0.027,0.044,Obese,Female
+Essex,7,Asian/Pacific Islander,1,42,**,**,**,0.107,0.359,Obese,Female
+Essex,7,Black,2,"1,259",0.445,0.402,0.489,0.043,0.050,Obese,Female
+Essex,7,White,3,833,0.179,0.140,0.225,0.042,0.121,Obese,Female
+Essex,7,Other,4,74,0.276,0.170,0.415,0.124,0.229,Obese,Female
+Essex,7,Hispanic,5,460,0.282,0.231,0.339,0.054,0.098,Obese,Female
+Gloucester,8,All Races,.,"1,211",0.286,0.243,0.334,0.045,0.081,Obese,Female
+Gloucester,8,Asian/Pacific Islander,1,8,**,**,**,0.000,.,Obese,Female
+Gloucester,8,Black,2,95,0.381,0.258,0.522,0.135,0.180,Obese,Female
+Gloucester,8,White,3,"1,053",0.271,0.227,0.321,0.048,0.089,Obese,Female
+Gloucester,8,Other,4,14,**,**,**,0.176,0.182,Obese,Female
+Gloucester,8,Hispanic,5,41,**,**,**,0.122,0.215,Obese,Female
+Hudson,9,All Races,.,"1,802",0.275,0.244,0.307,0.032,0.059,Obese,Female
+Hudson,9,Asian/Pacific Islander,1,113,0.055,0.023,0.128,0.048,0.441,Obese,Female
+Hudson,9,Black,2,287,0.455,0.377,0.535,0.080,0.089,Obese,Female
+Hudson,9,White,3,714,0.222,0.178,0.272,0.047,0.108,Obese,Female
+Hudson,9,Other,4,73,0.192,0.101,0.335,0.117,0.310,Obese,Female
+Hudson,9,Hispanic,5,615,0.336,0.284,0.393,0.054,0.083,Obese,Female
+Hunterdon,10,All Races,.,"1,139",0.155,0.122,0.195,0.036,0.119,Obese,Female
+Hunterdon,10,Asian/Pacific Islander,1,14,**,**,**,0.000,.,Obese,Female
+Hunterdon,10,Black,2,18,**,**,**,0.153,0.495,Obese,Female
+Hunterdon,10,White,3,"1,056",0.165,0.127,0.212,0.042,0.131,Obese,Female
+Hunterdon,10,Other,4,10,**,**,**,0.055,0.085,Obese,Female
+Hunterdon,10,Hispanic,5,41,**,**,**,0.070,0.353,Obese,Female
+Mercer,11,All Races,.,"1,213",**,**,**,0.034,0.066,Obese,Female
+Mercer,11,Asian/Pacific Islander,1,60,0.090,0.037,0.203,0.078,0.440,Obese,Female
+Mercer,11,Black,2,228,0.431,0.354,0.511,0.079,0.094,Obese,Female
+Mercer,11,White,3,796,0.199,0.162,0.242,0.040,0.102,Obese,Female
+Mercer,11,Other,4,30,**,**,**,0.165,0.212,Obese,Female
+Mercer,11,Hispanic,5,99,0.224,0.151,0.319,0.084,0.192,Obese,Female
+Middlesex,12,All Races,.,"1,256",**,**,**,0.034,0.069,Obese,Female
+Middlesex,12,Asian/Pacific Islander,1,156,0.112,0.061,0.196,0.066,0.299,Obese,Female
+Middlesex,12,Black,2,123,0.421,0.320,0.530,0.107,0.129,Obese,Female
+Middlesex,12,White,3,783,0.272,0.217,0.335,0.059,0.111,Obese,Female
+Middlesex,12,Other,4,32,**,**,**,0.155,0.394,Obese,Female
+Middlesex,12,Hispanic,5,162,0.396,0.317,0.480,0.082,0.106,Obese,Female
+Monmouth,13,All Races,.,"1,185",0.197,0.165,0.235,0.035,0.090,Obese,Female
+Monmouth,13,Asian/Pacific Islander,1,25,**,**,**,0.116,0.768,Obese,Female
+Monmouth,13,Black,2,62,0.365,0.277,0.463,0.094,0.131,Obese,Female
+Monmouth,13,White,3,"1,001",0.192,0.155,0.236,0.040,0.107,Obese,Female
+Monmouth,13,Other,4,20,**,**,**,0.128,0.193,Obese,Female
+Monmouth,13,Hispanic,5,77,0.254,0.155,0.386,0.116,0.234,Obese,Female
+Morris,14,All Races,.,"1,349",0.143,0.118,0.172,0.027,0.098,Obese,Female
+Morris,14,Asian/Pacific Islander,1,46,**,**,**,0.012,1.012,Obese,Female
+Morris,14,Black,2,36,**,**,**,0.141,0.272,Obese,Female
+Morris,14,White,3,"1,156",0.152,0.120,0.192,0.036,0.120,Obese,Female
+Morris,14,Other,4,19,**,**,**,0.095,0.556,Obese,Female
+Morris,14,Hispanic,5,92,0.170,0.112,0.248,0.068,0.203,Obese,Female
+Ocean,15,All Races,.,"1,256",0.268,0.231,0.308,0.039,0.074,Obese,Female
+Ocean,15,Asian/Pacific Islander,1,6,**,**,**,0.000,.,Obese,Female
+Ocean,15,Black,2,34,**,**,**,0.140,0.153,Obese,Female
+Ocean,15,White,3,"1,132",0.243,0.205,0.286,0.040,0.085,Obese,Female
+Ocean,15,Other,4,20,**,**,**,0.143,0.219,Obese,Female
+Ocean,15,Hispanic,5,64,0.382,0.256,0.525,0.138,0.184,Obese,Female
+Passaic,16,All Races,.,"1,193",0.295,0.257,0.335,0.039,0.068,Obese,Female
+Passaic,16,Asian/Pacific Islander,1,21,**,**,**,0.043,0.989,Obese,Female
+Passaic,16,Black,2,161,0.432,0.340,0.528,0.095,0.113,Obese,Female
+Passaic,16,White,3,635,0.246,0.191,0.311,0.060,0.124,Obese,Female
+Passaic,16,Other,4,19,**,**,**,0.170,0.180,Obese,Female
+Passaic,16,Hispanic,5,357,0.347,0.280,0.420,0.070,0.103,Obese,Female
+Salem,17,All Races,.,"1,292",0.375,0.326,0.427,0.051,0.069,Obese,Female
+Salem,17,Asian/Pacific Islander,1,1,**,**,**,0.000,.,Obese,Female
+Salem,17,Black,2,181,0.437,0.334,0.545,0.107,0.125,Obese,Female
+Salem,17,White,3,"1,038",0.340,0.287,0.397,0.055,0.083,Obese,Female
+Salem,17,Other,4,25,**,**,**,0.090,0.151,Obese,Female
+Salem,17,Hispanic,5,47,**,**,**,0.134,0.158,Obese,Female
+Somerset,18,All Races,.,"1,175",**,**,**,0.039,0.104,Obese,Female
+Somerset,18,Asian/Pacific Islander,1,78,0.024,0.007,0.076,0.028,0.607,Obese,Female
+Somerset,18,Black,2,67,0.302,0.198,0.432,0.119,0.201,Obese,Female
+Somerset,18,White,3,923,0.179,0.135,0.234,0.049,0.140,Obese,Female
+Somerset,18,Other,4,22,**,**,**,0.160,0.268,Obese,Female
+Somerset,18,Hispanic,5,85,0.283,0.182,0.412,0.117,0.210,Obese,Female
+Sussex,19,All Races,.,"1,086",0.237,0.199,0.280,0.041,0.088,Obese,Female
+Sussex,19,Asian/Pacific Islander,1,11,**,**,**,0.000,.,Obese,Female
+Sussex,19,Black,2,28,**,**,**,0.137,0.148,Obese,Female
+Sussex,19,White,3,977,0.222,0.182,0.268,0.043,0.099,Obese,Female
+Sussex,19,Other,4,17,**,**,**,0.202,0.369,Obese,Female
+Sussex,19,Hispanic,5,53,0.276,0.154,0.446,0.149,0.275,Obese,Female
+Union,20,All Races,.,"1,274",0.234,0.204,0.267,0.032,0.069,Obese,Female
+Union,20,Asian/Pacific Islander,1,25,**,**,**,0.017,1.099,Obese,Female
+Union,20,Black,2,277,0.395,0.322,0.474,0.077,0.099,Obese,Female
+Union,20,White,3,671,0.152,0.121,0.190,0.034,0.116,Obese,Female
+Union,20,Other,4,38,**,**,**,0.157,0.232,Obese,Female
+Union,20,Hispanic,5,263,0.240,0.181,0.310,0.065,0.139,Obese,Female
+Warren,21,All Races,.,"1,158",0.242,0.201,0.290,0.045,0.094,Obese,Female
+Warren,21,Asian/Pacific Islander,1,8,**,**,**,0.055,0.110,Obese,Female
+Warren,21,Black,2,33,**,**,**,0.130,0.148,Obese,Female
+Warren,21,White,3,"1,062",0.221,0.179,0.270,0.045,0.105,Obese,Female
+Warren,21,Other,4,15,**,**,**,0.158,0.279,Obese,Female
+Warren,21,Hispanic,5,40,**,**,**,0.152,0.313,Obese,Female
+Total,.,All Races,.,"52,525",0.149,0.144,0.154,0.005,0.018,Current Smoker,Male and Female
+Total,.,Asian/Pacific Islander,1,"1,951",0.077,0.061,0.097,0.018,0.120,Current Smoker,Male and Female
+Total,.,Black,2,"6,193",**,**,**,0.015,0.042,Current Smoker,Male and Female
+Total,.,White,3,"36,693",0.165,0.158,0.173,0.008,0.023,Current Smoker,Male and Female
+Total,.,Other,4,"1,233",0.164,0.136,0.197,0.031,0.095,Current Smoker,Male and Female
+Total,.,Hispanic,5,"6,455",0.124,0.113,0.135,0.011,0.046,Current Smoker,Male and Female
+Atlantic,1,All Races,.,"2,355",0.197,0.174,0.222,0.024,0.062,Current Smoker,Male and Female
+Atlantic,1,Asian/Pacific Islander,1,61,0.123,0.058,0.244,0.090,0.372,Current Smoker,Male and Female
+Atlantic,1,Black,2,313,0.241,0.185,0.307,0.061,0.130,Current Smoker,Male and Female
+Atlantic,1,White,3,"1,643",0.197,0.168,0.230,0.031,0.081,Current Smoker,Male and Female
+Atlantic,1,Other,4,61,0.107,0.052,0.205,0.074,0.352,Current Smoker,Male and Female
+Atlantic,1,Hispanic,5,277,0.207,0.150,0.279,0.065,0.159,Current Smoker,Male and Female
+Bergen,2,All Races,.,"2,483",0.124,0.105,0.145,0.020,0.081,Current Smoker,Male and Female
+Bergen,2,Asian/Pacific Islander,1,195,0.137,0.084,0.214,0.064,0.239,Current Smoker,Male and Female
+Bergen,2,Black,2,153,0.136,0.077,0.230,0.075,0.280,Current Smoker,Male and Female
+Bergen,2,White,3,"1,682",0.129,0.104,0.158,0.026,0.105,Current Smoker,Male and Female
+Bergen,2,Other,4,58,0.239,0.137,0.382,0.124,0.264,Current Smoker,Male and Female
+Bergen,2,Hispanic,5,395,0.093,0.064,0.134,0.034,0.189,Current Smoker,Male and Female
+Burlington,3,All Races,.,"2,422",0.132,0.113,0.153,0.020,0.077,Current Smoker,Male and Female
+Burlington,3,Asian/Pacific Islander,1,54,0.045,0.012,0.149,0.056,0.644,Current Smoker,Male and Female
+Burlington,3,Black,2,323,0.110,0.075,0.158,0.041,0.193,Current Smoker,Male and Female
+Burlington,3,White,3,"1,869",0.157,0.131,0.186,0.027,0.088,Current Smoker,Male and Female
+Burlington,3,Other,4,74,0.142,0.071,0.262,0.093,0.336,Current Smoker,Male and Female
+Burlington,3,Hispanic,5,102,0.046,0.020,0.103,0.038,0.418,Current Smoker,Male and Female
+Camden,4,All Races,.,"2,673",0.186,0.164,0.212,0.024,0.066,Current Smoker,Male and Female
+Camden,4,Asian/Pacific Islander,1,50,0.043,0.012,0.140,0.053,0.623,Current Smoker,Male and Female
+Camden,4,Black,2,433,0.174,0.126,0.234,0.054,0.157,Current Smoker,Male and Female
+Camden,4,White,3,"1,877",0.193,0.164,0.227,0.032,0.083,Current Smoker,Male and Female
+Camden,4,Other,4,55,0.352,0.218,0.514,0.152,0.220,Current Smoker,Male and Female
+Camden,4,Hispanic,5,258,0.207,0.147,0.283,0.068,0.168,Current Smoker,Male and Female
+Cape May,5,All Races,.,"2,127",0.228,0.195,0.264,0.034,0.077,Current Smoker,Male and Female
+Cape May,5,Asian/Pacific Islander,1,6,**,**,**,0.000,.,Current Smoker,Male and Female
+Cape May,5,Black,2,75,0.316,0.198,0.465,0.136,0.220,Current Smoker,Male and Female
+Cape May,5,White,3,"1,939",0.237,0.200,0.278,0.039,0.084,Current Smoker,Male and Female
+Cape May,5,Other,4,37,**,**,**,0.126,0.321,Current Smoker,Male and Female
+Cape May,5,Hispanic,5,70,0.128,0.065,0.236,0.083,0.332,Current Smoker,Male and Female
+Cumberland,6,All Races,.,"2,214",**,**,**,0.026,0.065,Current Smoker,Male and Female
+Cumberland,6,Asian/Pacific Islander,1,21,**,**,**,0.059,0.750,Current Smoker,Male and Female
+Cumberland,6,Black,2,299,0.155,0.113,0.210,0.049,0.159,Current Smoker,Male and Female
+Cumberland,6,White,3,"1,476",0.258,0.220,0.301,0.041,0.080,Current Smoker,Male and Female
+Cumberland,6,Other,4,75,0.279,0.159,0.443,0.145,0.264,Current Smoker,Male and Female
+Cumberland,6,Hispanic,5,343,0.152,0.112,0.203,0.045,0.152,Current Smoker,Male and Female
+Essex,7,All Races,.,"4,616",0.141,0.126,0.158,0.016,0.057,Current Smoker,Male and Female
+Essex,7,Asian/Pacific Islander,1,110,0.110,0.057,0.202,0.070,0.323,Current Smoker,Male and Female
+Essex,7,Black,2,"1,923",0.171,0.146,0.199,0.026,0.079,Current Smoker,Male and Female
+Essex,7,White,3,"1,605",0.132,0.104,0.165,0.031,0.118,Current Smoker,Male and Female
+Essex,7,Other,4,138,0.150,0.081,0.260,0.088,0.300,Current Smoker,Male and Female
+Essex,7,Hispanic,5,840,0.133,0.103,0.171,0.034,0.130,Current Smoker,Male and Female
+Gloucester,8,All Races,.,"2,256",0.215,0.186,0.247,0.030,0.072,Current Smoker,Male and Female
+Gloucester,8,Asian/Pacific Islander,1,19,**,**,**,0.188,0.205,Current Smoker,Male and Female
+Gloucester,8,Black,2,158,0.150,0.079,0.267,0.092,0.312,Current Smoker,Male and Female
+Gloucester,8,White,3,"1,953",0.220,0.188,0.255,0.034,0.078,Current Smoker,Male and Female
+Gloucester,8,Other,4,41,**,**,**,0.159,0.261,Current Smoker,Male and Female
+Gloucester,8,Hispanic,5,85,0.117,0.061,0.214,0.074,0.323,Current Smoker,Male and Female
+Hudson,9,All Races,.,"3,348",0.153,0.135,0.173,0.019,0.062,Current Smoker,Male and Female
+Hudson,9,Asian/Pacific Islander,1,287,0.059,0.033,0.105,0.035,0.298,Current Smoker,Male and Female
+Hudson,9,Black,2,450,0.289,0.229,0.356,0.064,0.113,Current Smoker,Male and Female
+Hudson,9,White,3,"1,361",0.176,0.145,0.212,0.034,0.097,Current Smoker,Male and Female
+Hudson,9,Other,4,128,0.180,0.108,0.285,0.088,0.249,Current Smoker,Male and Female
+Hudson,9,Hispanic,5,"1,122",0.124,0.098,0.156,0.029,0.120,Current Smoker,Male and Female
+Hunterdon,10,All Races,.,"2,231",0.127,0.101,0.160,0.029,0.117,Current Smoker,Male and Female
+Hunterdon,10,Asian/Pacific Islander,1,38,**,**,**,0.023,0.789,Current Smoker,Male and Female
+Hunterdon,10,Black,2,31,**,**,**,0.078,0.878,Current Smoker,Male and Female
+Hunterdon,10,White,3,"2,056",0.146,0.115,0.185,0.035,0.121,Current Smoker,Male and Female
+Hunterdon,10,Other,4,21,**,**,**,0.056,0.127,Current Smoker,Male and Female
+Hunterdon,10,Hispanic,5,85,0.056,0.023,0.131,0.049,0.445,Current Smoker,Male and Female
+Mercer,11,All Races,.,"2,275",0.154,0.132,0.179,0.024,0.078,Current Smoker,Male and Female
+Mercer,11,Asian/Pacific Islander,1,125,0.089,0.042,0.181,0.066,0.376,Current Smoker,Male and Female
+Mercer,11,Black,2,377,0.274,0.216,0.340,0.062,0.116,Current Smoker,Male and Female
+Mercer,11,White,3,"1,497",0.120,0.093,0.154,0.030,0.129,Current Smoker,Male and Female
+Mercer,11,Other,4,51,0.283,0.174,0.425,0.128,0.230,Current Smoker,Male and Female
+Mercer,11,Hispanic,5,225,0.146,0.092,0.222,0.064,0.225,Current Smoker,Male and Female
+Middlesex,12,All Races,.,"2,596",0.115,0.099,0.134,0.017,0.076,Current Smoker,Male and Female
+Middlesex,12,Asian/Pacific Islander,1,408,0.078,0.040,0.146,0.051,0.332,Current Smoker,Male and Female
+Middlesex,12,Black,2,206,0.117,0.066,0.198,0.065,0.284,Current Smoker,Male and Female
+Middlesex,12,White,3,"1,548",0.155,0.129,0.186,0.028,0.093,Current Smoker,Male and Female
+Middlesex,12,Other,4,78,0.081,0.034,0.181,0.068,0.429,Current Smoker,Male and Female
+Middlesex,12,Hispanic,5,356,0.092,0.064,0.130,0.033,0.182,Current Smoker,Male and Female
+Monmouth,13,All Races,.,"2,287",**,**,**,0.022,0.073,Current Smoker,Male and Female
+Monmouth,13,Asian/Pacific Islander,1,60,0.052,0.009,0.246,0.088,0.866,Current Smoker,Male and Female
+Monmouth,13,Black,2,110,0.159,0.087,0.271,0.091,0.292,Current Smoker,Male and Female
+Monmouth,13,White,3,"1,887",0.170,0.144,0.200,0.028,0.083,Current Smoker,Male and Female
+Monmouth,13,Other,4,45,**,**,**,0.075,0.137,Current Smoker,Male and Female
+Monmouth,13,Hispanic,5,185,0.120,0.073,0.191,0.058,0.247,Current Smoker,Male and Female
+Morris,14,All Races,.,"2,659",0.117,0.099,0.138,0.020,0.086,Current Smoker,Male and Female
+Morris,14,Asian/Pacific Islander,1,135,0.049,0.021,0.107,0.039,0.414,Current Smoker,Male and Female
+Morris,14,Black,2,71,0.112,0.053,0.221,0.081,0.368,Current Smoker,Male and Female
+Morris,14,White,3,"2,190",0.131,0.107,0.160,0.026,0.102,Current Smoker,Male and Female
+Morris,14,Other,4,62,0.051,0.018,0.134,0.051,0.514,Current Smoker,Male and Female
+Morris,14,Hispanic,5,201,0.139,0.089,0.212,0.061,0.223,Current Smoker,Male and Female
+Ocean,15,All Races,.,"2,391",0.199,0.175,0.225,0.025,0.064,Current Smoker,Male and Female
+Ocean,15,Asian/Pacific Islander,1,17,**,**,**,0.092,0.882,Current Smoker,Male and Female
+Ocean,15,Black,2,62,0.378,0.256,0.518,0.134,0.180,Current Smoker,Male and Female
+Ocean,15,White,3,"2,130",0.206,0.179,0.236,0.028,0.070,Current Smoker,Male and Female
+Ocean,15,Other,4,37,**,**,**,0.082,0.389,Current Smoker,Male and Female
+Ocean,15,Hispanic,5,145,0.146,0.089,0.231,0.070,0.245,Current Smoker,Male and Female
+Passaic,16,All Races,.,"2,294",**,**,**,0.020,0.073,Current Smoker,Male and Female
+Passaic,16,Asian/Pacific Islander,1,63,0.032,0.010,0.091,0.034,0.558,Current Smoker,Male and Female
+Passaic,16,Black,2,254,0.226,0.167,0.300,0.067,0.151,Current Smoker,Male and Female
+Passaic,16,White,3,"1,209",0.171,0.138,0.209,0.035,0.105,Current Smoker,Male and Female
+Passaic,16,Other,4,42,**,**,**,0.152,0.447,Current Smoker,Male and Female
+Passaic,16,Hispanic,5,726,0.109,0.084,0.141,0.028,0.131,Current Smoker,Male and Female
+Salem,17,All Races,.,"2,239",**,**,**,0.028,0.066,Current Smoker,Male and Female
+Salem,17,Asian/Pacific Islander,1,4,**,**,**,0.000,.,Current Smoker,Male and Female
+Salem,17,Black,2,263,0.182,0.123,0.263,0.070,0.195,Current Smoker,Male and Female
+Salem,17,White,3,"1,834",0.232,0.201,0.267,0.033,0.072,Current Smoker,Male and Female
+Salem,17,Other,4,52,0.247,0.130,0.419,0.146,0.302,Current Smoker,Male and Female
+Salem,17,Hispanic,5,86,0.179,0.104,0.290,0.092,0.263,Current Smoker,Male and Female
+Somerset,18,All Races,.,"2,254",0.108,0.086,0.135,0.024,0.116,Current Smoker,Male and Female
+Somerset,18,Asian/Pacific Islander,1,186,0.058,0.028,0.115,0.041,0.361,Current Smoker,Male and Female
+Somerset,18,Black,2,123,0.097,0.048,0.186,0.066,0.349,Current Smoker,Male and Female
+Somerset,18,White,3,"1,714",0.118,0.084,0.162,0.038,0.166,Current Smoker,Male and Female
+Somerset,18,Other,4,54,0.099,0.043,0.215,0.081,0.417,Current Smoker,Male and Female
+Somerset,18,Hispanic,5,177,0.142,0.089,0.220,0.065,0.233,Current Smoker,Male and Female
+Sussex,19,All Races,.,"2,141",0.175,0.147,0.206,0.029,0.086,Current Smoker,Male and Female
+Sussex,19,Asian/Pacific Islander,1,25,**,**,**,0.128,0.347,Current Smoker,Male and Female
+Sussex,19,Black,2,53,0.033,0.008,0.118,0.044,0.680,Current Smoker,Male and Female
+Sussex,19,White,3,"1,911",0.184,0.153,0.221,0.034,0.093,Current Smoker,Male and Female
+Sussex,19,Other,4,34,**,**,**,0.157,0.283,Current Smoker,Male and Female
+Sussex,19,Hispanic,5,118,0.133,0.076,0.223,0.072,0.276,Current Smoker,Male and Female
+Union,20,All Races,.,"2,448",0.138,0.118,0.161,0.022,0.081,Current Smoker,Male and Female
+Union,20,Asian/Pacific Islander,1,71,0.056,0.013,0.216,0.081,0.738,Current Smoker,Male and Female
+Union,20,Black,2,460,0.181,0.135,0.238,0.052,0.146,Current Smoker,Male and Female
+Union,20,White,3,"1,292",0.142,0.113,0.176,0.032,0.115,Current Smoker,Male and Female
+Union,20,Other,4,60,0.158,0.071,0.316,0.120,0.388,Current Smoker,Male and Female
+Union,20,Hispanic,5,565,0.113,0.081,0.157,0.038,0.170,Current Smoker,Male and Female
+Warren,21,All Races,.,"2,216",0.167,0.141,0.197,0.028,0.085,Current Smoker,Male and Female
+Warren,21,Asian/Pacific Islander,1,16,**,**,**,0.075,0.494,Current Smoker,Male and Female
+Warren,21,Black,2,56,0.131,0.055,0.281,0.108,0.421,Current Smoker,Male and Female
+Warren,21,White,3,"2,020",0.179,0.150,0.213,0.032,0.090,Current Smoker,Male and Female
+Warren,21,Other,4,30,**,**,**,0.151,0.281,Current Smoker,Male and Female
+Warren,21,Hispanic,5,94,0.131,0.072,0.226,0.075,0.293,Current Smoker,Male and Female
+Total,.,All Races,.,"22,020",0.170,0.162,0.178,0.008,0.025,Current Smoker,Male
+Total,.,Asian/Pacific Islander,1,"1,099",0.113,0.088,0.144,0.028,0.125,Current Smoker,Male
+Total,.,Black,2,"2,084",0.215,0.190,0.243,0.026,0.063,Current Smoker,Male
+Total,.,White,3,"15,577",0.173,0.162,0.185,0.011,0.033,Current Smoker,Male
+Total,.,Other,4,551,0.182,0.143,0.228,0.043,0.120,Current Smoker,Male
+Total,.,Hispanic,5,"2,709",0.167,0.148,0.186,0.019,0.058,Current Smoker,Male
+Atlantic,1,All Races,.,"1,017",0.209,0.176,0.246,0.035,0.086,Current Smoker,Male
+Atlantic,1,Asian/Pacific Islander,1,39,**,**,**,0.130,0.294,Current Smoker,Male
+Atlantic,1,Black,2,120,0.217,0.145,0.312,0.084,0.197,Current Smoker,Male
+Atlantic,1,White,3,715,0.191,0.152,0.236,0.042,0.111,Current Smoker,Male
+Atlantic,1,Other,4,19,**,**,**,0.113,0.450,Current Smoker,Male
+Atlantic,1,Hispanic,5,124,0.266,0.177,0.381,0.103,0.197,Current Smoker,Male
+Bergen,2,All Races,.,"1,126",**,**,**,0.030,0.101,Current Smoker,Male
+Bergen,2,Asian/Pacific Islander,1,119,0.164,0.095,0.269,0.086,0.268,Current Smoker,Male
+Bergen,2,Black,2,57,0.148,0.064,0.303,0.116,0.401,Current Smoker,Male
+Bergen,2,White,3,744,0.153,0.118,0.195,0.038,0.128,Current Smoker,Male
+Bergen,2,Other,4,24,**,**,**,0.176,0.391,Current Smoker,Male
+Bergen,2,Hispanic,5,182,0.130,0.083,0.196,0.056,0.220,Current Smoker,Male
+Burlington,3,All Races,.,983,0.128,0.101,0.160,0.029,0.117,Current Smoker,Male
+Burlington,3,Asian/Pacific Islander,1,32,**,**,**,0.106,0.622,Current Smoker,Male
+Burlington,3,Black,2,106,0.111,0.059,0.199,0.068,0.312,Current Smoker,Male
+Burlington,3,White,3,772,0.146,0.112,0.188,0.038,0.133,Current Smoker,Male
+Burlington,3,Other,4,29,**,**,**,0.116,0.400,Current Smoker,Male
+Burlington,3,Hispanic,5,44,**,**,**,0.049,0.593,Current Smoker,Male
+Camden,4,All Races,.,"1,076",0.198,0.164,0.238,0.037,0.096,Current Smoker,Male
+Camden,4,Asian/Pacific Islander,1,26,**,**,**,0.123,0.615,Current Smoker,Male
+Camden,4,Black,2,152,0.228,0.151,0.329,0.089,0.200,Current Smoker,Male
+Camden,4,White,3,772,0.177,0.137,0.225,0.044,0.128,Current Smoker,Male
+Camden,4,Other,4,24,**,**,**,0.207,0.342,Current Smoker,Male
+Camden,4,Hispanic,5,102,0.230,0.150,0.334,0.092,0.205,Current Smoker,Male
+Cape May,5,All Races,.,871,0.238,0.195,0.286,0.046,0.098,Current Smoker,Male
+Cape May,5,Asian/Pacific Islander,1,4,**,**,**,0.000,.,Current Smoker,Male
+Cape May,5,Black,2,28,**,**,**,0.076,0.129,Current Smoker,Male
+Cape May,5,White,3,789,0.240,0.193,0.294,0.051,0.108,Current Smoker,Male
+Cape May,5,Other,4,23,**,**,**,0.165,0.425,Current Smoker,Male
+Cape May,5,Hispanic,5,27,**,**,**,0.167,0.324,Current Smoker,Male
+Cumberland,6,All Races,.,897,0.225,0.188,0.267,0.039,0.089,Current Smoker,Male
+Cumberland,6,Asian/Pacific Islander,1,10,**,**,**,0.054,1.071,Current Smoker,Male
+Cumberland,6,Black,2,106,0.161,0.105,0.238,0.066,0.209,Current Smoker,Male
+Cumberland,6,White,3,597,0.273,0.217,0.336,0.060,0.112,Current Smoker,Male
+Cumberland,6,Other,4,34,**,**,**,0.166,0.305,Current Smoker,Male
+Cumberland,6,Hispanic,5,150,0.189,0.129,0.270,0.070,0.189,Current Smoker,Male
+Essex,7,All Races,.,"1,724",0.160,0.136,0.188,0.026,0.082,Current Smoker,Male
+Essex,7,Asian/Pacific Islander,1,61,0.204,0.112,0.343,0.115,0.288,Current Smoker,Male
+Essex,7,Black,2,594,0.195,0.152,0.246,0.047,0.123,Current Smoker,Male
+Essex,7,White,3,702,0.133,0.092,0.188,0.048,0.183,Current Smoker,Male
+Essex,7,Other,4,56,0.193,0.098,0.345,0.123,0.326,Current Smoker,Male
+Essex,7,Hispanic,5,311,0.161,0.111,0.229,0.059,0.186,Current Smoker,Male
+Gloucester,8,All Races,.,951,0.231,0.188,0.281,0.046,0.103,Current Smoker,Male
+Gloucester,8,Asian/Pacific Islander,1,9,**,**,**,0.245,0.278,Current Smoker,Male
+Gloucester,8,Black,2,53,0.162,0.064,0.356,0.142,0.447,Current Smoker,Male
+Gloucester,8,White,3,826,0.232,0.185,0.287,0.051,0.113,Current Smoker,Male
+Gloucester,8,Other,4,23,**,**,**,0.163,0.341,Current Smoker,Male
+Gloucester,8,Hispanic,5,40,**,**,**,0.115,0.352,Current Smoker,Male
+Hudson,9,All Races,.,"1,371",0.192,0.162,0.226,0.032,0.084,Current Smoker,Male
+Hudson,9,Asian/Pacific Islander,1,159,0.076,0.043,0.133,0.044,0.292,Current Smoker,Male
+Hudson,9,Black,2,141,0.339,0.246,0.448,0.102,0.154,Current Smoker,Male
+Hudson,9,White,3,589,0.172,0.125,0.231,0.052,0.156,Current Smoker,Male
+Hudson,9,Other,4,51,0.202,0.111,0.338,0.113,0.286,Current Smoker,Male
+Hudson,9,Hispanic,5,431,0.188,0.141,0.246,0.053,0.143,Current Smoker,Male
+Hunterdon,10,All Races,.,990,0.136,0.097,0.187,0.045,0.167,Current Smoker,Male
+Hunterdon,10,Asian/Pacific Islander,1,22,**,**,**,0.029,0.791,Current Smoker,Male
+Hunterdon,10,Black,2,11,**,**,**,0.149,0.736,Current Smoker,Male
+Hunterdon,10,White,3,913,0.151,0.106,0.210,0.052,0.175,Current Smoker,Male
+Hunterdon,10,Other,4,10,**,**,**,0.158,0.213,Current Smoker,Male
+Hunterdon,10,Hispanic,5,34,**,**,**,0.062,0.596,Current Smoker,Male
+Mercer,11,All Races,.,952,**,**,**,0.038,0.109,Current Smoker,Male
+Mercer,11,Asian/Pacific Islander,1,61,0.120,0.054,0.245,0.091,0.390,Current Smoker,Male
+Mercer,11,Black,2,137,0.348,0.251,0.460,0.106,0.156,Current Smoker,Male
+Mercer,11,White,3,634,0.125,0.084,0.181,0.048,0.198,Current Smoker,Male
+Mercer,11,Other,4,19,**,**,**,0.207,0.318,Current Smoker,Male
+Mercer,11,Hispanic,5,101,0.186,0.118,0.282,0.082,0.225,Current Smoker,Male
+Middlesex,12,All Races,.,"1,216",**,**,**,0.026,0.097,Current Smoker,Male
+Middlesex,12,Asian/Pacific Islander,1,235,0.095,0.044,0.193,0.071,0.381,Current Smoker,Male
+Middlesex,12,Black,2,76,0.135,0.061,0.273,0.103,0.389,Current Smoker,Male
+Middlesex,12,White,3,688,0.174,0.137,0.218,0.040,0.118,Current Smoker,Male
+Middlesex,12,Other,4,48,**,**,**,0.124,0.442,Current Smoker,Male
+Middlesex,12,Hispanic,5,169,0.122,0.076,0.189,0.056,0.233,Current Smoker,Male
+Monmouth,13,All Races,.,"1,007",0.176,0.145,0.213,0.034,0.099,Current Smoker,Male
+Monmouth,13,Asian/Pacific Islander,1,35,**,**,**,0.102,0.396,Current Smoker,Male
+Monmouth,13,Black,2,39,**,**,**,0.135,0.312,Current Smoker,Male
+Monmouth,13,White,3,822,0.173,0.135,0.218,0.041,0.122,Current Smoker,Male
+Monmouth,13,Other,4,22,**,**,**,0.142,0.202,Current Smoker,Male
+Monmouth,13,Hispanic,5,89,0.212,0.127,0.332,0.103,0.248,Current Smoker,Male
+Morris,14,All Races,.,"1,187",0.145,0.116,0.181,0.032,0.113,Current Smoker,Male
+Morris,14,Asian/Pacific Islander,1,82,0.089,0.042,0.179,0.065,0.370,Current Smoker,Male
+Morris,14,Black,2,33,**,**,**,0.113,0.412,Current Smoker,Male
+Morris,14,White,3,941,0.152,0.115,0.198,0.041,0.139,Current Smoker,Male
+Morris,14,Other,4,34,**,**,**,0.040,0.900,Current Smoker,Male
+Morris,14,Hispanic,5,97,0.191,0.116,0.299,0.092,0.244,Current Smoker,Male
+Ocean,15,All Races,.,"1,003",0.210,0.175,0.250,0.037,0.091,Current Smoker,Male
+Ocean,15,Asian/Pacific Islander,1,10,**,**,**,0.139,0.803,Current Smoker,Male
+Ocean,15,Black,2,29,**,**,**,0.080,0.148,Current Smoker,Male
+Ocean,15,White,3,885,0.215,0.176,0.260,0.042,0.100,Current Smoker,Male
+Ocean,15,Other,4,15,**,**,**,0.152,0.586,Current Smoker,Male
+Ocean,15,Hispanic,5,64,0.178,0.097,0.304,0.102,0.293,Current Smoker,Male
+Passaic,16,All Races,.,949,0.168,0.138,0.203,0.032,0.098,Current Smoker,Male
+Passaic,16,Asian/Pacific Islander,1,38,**,**,**,0.056,0.598,Current Smoker,Male
+Passaic,16,Black,2,82,0.192,0.129,0.277,0.074,0.197,Current Smoker,Male
+Passaic,16,White,3,523,0.172,0.125,0.232,0.053,0.158,Current Smoker,Male
+Passaic,16,Other,4,22,**,**,**,0.068,0.617,Current Smoker,Male
+Passaic,16,Hispanic,5,284,0.150,0.110,0.201,0.045,0.154,Current Smoker,Male
+Salem,17,All Races,.,847,0.229,0.189,0.274,0.043,0.095,Current Smoker,Male
+Salem,17,Asian/Pacific Islander,1,3,**,**,**,0.000,.,Current Smoker,Male
+Salem,17,Black,2,71,0.212,0.109,0.370,0.131,0.315,Current Smoker,Male
+Salem,17,White,3,721,0.245,0.201,0.295,0.047,0.098,Current Smoker,Male
+Salem,17,Other,4,22,**,**,**,0.074,0.229,Current Smoker,Male
+Salem,17,Hispanic,5,30,**,**,**,0.131,0.308,Current Smoker,Male
+Somerset,18,All Races,.,984,0.121,0.091,0.160,0.034,0.145,Current Smoker,Male
+Somerset,18,Asian/Pacific Islander,1,97,0.110,0.057,0.201,0.070,0.323,Current Smoker,Male
+Somerset,18,Black,2,47,**,**,**,0.058,0.597,Current Smoker,Male
+Somerset,18,White,3,731,0.128,0.085,0.188,0.051,0.205,Current Smoker,Male
+Somerset,18,Other,4,29,**,**,**,0.153,0.428,Current Smoker,Male
+Somerset,18,Hispanic,5,80,0.141,0.079,0.240,0.079,0.284,Current Smoker,Male
+Sussex,19,All Races,.,923,0.194,0.155,0.241,0.043,0.114,Current Smoker,Male
+Sussex,19,Asian/Pacific Islander,1,9,**,**,**,0.206,0.298,Current Smoker,Male
+Sussex,19,Black,2,23,**,**,**,0.009,1.093,Current Smoker,Male
+Sussex,19,White,3,820,0.200,0.155,0.254,0.050,0.127,Current Smoker,Male
+Sussex,19,Other,4,16,**,**,**,0.141,0.198,Current Smoker,Male
+Sussex,19,Hispanic,5,55,0.186,0.104,0.311,0.103,0.283,Current Smoker,Male
+Union,20,All Races,.,"1,020",0.178,0.145,0.218,0.037,0.105,Current Smoker,Male
+Union,20,Asian/Pacific Islander,1,41,**,**,**,0.088,0.704,Current Smoker,Male
+Union,20,Black,2,159,0.280,0.191,0.390,0.100,0.183,Current Smoker,Male
+Union,20,White,3,554,0.160,0.117,0.213,0.048,0.153,Current Smoker,Male
+Union,20,Other,4,18,**,**,**,0.125,0.624,Current Smoker,Male
+Union,20,Hispanic,5,248,0.159,0.108,0.229,0.060,0.192,Current Smoker,Male
+Warren,21,All Races,.,926,0.176,0.136,0.224,0.044,0.127,Current Smoker,Male
+Warren,21,Asian/Pacific Islander,1,7,**,**,**,0.000,.,Current Smoker,Male
+Warren,21,Black,2,20,**,**,**,0.105,0.155,Current Smoker,Male
+Warren,21,White,3,839,0.176,0.133,0.229,0.048,0.138,Current Smoker,Male
+Warren,21,Other,4,13,**,**,**,0.163,0.199,Current Smoker,Male
+Warren,21,Hispanic,5,47,**,**,**,0.109,0.248,Current Smoker,Male
+Total,.,All Races,.,"30,505",0.127,0.121,0.134,0.006,0.026,Current Smoker,Female
+Total,.,Asian/Pacific Islander,1,852,0.039,0.022,0.067,0.022,0.283,Current Smoker,Female
+Total,.,Black,2,"4,109",0.150,0.135,0.167,0.016,0.055,Current Smoker,Female
+Total,.,White,3,"21,116",0.155,0.146,0.165,0.010,0.033,Current Smoker,Female
+Total,.,Other,4,682,0.152,0.114,0.199,0.042,0.142,Current Smoker,Female
+Total,.,Hispanic,5,"3,746",0.079,0.068,0.092,0.012,0.075,Current Smoker,Female
+Atlantic,1,All Races,.,"1,338",0.184,0.154,0.217,0.031,0.087,Current Smoker,Female
+Atlantic,1,Asian/Pacific Islander,1,22,**,**,**,0.000,.,Current Smoker,Female
+Atlantic,1,Black,2,193,0.244,0.175,0.329,0.078,0.162,Current Smoker,Female
+Atlantic,1,White,3,928,0.203,0.160,0.254,0.047,0.117,Current Smoker,Female
+Atlantic,1,Other,4,42,**,**,**,0.081,0.506,Current Smoker,Female
+Atlantic,1,Hispanic,5,153,0.149,0.089,0.238,0.074,0.252,Current Smoker,Female
+Bergen,2,All Races,.,"1,357",**,**,**,0.024,0.129,Current Smoker,Female
+Bergen,2,Asian/Pacific Islander,1,76,0.108,0.044,0.242,0.094,0.441,Current Smoker,Female
+Bergen,2,Black,2,96,0.130,0.063,0.247,0.089,0.351,Current Smoker,Female
+Bergen,2,White,3,938,0.107,0.075,0.149,0.037,0.175,Current Smoker,Female
+Bergen,2,Other,4,34,**,**,**,0.128,0.213,Current Smoker,Female
+Bergen,2,Hispanic,5,213,0.048,0.026,0.086,0.029,0.306,Current Smoker,Female
+Burlington,3,All Races,.,"1,439",0.133,0.109,0.161,0.026,0.099,Current Smoker,Female
+Burlington,3,Asian/Pacific Islander,1,22,**,**,**,0.000,.,Current Smoker,Female
+Burlington,3,Black,2,217,0.117,0.072,0.182,0.054,0.236,Current Smoker,Female
+Burlington,3,White,3,"1,097",0.164,0.131,0.204,0.037,0.114,Current Smoker,Female
+Burlington,3,Other,4,45,**,**,**,0.131,0.429,Current Smoker,Female
+Burlington,3,Hispanic,5,58,0.041,0.013,0.118,0.045,0.565,Current Smoker,Female
+Camden,4,All Races,.,"1,597",0.176,0.148,0.209,0.030,0.088,Current Smoker,Female
+Camden,4,Asian/Pacific Islander,1,24,**,**,**,0.020,1.072,Current Smoker,Female
+Camden,4,Black,2,281,0.122,0.080,0.182,0.050,0.210,Current Smoker,Female
+Camden,4,White,3,"1,105",0.212,0.171,0.261,0.045,0.108,Current Smoker,Female
+Camden,4,Other,4,31,**,**,**,0.161,0.218,Current Smoker,Female
+Camden,4,Hispanic,5,156,0.178,0.107,0.281,0.086,0.248,Current Smoker,Female
+Cape May,5,All Races,.,"1,256",0.220,0.174,0.274,0.050,0.117,Current Smoker,Female
+Cape May,5,Asian/Pacific Islander,1,2,**,**,**,0.000,.,Current Smoker,Female
+Cape May,5,Black,2,47,**,**,**,0.175,0.232,Current Smoker,Female
+Cape May,5,White,3,"1,150",0.240,0.184,0.307,0.061,0.130,Current Smoker,Female
+Cape May,5,Other,4,14,**,**,**,0.170,0.461,Current Smoker,Female
+Cape May,5,Hispanic,5,43,**,**,**,0.050,0.569,Current Smoker,Female
+Cumberland,6,All Races,.,"1,317",0.184,0.153,0.219,0.033,0.091,Current Smoker,Female
+Cumberland,6,Asian/Pacific Islander,1,11,**,**,**,0.068,1.036,Current Smoker,Female
+Cumberland,6,Black,2,193,0.146,0.090,0.229,0.069,0.240,Current Smoker,Female
+Cumberland,6,White,3,879,0.245,0.195,0.303,0.054,0.113,Current Smoker,Female
+Cumberland,6,Other,4,41,**,**,**,0.142,0.360,Current Smoker,Female
+Cumberland,6,Hispanic,5,193,0.096,0.062,0.145,0.041,0.218,Current Smoker,Female
+Essex,7,All Races,.,"2,892",**,**,**,0.018,0.076,Current Smoker,Female
+Essex,7,Asian/Pacific Islander,1,49,**,**,**,0.000,.,Current Smoker,Female
+Essex,7,Black,2,"1,329",0.150,0.124,0.179,0.028,0.095,Current Smoker,Female
+Essex,7,White,3,903,0.127,0.094,0.170,0.038,0.151,Current Smoker,Female
+Essex,7,Other,4,82,0.081,0.034,0.180,0.068,0.427,Current Smoker,Female
+Essex,7,Hispanic,5,529,0.109,0.075,0.155,0.039,0.184,Current Smoker,Female
+Gloucester,8,All Races,.,"1,305",0.200,0.163,0.243,0.040,0.103,Current Smoker,Female
+Gloucester,8,Asian/Pacific Islander,1,10,**,**,**,0.198,0.438,Current Smoker,Female
+Gloucester,8,Black,2,105,0.135,0.061,0.270,0.101,0.383,Current Smoker,Female
+Gloucester,8,White,3,"1,127",0.212,0.170,0.261,0.046,0.110,Current Smoker,Female
+Gloucester,8,Other,4,18,**,**,**,0.171,0.299,Current Smoker,Female
+Gloucester,8,Hispanic,5,45,**,**,**,0.065,0.650,Current Smoker,Female
+Hudson,9,All Races,.,"1,977",0.114,0.095,0.135,0.020,0.089,Current Smoker,Female
+Hudson,9,Asian/Pacific Islander,1,128,0.042,0.012,0.141,0.053,0.640,Current Smoker,Female
+Hudson,9,Black,2,309,0.234,0.170,0.312,0.071,0.156,Current Smoker,Female
+Hudson,9,White,3,772,0.171,0.137,0.212,0.037,0.110,Current Smoker,Female
+Hudson,9,Other,4,77,0.138,0.066,0.265,0.096,0.356,Current Smoker,Female
+Hudson,9,Hispanic,5,691,0.061,0.042,0.088,0.023,0.189,Current Smoker,Female
+Hunterdon,10,All Races,.,"1,241",0.119,0.086,0.164,0.038,0.165,Current Smoker,Female
+Hunterdon,10,Asian/Pacific Islander,1,16,**,**,**,0.000,.,Current Smoker,Female
+Hunterdon,10,Black,2,20,**,**,**,0.000,.,Current Smoker,Female
+Hunterdon,10,White,3,"1,143",0.143,0.102,0.197,0.047,0.168,Current Smoker,Female
+Hunterdon,10,Other,4,11,**,**,**,0.078,1.020,Current Smoker,Female
+Hunterdon,10,Hispanic,5,51,0.047,0.016,0.130,0.050,0.542,Current Smoker,Female
+Mercer,11,All Races,.,"1,323",**,**,**,0.027,0.104,Current Smoker,Female
+Mercer,11,Asian/Pacific Islander,1,64,0.039,0.010,0.145,0.054,0.696,Current Smoker,Female
+Mercer,11,Black,2,240,0.216,0.156,0.290,0.067,0.158,Current Smoker,Female
+Mercer,11,White,3,863,0.114,0.083,0.154,0.035,0.157,Current Smoker,Female
+Mercer,11,Other,4,32,**,**,**,0.145,0.291,Current Smoker,Female
+Mercer,11,Hispanic,5,124,0.119,0.049,0.262,0.101,0.434,Current Smoker,Female
+Middlesex,12,All Races,.,"1,380",**,**,**,0.022,0.123,Current Smoker,Female
+Middlesex,12,Asian/Pacific Islander,1,173,0.056,0.017,0.167,0.064,0.584,Current Smoker,Female
+Middlesex,12,Black,2,130,0.091,0.041,0.188,0.070,0.390,Current Smoker,Female
+Middlesex,12,White,3,860,0.124,0.092,0.164,0.036,0.149,Current Smoker,Female
+Middlesex,12,Other,4,30,**,**,**,0.082,0.958,Current Smoker,Female
+Middlesex,12,Hispanic,5,187,0.066,0.038,0.113,0.036,0.280,Current Smoker,Female
+Monmouth,13,All Races,.,"1,280",0.135,0.109,0.167,0.029,0.108,Current Smoker,Female
+Monmouth,13,Asian/Pacific Islander,1,25,**,**,**,0.000,.,Current Smoker,Female
+Monmouth,13,Black,2,71,0.113,0.043,0.263,0.103,0.468,Current Smoker,Female
+Monmouth,13,White,3,"1,065",0.168,0.133,0.210,0.038,0.116,Current Smoker,Female
+Monmouth,13,Other,4,23,**,**,**,0.069,0.751,Current Smoker,Female
+Monmouth,13,Hispanic,5,96,0.033,0.013,0.080,0.030,0.463,Current Smoker,Female
+Morris,14,All Races,.,"1,472",0.087,0.068,0.111,0.022,0.126,Current Smoker,Female
+Morris,14,Asian/Pacific Islander,1,53,0.000,.,.,0.000,.,Current Smoker,Female
+Morris,14,Black,2,38,**,**,**,0.047,0.579,Current Smoker,Female
+Morris,14,White,3,"1,249",0.107,0.080,0.140,0.030,0.143,Current Smoker,Female
+Morris,14,Other,4,28,**,**,**,0.095,0.572,Current Smoker,Female
+Morris,14,Hispanic,5,104,0.074,0.035,0.150,0.054,0.376,Current Smoker,Female
+Ocean,15,All Races,.,"1,388",0.187,0.157,0.222,0.033,0.089,Current Smoker,Female
+Ocean,15,Asian/Pacific Islander,1,7,**,**,**,0.000,.,Current Smoker,Female
+Ocean,15,Black,2,33,**,**,**,0.179,0.202,Current Smoker,Female
+Ocean,15,White,3,"1,245",0.193,0.159,0.233,0.037,0.097,Current Smoker,Female
+Ocean,15,Other,4,22,**,**,**,0.117,0.529,Current Smoker,Female
+Ocean,15,Hispanic,5,81,0.141,0.066,0.276,0.102,0.370,Current Smoker,Female
+Passaic,16,All Races,.,"1,345",0.121,0.099,0.148,0.025,0.104,Current Smoker,Female
+Passaic,16,Asian/Pacific Islander,1,25,**,**,**,0.028,1.050,Current Smoker,Female
+Passaic,16,Black,2,172,0.198,0.131,0.287,0.078,0.200,Current Smoker,Female
+Passaic,16,White,3,686,0.172,0.129,0.227,0.049,0.145,Current Smoker,Female
+Passaic,16,Other,4,20,**,**,**,0.169,0.332,Current Smoker,Female
+Passaic,16,Hispanic,5,442,0.069,0.044,0.106,0.030,0.222,Current Smoker,Female
+Salem,17,All Races,.,"1,392",0.205,0.170,0.245,0.038,0.094,Current Smoker,Female
+Salem,17,Asian/Pacific Islander,1,1,**,**,**,0.000,.,Current Smoker,Female
+Salem,17,Black,2,192,0.241,0.147,0.369,0.112,0.236,Current Smoker,Female
+Salem,17,White,3,"1,113",0.222,0.178,0.273,0.047,0.108,Current Smoker,Female
+Salem,17,Other,4,30,**,**,**,0.161,0.379,Current Smoker,Female
+Salem,17,Hispanic,5,56,0.125,0.045,0.302,0.121,0.496,Current Smoker,Female
+Somerset,18,All Races,.,"1,270",**,**,**,0.031,0.165,Current Smoker,Female
+Somerset,18,Asian/Pacific Islander,1,89,0.006,0.001,0.040,0.011,1.002,Current Smoker,Female
+Somerset,18,Black,2,76,0.153,0.070,0.301,0.113,0.378,Current Smoker,Female
+Somerset,18,White,3,983,0.109,0.070,0.166,0.047,0.221,Current Smoker,Female
+Somerset,18,Other,4,25,**,**,**,0.070,0.662,Current Smoker,Female
+Somerset,18,Hispanic,5,97,0.147,0.075,0.268,0.095,0.329,Current Smoker,Female
+Sussex,19,All Races,.,"1,218",0.153,0.118,0.196,0.039,0.130,Current Smoker,Female
+Sussex,19,Asian/Pacific Islander,1,16,**,**,**,0.000,.,Current Smoker,Female
+Sussex,19,Black,2,30,**,**,**,0.100,0.701,Current Smoker,Female
+Sussex,19,White,3,"1,091",0.167,0.126,0.218,0.046,0.140,Current Smoker,Female
+Sussex,19,Other,4,18,**,**,**,0.140,0.881,Current Smoker,Female
+Sussex,19,Hispanic,5,63,0.083,0.034,0.187,0.071,0.437,Current Smoker,Female
+Union,20,All Races,.,"1,428",0.094,0.076,0.115,0.019,0.104,Current Smoker,Female
+Union,20,Asian/Pacific Islander,1,30,**,**,**,0.000,.,Current Smoker,Female
+Union,20,Black,2,301,0.108,0.072,0.159,0.043,0.201,Current Smoker,Female
+Union,20,White,3,738,0.111,0.081,0.150,0.034,0.158,Current Smoker,Female
+Union,20,Other,4,42,**,**,**,0.121,0.306,Current Smoker,Female
+Union,20,Hispanic,5,317,0.061,0.037,0.099,0.030,0.250,Current Smoker,Female
+Warren,21,All Races,.,"1,290",0.157,0.127,0.193,0.032,0.105,Current Smoker,Female
+Warren,21,Asian/Pacific Islander,1,9,**,**,**,0.062,0.314,Current Smoker,Female
+Warren,21,Black,2,36,**,**,**,0.030,0.746,Current Smoker,Female
+Warren,21,White,3,"1,181",0.178,0.143,0.220,0.039,0.111,Current Smoker,Female
+Warren,21,Other,4,17,**,**,**,0.180,0.396,Current Smoker,Female
+Warren,21,Hispanic,5,47,**,**,**,0.071,0.374,Current Smoker,Female
+Total,.,All Races,.,"30,999",0.507,0.498,0.517,0.010,0.010,Physical Inactivity,Male and Female
+Total,.,Asian/Pacific Islander,1,"1,128",0.497,0.457,0.536,0.040,0.041,Physical Inactivity,Male and Female
+Total,.,Black,2,"3,566",0.564,0.539,0.589,0.026,0.030,Physical Inactivity,Male and Female
+Total,.,White,3,"21,895",0.464,0.451,0.476,0.012,0.014,Physical Inactivity,Male and Female
+Total,.,Other,4,767,0.532,0.478,0.586,0.054,0.059,Physical Inactivity,Male and Female
+Total,.,Hispanic,5,"3,643",**,**,**,0.024,0.030,Physical Inactivity,Male and Female
+Atlantic,1,All Races,.,"1,395",0.495,0.458,0.533,0.038,0.039,Physical Inactivity,Male and Female
+Atlantic,1,Asian/Pacific Islander,1,33,**,**,**,0.176,0.196,Physical Inactivity,Male and Female
+Atlantic,1,Black,2,174,0.534,0.421,0.643,0.113,0.124,Physical Inactivity,Male and Female
+Atlantic,1,White,3,"1,005",0.465,0.419,0.512,0.047,0.051,Physical Inactivity,Male and Female
+Atlantic,1,Other,4,39,**,**,**,0.103,0.115,Physical Inactivity,Male and Female
+Atlantic,1,Hispanic,5,144,0.554,0.455,0.649,0.098,0.113,Physical Inactivity,Male and Female
+Bergen,2,All Races,.,"1,414",**,**,**,0.037,0.040,Physical Inactivity,Male and Female
+Bergen,2,Asian/Pacific Islander,1,113,0.501,0.399,0.604,0.104,0.106,Physical Inactivity,Male and Female
+Bergen,2,Black,2,84,0.691,0.571,0.790,0.111,0.183,Physical Inactivity,Male and Female
+Bergen,2,White,3,954,0.477,0.429,0.524,0.048,0.051,Physical Inactivity,Male and Female
+Bergen,2,Other,4,32,**,**,**,0.184,0.251,Physical Inactivity,Male and Female
+Bergen,2,Hispanic,5,231,0.567,0.477,0.653,0.089,0.105,Physical Inactivity,Male and Female
+Burlington,3,All Races,.,"1,467",**,**,**,0.037,0.042,Physical Inactivity,Male and Female
+Burlington,3,Asian/Pacific Islander,1,26,**,**,**,0.144,0.308,Physical Inactivity,Male and Female
+Burlington,3,Black,2,194,0.509,0.420,0.597,0.089,0.092,Physical Inactivity,Male and Female
+Burlington,3,White,3,"1,138",0.432,0.388,0.477,0.045,0.053,Physical Inactivity,Male and Female
+Burlington,3,Other,4,53,0.477,0.313,0.647,0.174,0.186,Physical Inactivity,Male and Female
+Burlington,3,Hispanic,5,56,0.560,0.413,0.698,0.146,0.170,Physical Inactivity,Male and Female
+Camden,4,All Races,.,"1,539",0.536,0.498,0.574,0.038,0.042,Physical Inactivity,Male and Female
+Camden,4,Asian/Pacific Islander,1,31,**,**,**,0.142,0.152,Physical Inactivity,Male and Female
+Camden,4,Black,2,247,0.641,0.553,0.720,0.084,0.120,Physical Inactivity,Male and Female
+Camden,4,White,3,"1,078",0.509,0.461,0.556,0.047,0.049,Physical Inactivity,Male and Female
+Camden,4,Other,4,31,**,**,**,0.149,0.255,Physical Inactivity,Male and Female
+Camden,4,Hispanic,5,152,0.580,0.478,0.675,0.100,0.122,Physical Inactivity,Male and Female
+Cape May,5,All Races,.,"1,233",0.456,0.410,0.503,0.047,0.052,Physical Inactivity,Male and Female
+Cape May,5,Asian/Pacific Islander,1,4,**,**,**,0.000,0.000,Physical Inactivity,Male and Female
+Cape May,5,Black,2,37,**,**,**,0.152,0.194,Physical Inactivity,Male and Female
+Cape May,5,White,3,"1,123",0.430,0.379,0.482,0.052,0.062,Physical Inactivity,Male and Female
+Cape May,5,Other,4,23,**,**,**,0.207,0.262,Physical Inactivity,Male and Female
+Cape May,5,Hispanic,5,46,**,**,**,0.181,0.210,Physical Inactivity,Male and Female
+Cumberland,6,All Races,.,"1,291",**,**,**,0.041,0.045,Physical Inactivity,Male and Female
+Cumberland,6,Asian/Pacific Islander,1,13,**,**,**,0.091,0.094,Physical Inactivity,Male and Female
+Cumberland,6,Black,2,165,0.603,0.489,0.706,0.110,0.141,Physical Inactivity,Male and Female
+Cumberland,6,White,3,863,0.496,0.440,0.552,0.056,0.058,Physical Inactivity,Male and Female
+Cumberland,6,Other,4,50,0.612,0.457,0.747,0.149,0.196,Physical Inactivity,Male and Female
+Cumberland,6,Hispanic,5,200,0.574,0.489,0.655,0.084,0.100,Physical Inactivity,Male and Female
+Essex,7,All Races,.,"2,660",0.536,0.506,0.566,0.030,0.032,Physical Inactivity,Male and Female
+Essex,7,Asian/Pacific Islander,1,69,0.530,0.385,0.671,0.147,0.160,Physical Inactivity,Male and Female
+Essex,7,Black,2,"1,129",0.573,0.528,0.618,0.046,0.054,Physical Inactivity,Male and Female
+Essex,7,White,3,896,0.462,0.410,0.515,0.052,0.058,Physical Inactivity,Male and Female
+Essex,7,Other,4,84,0.508,0.373,0.642,0.138,0.143,Physical Inactivity,Male and Female
+Essex,7,Hispanic,5,482,0.607,0.542,0.668,0.063,0.082,Physical Inactivity,Male and Female
+Gloucester,8,All Races,.,"1,348",0.506,0.464,0.548,0.042,0.044,Physical Inactivity,Male and Female
+Gloucester,8,Asian/Pacific Islander,1,13,**,**,**,0.202,0.303,Physical Inactivity,Male and Female
+Gloucester,8,Black,2,90,0.522,0.413,0.629,0.110,0.117,Physical Inactivity,Male and Female
+Gloucester,8,White,3,"1,170",0.489,0.444,0.534,0.045,0.047,Physical Inactivity,Male and Female
+Gloucester,8,Other,4,25,**,**,**,0.207,0.244,Physical Inactivity,Male and Female
+Gloucester,8,Hispanic,5,50,0.617,0.495,0.726,0.118,0.157,Physical Inactivity,Male and Female
+Hudson,9,All Races,.,"1,809",0.532,0.499,0.566,0.034,0.037,Physical Inactivity,Male and Female
+Hudson,9,Asian/Pacific Islander,1,152,0.543,0.427,0.654,0.115,0.129,Physical Inactivity,Male and Female
+Hudson,9,Black,2,229,0.564,0.466,0.657,0.097,0.113,Physical Inactivity,Male and Female
+Hudson,9,White,3,772,0.455,0.401,0.510,0.054,0.061,Physical Inactivity,Male and Female
+Hudson,9,Other,4,72,0.644,0.484,0.778,0.151,0.216,Physical Inactivity,Male and Female
+Hudson,9,Hispanic,5,584,0.546,0.493,0.599,0.054,0.060,Physical Inactivity,Male and Female
+Hunterdon,10,All Races,.,"1,387",0.452,0.406,0.500,0.047,0.053,Physical Inactivity,Male and Female
+Hunterdon,10,Asian/Pacific Islander,1,22,**,**,**,0.128,0.185,Physical Inactivity,Male and Female
+Hunterdon,10,Black,2,18,**,**,**,0.150,0.184,Physical Inactivity,Male and Female
+Hunterdon,10,White,3,"1,281",0.417,0.367,0.468,0.051,0.062,Physical Inactivity,Male and Female
+Hunterdon,10,Other,4,15,**,**,**,0.102,0.395,Physical Inactivity,Male and Female
+Hunterdon,10,Hispanic,5,51,0.736,0.586,0.846,0.132,0.254,Physical Inactivity,Male and Female
+Mercer,11,All Races,.,"1,416",**,**,**,0.037,0.039,Physical Inactivity,Male and Female
+Mercer,11,Asian/Pacific Islander,1,78,0.532,0.397,0.663,0.136,0.148,Physical Inactivity,Male and Female
+Mercer,11,Black,2,232,0.646,0.569,0.716,0.074,0.106,Physical Inactivity,Male and Female
+Mercer,11,White,3,954,0.441,0.390,0.493,0.052,0.060,Physical Inactivity,Male and Female
+Mercer,11,Other,4,32,**,**,**,0.173,0.221,Physical Inactivity,Male and Female
+Mercer,11,Hispanic,5,120,0.645,0.539,0.738,0.101,0.145,Physical Inactivity,Male and Female
+Middlesex,12,All Races,.,"1,605",0.526,0.491,0.561,0.035,0.038,Physical Inactivity,Male and Female
+Middlesex,12,Asian/Pacific Islander,1,245,0.503,0.420,0.586,0.083,0.086,Physical Inactivity,Male and Female
+Middlesex,12,Black,2,127,0.581,0.466,0.688,0.113,0.137,Physical Inactivity,Male and Female
+Middlesex,12,White,3,976,0.493,0.441,0.544,0.052,0.053,Physical Inactivity,Male and Female
+Middlesex,12,Other,4,54,0.616,0.461,0.750,0.149,0.197,Physical Inactivity,Male and Female
+Middlesex,12,Hispanic,5,203,0.582,0.500,0.660,0.081,0.099,Physical Inactivity,Male and Female
+Monmouth,13,All Races,.,"1,411",0.441,0.401,0.482,0.041,0.047,Physical Inactivity,Male and Female
+Monmouth,13,Asian/Pacific Islander,1,30,**,**,**,0.113,0.131,Physical Inactivity,Male and Female
+Monmouth,13,Black,2,63,0.484,0.309,0.663,0.185,0.195,Physical Inactivity,Male and Female
+Monmouth,13,White,3,"1,181",0.422,0.377,0.468,0.046,0.055,Physical Inactivity,Male and Female
+Monmouth,13,Other,4,27,**,**,**,0.126,0.145,Physical Inactivity,Male and Female
+Monmouth,13,Hispanic,5,110,0.529,0.400,0.653,0.130,0.140,Physical Inactivity,Male and Female
+Morris,14,All Races,.,"1,564",0.452,0.413,0.492,0.040,0.045,Physical Inactivity,Male and Female
+Morris,14,Asian/Pacific Islander,1,74,0.369,0.242,0.517,0.141,0.194,Physical Inactivity,Male and Female
+Morris,14,Black,2,42,**,**,**,0.162,0.237,Physical Inactivity,Male and Female
+Morris,14,White,3,"1,302",0.442,0.394,0.490,0.048,0.055,Physical Inactivity,Male and Female
+Morris,14,Other,4,38,**,**,**,0.172,0.282,Physical Inactivity,Male and Female
+Morris,14,Hispanic,5,108,0.639,0.529,0.737,0.105,0.149,Physical Inactivity,Male and Female
+Ocean,15,All Races,.,"1,460",0.473,0.435,0.511,0.038,0.041,Physical Inactivity,Male and Female
+Ocean,15,Asian/Pacific Islander,1,8,**,**,**,0.109,0.135,Physical Inactivity,Male and Female
+Ocean,15,Black,2,32,**,**,**,0.166,0.290,Physical Inactivity,Male and Female
+Ocean,15,White,3,"1,313",0.451,0.409,0.494,0.043,0.048,Physical Inactivity,Male and Female
+Ocean,15,Other,4,23,**,**,**,0.178,0.286,Physical Inactivity,Male and Female
+Ocean,15,Hispanic,5,84,0.617,0.500,0.721,0.112,0.149,Physical Inactivity,Male and Female
+Passaic,16,All Races,.,"1,361",0.574,0.535,0.612,0.038,0.046,Physical Inactivity,Male and Female
+Passaic,16,Asian/Pacific Islander,1,35,**,**,**,0.164,0.196,Physical Inactivity,Male and Female
+Passaic,16,Black,2,143,0.561,0.463,0.655,0.097,0.113,Physical Inactivity,Male and Female
+Passaic,16,White,3,720,0.513,0.455,0.571,0.058,0.061,Physical Inactivity,Male and Female
+Passaic,16,Other,4,23,**,**,**,0.183,0.398,Physical Inactivity,Male and Female
+Passaic,16,Hispanic,5,440,0.651,0.588,0.710,0.061,0.089,Physical Inactivity,Male and Female
+Salem,17,All Races,.,"1,313",0.488,0.440,0.536,0.048,0.050,Physical Inactivity,Male and Female
+Salem,17,Asian/Pacific Islander,1,4,**,**,**,0.000,0.000,Physical Inactivity,Male and Female
+Salem,17,Black,2,167,0.566,0.433,0.690,0.131,0.154,Physical Inactivity,Male and Female
+Salem,17,White,3,"1,050",0.451,0.398,0.505,0.054,0.061,Physical Inactivity,Male and Female
+Salem,17,Other,4,35,**,**,**,0.179,0.211,Physical Inactivity,Male and Female
+Salem,17,Hispanic,5,57,0.644,0.488,0.774,0.147,0.210,Physical Inactivity,Male and Female
+Somerset,18,All Races,.,"1,356",**,**,**,0.044,0.046,Physical Inactivity,Male and Female
+Somerset,18,Asian/Pacific Islander,1,100,0.472,0.354,0.593,0.122,0.132,Physical Inactivity,Male and Female
+Somerset,18,Black,2,78,0.678,0.540,0.790,0.127,0.202,Physical Inactivity,Male and Female
+Somerset,18,White,3,"1,042",0.468,0.412,0.525,0.056,0.062,Physical Inactivity,Male and Female
+Somerset,18,Other,4,28,**,**,**,0.153,0.163,Physical Inactivity,Male and Female
+Somerset,18,Hispanic,5,108,0.612,0.484,0.725,0.123,0.162,Physical Inactivity,Male and Female
+Sussex,19,All Races,.,"1,277",0.492,0.445,0.539,0.047,0.048,Physical Inactivity,Male and Female
+Sussex,19,Asian/Pacific Islander,1,18,**,**,**,0.189,0.197,Physical Inactivity,Male and Female
+Sussex,19,Black,2,30,**,**,**,0.125,0.134,Physical Inactivity,Male and Female
+Sussex,19,White,3,"1,151",0.484,0.432,0.536,0.052,0.055,Physical Inactivity,Male and Female
+Sussex,19,Other,4,23,**,**,**,0.201,0.257,Physical Inactivity,Male and Female
+Sussex,19,Hispanic,5,55,0.679,0.543,0.790,0.125,0.199,Physical Inactivity,Male and Female
+Union,20,All Races,.,"1,372",**,**,**,0.038,0.043,Physical Inactivity,Male and Female
+Union,20,Asian/Pacific Islander,1,51,0.532,0.383,0.676,0.151,0.165,Physical Inactivity,Male and Female
+Union,20,Black,2,249,0.518,0.435,0.600,0.083,0.088,Physical Inactivity,Male and Female
+Union,20,White,3,721,0.479,0.419,0.540,0.061,0.065,Physical Inactivity,Male and Female
+Union,20,Other,4,43,**,**,**,0.186,0.248,Physical Inactivity,Male and Female
+Union,20,Hispanic,5,308,0.645,0.570,0.713,0.072,0.103,Physical Inactivity,Male and Female
+Warren,21,All Races,.,"1,321",0.479,0.432,0.526,0.047,0.050,Physical Inactivity,Male and Female
+Warren,21,Asian/Pacific Islander,1,9,**,**,**,0.000,0.000,Physical Inactivity,Male and Female
+Warren,21,Black,2,36,**,**,**,0.175,0.183,Physical Inactivity,Male and Female
+Warren,21,White,3,"1,205",0.487,0.438,0.536,0.049,0.052,Physical Inactivity,Male and Female
+Warren,21,Other,4,17,**,**,**,0.243,0.394,Physical Inactivity,Male and Female
+Warren,21,Hispanic,5,54,0.583,0.434,0.718,0.146,0.178,Physical Inactivity,Male and Female
+Total,.,All Races,.,"12,998",**,**,**,0.014,0.015,Physical Inactivity,Male
+Total,.,Asian/Pacific Islander,1,654,0.492,0.441,0.542,0.051,0.053,Physical Inactivity,Male
+Total,.,Black,2,"1,163",0.528,0.486,0.569,0.042,0.045,Physical Inactivity,Male
+Total,.,White,3,"9,329",0.442,0.424,0.459,0.018,0.020,Physical Inactivity,Male
+Total,.,Other,4,339,0.439,0.367,0.514,0.074,0.086,Physical Inactivity,Male
+Total,.,Hispanic,5,"1,513",0.561,0.524,0.597,0.036,0.042,Physical Inactivity,Male
+Atlantic,1,All Races,.,596,0.451,0.401,0.502,0.051,0.057,Physical Inactivity,Male
+Atlantic,1,Asian/Pacific Islander,1,24,**,**,**,0.186,0.200,Physical Inactivity,Male
+Atlantic,1,Black,2,68,0.507,0.366,0.648,0.145,0.150,Physical Inactivity,Male
+Atlantic,1,White,3,430,0.440,0.380,0.502,0.062,0.071,Physical Inactivity,Male
+Atlantic,1,Other,4,14,**,**,**,0.246,0.377,Physical Inactivity,Male
+Atlantic,1,Hispanic,5,60,0.436,0.312,0.568,0.131,0.153,Physical Inactivity,Male
+Bergen,2,All Races,.,617,0.469,0.415,0.523,0.054,0.059,Physical Inactivity,Male
+Bergen,2,Asian/Pacific Islander,1,66,0.485,0.366,0.605,0.122,0.128,Physical Inactivity,Male
+Bergen,2,Black,2,30,**,**,**,0.182,0.236,Physical Inactivity,Male
+Bergen,2,White,3,405,0.427,0.362,0.495,0.067,0.080,Physical Inactivity,Male
+Bergen,2,Other,4,14,**,**,**,0.186,0.194,Physical Inactivity,Male
+Bergen,2,Hispanic,5,102,0.490,0.375,0.606,0.118,0.122,Physical Inactivity,Male
+Burlington,3,All Races,.,613,0.420,0.368,0.474,0.053,0.064,Physical Inactivity,Male
+Burlington,3,Asian/Pacific Islander,1,15,**,**,**,0.211,0.423,Physical Inactivity,Male
+Burlington,3,Black,2,68,0.410,0.302,0.528,0.115,0.143,Physical Inactivity,Male
+Burlington,3,White,3,478,0.413,0.348,0.480,0.066,0.082,Physical Inactivity,Male
+Burlington,3,Other,4,24,**,**,**,0.192,0.330,Physical Inactivity,Male
+Burlington,3,Hispanic,5,28,**,**,**,0.202,0.209,Physical Inactivity,Male
+Camden,4,All Races,.,622,0.550,0.494,0.604,0.055,0.063,Physical Inactivity,Male
+Camden,4,Asian/Pacific Islander,1,12,**,**,**,0.190,0.202,Physical Inactivity,Male
+Camden,4,Black,2,87,0.667,0.537,0.776,0.122,0.187,Physical Inactivity,Male
+Camden,4,White,3,449,0.539,0.472,0.604,0.067,0.074,Physical Inactivity,Male
+Camden,4,Other,4,12,**,**,**,0.103,0.176,Physical Inactivity,Male
+Camden,4,Hispanic,5,62,0.659,0.525,0.771,0.125,0.187,Physical Inactivity,Male
+Cape May,5,All Races,.,501,0.438,0.374,0.504,0.065,0.076,Physical Inactivity,Male
+Cape May,5,Asian/Pacific Islander,1,3,**,**,**,0.000,0.000,Physical Inactivity,Male
+Cape May,5,Black,2,12,**,**,**,0.085,0.095,Physical Inactivity,Male
+Cape May,5,White,3,452,0.405,0.336,0.478,0.071,0.090,Physical Inactivity,Male
+Cape May,5,Other,4,16,**,**,**,0.232,0.290,Physical Inactivity,Male
+Cape May,5,Hispanic,5,18,**,**,**,0.119,0.154,Physical Inactivity,Male
+Cumberland,6,All Races,.,524,0.497,0.436,0.558,0.062,0.063,Physical Inactivity,Male
+Cumberland,6,Asian/Pacific Islander,1,7,**,**,**,0.091,0.093,Physical Inactivity,Male
+Cumberland,6,Black,2,57,0.598,0.431,0.746,0.163,0.207,Physical Inactivity,Male
+Cumberland,6,White,3,351,0.472,0.394,0.553,0.080,0.087,Physical Inactivity,Male
+Cumberland,6,Other,4,22,**,**,**,0.137,0.209,Physical Inactivity,Male
+Cumberland,6,Hispanic,5,87,0.534,0.414,0.651,0.121,0.132,Physical Inactivity,Male
+Essex,7,All Races,.,990,0.509,0.465,0.553,0.044,0.046,Physical Inactivity,Male
+Essex,7,Asian/Pacific Islander,1,40,**,**,**,0.179,0.196,Physical Inactivity,Male
+Essex,7,Black,2,341,0.551,0.478,0.623,0.073,0.083,Physical Inactivity,Male
+Essex,7,White,3,394,0.411,0.337,0.489,0.077,0.095,Physical Inactivity,Male
+Essex,7,Other,4,38,**,**,**,0.137,0.205,Physical Inactivity,Male
+Essex,7,Hispanic,5,177,0.648,0.550,0.735,0.094,0.136,Physical Inactivity,Male
+Gloucester,8,All Races,.,584,0.508,0.449,0.567,0.059,0.061,Physical Inactivity,Male
+Gloucester,8,Asian/Pacific Islander,1,7,**,**,**,0.226,0.293,Physical Inactivity,Male
+Gloucester,8,Black,2,29,**,**,**,0.153,0.163,Physical Inactivity,Male
+Gloucester,8,White,3,507,0.489,0.427,0.552,0.063,0.066,Physical Inactivity,Male
+Gloucester,8,Other,4,14,**,**,**,0.212,0.228,Physical Inactivity,Male
+Gloucester,8,Hispanic,5,27,**,**,**,0.154,0.166,Physical Inactivity,Male
+Hudson,9,All Races,.,756,**,**,**,0.049,0.050,Physical Inactivity,Male
+Hudson,9,Asian/Pacific Islander,1,91,0.656,0.504,0.782,0.142,0.211,Physical Inactivity,Male
+Hudson,9,Black,2,69,0.519,0.382,0.652,0.139,0.147,Physical Inactivity,Male
+Hudson,9,White,3,353,0.423,0.349,0.501,0.076,0.092,Physical Inactivity,Male
+Hudson,9,Other,4,26,**,**,**,0.166,0.208,Physical Inactivity,Male
+Hudson,9,Hispanic,5,217,0.500,0.420,0.579,0.080,0.082,Physical Inactivity,Male
+Hunterdon,10,All Races,.,621,0.465,0.400,0.531,0.066,0.073,Physical Inactivity,Male
+Hunterdon,10,Asian/Pacific Islander,1,16,**,**,**,0.134,0.184,Physical Inactivity,Male
+Hunterdon,10,Black,2,7,**,**,**,0.226,0.389,Physical Inactivity,Male
+Hunterdon,10,White,3,570,0.420,0.350,0.494,0.072,0.088,Physical Inactivity,Male
+Hunterdon,10,Other,4,8,**,**,**,0.103,1.023,Physical Inactivity,Male
+Hunterdon,10,Hispanic,5,20,**,**,**,0.103,0.232,Physical Inactivity,Male
+Mercer,11,All Races,.,583,0.475,0.419,0.531,0.056,0.060,Physical Inactivity,Male
+Mercer,11,Asian/Pacific Islander,1,39,**,**,**,0.162,0.198,Physical Inactivity,Male
+Mercer,11,Black,2,76,0.503,0.380,0.626,0.126,0.129,Physical Inactivity,Male
+Mercer,11,White,3,404,0.397,0.324,0.476,0.076,0.098,Physical Inactivity,Male
+Mercer,11,Other,4,12,**,**,**,0.038,0.038,Physical Inactivity,Male
+Mercer,11,Hispanic,5,52,0.643,0.505,0.761,0.131,0.187,Physical Inactivity,Male
+Middlesex,12,All Races,.,757,0.474,0.428,0.520,0.046,0.050,Physical Inactivity,Male
+Middlesex,12,Asian/Pacific Islander,1,145,0.468,0.367,0.573,0.105,0.114,Physical Inactivity,Male
+Middlesex,12,Black,2,44,**,**,**,0.178,0.188,Physical Inactivity,Male
+Middlesex,12,White,3,433,0.464,0.400,0.530,0.065,0.072,Physical Inactivity,Male
+Middlesex,12,Other,4,32,**,**,**,0.158,0.193,Physical Inactivity,Male
+Middlesex,12,Hispanic,5,103,0.525,0.420,0.627,0.105,0.112,Physical Inactivity,Male
+Monmouth,13,All Races,.,631,0.384,0.328,0.442,0.057,0.076,Physical Inactivity,Male
+Monmouth,13,Asian/Pacific Islander,1,18,**,**,**,0.137,0.188,Physical Inactivity,Male
+Monmouth,13,Black,2,20,**,**,**,0.169,0.190,Physical Inactivity,Male
+Monmouth,13,White,3,530,0.371,0.307,0.439,0.066,0.091,Physical Inactivity,Male
+Monmouth,13,Other,4,13,**,**,**,0.060,0.123,Physical Inactivity,Male
+Monmouth,13,Hispanic,5,50,0.376,0.240,0.533,0.150,0.204,Physical Inactivity,Male
+Morris,14,All Races,.,682,0.454,0.400,0.510,0.055,0.062,Physical Inactivity,Male
+Morris,14,Asian/Pacific Islander,1,46,**,**,**,0.141,0.182,Physical Inactivity,Male
+Morris,14,Black,2,21,**,**,**,0.157,0.396,Physical Inactivity,Male
+Morris,14,White,3,541,0.436,0.369,0.506,0.069,0.080,Physical Inactivity,Male
+Morris,14,Other,4,20,**,**,**,0.216,0.347,Physical Inactivity,Male
+Morris,14,Hispanic,5,54,0.666,0.511,0.792,0.144,0.220,Physical Inactivity,Male
+Ocean,15,All Races,.,612,0.468,0.412,0.524,0.056,0.061,Physical Inactivity,Male
+Ocean,15,Asian/Pacific Islander,1,4,**,**,**,0.000,0.000,Physical Inactivity,Male
+Ocean,15,Black,2,13,**,**,**,0.158,0.373,Physical Inactivity,Male
+Ocean,15,White,3,552,0.453,0.390,0.518,0.064,0.072,Physical Inactivity,Male
+Ocean,15,Other,4,7,**,**,**,0.333,0.565,Physical Inactivity,Male
+Ocean,15,Hispanic,5,36,**,**,**,0.128,0.143,Physical Inactivity,Male
+Passaic,16,All Races,.,564,0.532,0.475,0.588,0.056,0.062,Physical Inactivity,Male
+Passaic,16,Asian/Pacific Islander,1,21,**,**,**,0.195,0.220,Physical Inactivity,Male
+Passaic,16,Black,2,49,**,**,**,0.108,0.111,Physical Inactivity,Male
+Passaic,16,White,3,311,0.500,0.416,0.584,0.085,0.086,Physical Inactivity,Male
+Passaic,16,Other,4,12,**,**,**,0.100,0.210,Physical Inactivity,Male
+Passaic,16,Hispanic,5,171,0.586,0.485,0.680,0.099,0.122,Physical Inactivity,Male
+Salem,17,All Races,.,482,0.418,0.355,0.484,0.065,0.079,Physical Inactivity,Male
+Salem,17,Asian/Pacific Islander,1,3,**,**,**,0.000,0.000,Physical Inactivity,Male
+Salem,17,Black,2,41,**,**,**,0.220,0.241,Physical Inactivity,Male
+Salem,17,White,3,407,0.405,0.340,0.475,0.068,0.086,Physical Inactivity,Male
+Salem,17,Other,4,13,**,**,**,0.179,0.188,Physical Inactivity,Male
+Salem,17,Hispanic,5,18,**,**,**,0.203,0.229,Physical Inactivity,Male
+Somerset,18,All Races,.,606,0.528,0.466,0.589,0.062,0.067,Physical Inactivity,Male
+Somerset,18,Asian/Pacific Islander,1,55,0.460,0.321,0.606,0.146,0.163,Physical Inactivity,Male
+Somerset,18,Black,2,32,**,**,**,0.122,0.292,Physical Inactivity,Male
+Somerset,18,White,3,459,0.489,0.411,0.569,0.080,0.083,Physical Inactivity,Male
+Somerset,18,Other,4,14,**,**,**,0.172,0.533,Physical Inactivity,Male
+Somerset,18,Hispanic,5,46,**,**,**,0.182,0.207,Physical Inactivity,Male
+Sussex,19,All Races,.,539,0.516,0.453,0.579,0.064,0.067,Physical Inactivity,Male
+Sussex,19,Asian/Pacific Islander,1,8,**,**,**,0.156,0.162,Physical Inactivity,Male
+Sussex,19,Black,2,13,**,**,**,0.135,0.160,Physical Inactivity,Male
+Sussex,19,White,3,486,0.498,0.428,0.568,0.070,0.072,Physical Inactivity,Male
+Sussex,19,Other,4,9,**,**,**,0.184,0.262,Physical Inactivity,Male
+Sussex,19,Hispanic,5,23,**,**,**,0.108,0.251,Physical Inactivity,Male
+Union,20,All Races,.,559,0.498,0.442,0.555,0.057,0.058,Physical Inactivity,Male
+Union,20,Asian/Pacific Islander,1,30,**,**,**,0.143,0.191,Physical Inactivity,Male
+Union,20,Black,2,74,0.423,0.299,0.557,0.132,0.159,Physical Inactivity,Male
+Union,20,White,3,304,0.432,0.356,0.512,0.079,0.093,Physical Inactivity,Male
+Union,20,Other,4,14,**,**,**,0.196,0.223,Physical Inactivity,Male
+Union,20,Hispanic,5,137,0.611,0.498,0.713,0.109,0.143,Physical Inactivity,Male
+Warren,21,All Races,.,559,0.483,0.419,0.548,0.065,0.068,Physical Inactivity,Male
+Warren,21,Asian/Pacific Islander,1,4,**,**,**,0.000,0.000,Physical Inactivity,Male
+Warren,21,Black,2,12,**,**,**,0.134,0.297,Physical Inactivity,Male
+Warren,21,White,3,513,0.459,0.392,0.527,0.068,0.075,Physical Inactivity,Male
+Warren,21,Other,4,5,**,**,**,0.267,0.578,Physical Inactivity,Male
+Warren,21,Hispanic,5,25,**,**,**,0.128,0.134,Physical Inactivity,Male
+Total,.,All Races,.,"18,001",0.532,0.519,0.545,0.013,0.014,Physical Inactivity,Female
+Total,.,Asian/Pacific Islander,1,474,0.499,0.439,0.558,0.060,0.061,Physical Inactivity,Female
+Total,.,Black,2,"2,403",0.591,0.560,0.621,0.031,0.038,Physical Inactivity,Female
+Total,.,White,3,"12,566",0.483,0.465,0.500,0.018,0.019,Physical Inactivity,Female
+Total,.,Other,4,428,0.592,0.519,0.661,0.071,0.089,Physical Inactivity,Female
+Total,.,Hispanic,5,"2,130",0.633,0.602,0.663,0.030,0.042,Physical Inactivity,Female
+Atlantic,1,All Races,.,799,0.538,0.484,0.591,0.054,0.059,Physical Inactivity,Female
+Atlantic,1,Asian/Pacific Islander,1,9,**,**,**,0.150,0.212,Physical Inactivity,Female
+Atlantic,1,Black,2,106,0.564,0.441,0.680,0.122,0.143,Physical Inactivity,Female
+Atlantic,1,White,3,575,0.496,0.426,0.567,0.071,0.073,Physical Inactivity,Female
+Atlantic,1,Other,4,25,**,**,**,0.093,0.126,Physical Inactivity,Female
+Atlantic,1,Hispanic,5,84,0.661,0.536,0.768,0.118,0.177,Physical Inactivity,Female
+Bergen,2,All Races,.,797,0.575,0.524,0.624,0.050,0.060,Physical Inactivity,Female
+Bergen,2,Asian/Pacific Islander,1,47,**,**,**,0.182,0.199,Physical Inactivity,Female
+Bergen,2,Black,2,54,0.742,0.634,0.827,0.097,0.192,Physical Inactivity,Female
+Bergen,2,White,3,549,0.519,0.452,0.586,0.067,0.071,Physical Inactivity,Female
+Bergen,2,Other,4,18,**,**,**,0.174,0.179,Physical Inactivity,Female
+Bergen,2,Hispanic,5,129,0.656,0.556,0.744,0.095,0.141,Physical Inactivity,Female
+Burlington,3,All Races,.,854,0.486,0.437,0.534,0.049,0.051,Physical Inactivity,Female
+Burlington,3,Asian/Pacific Islander,1,11,**,**,**,0.114,0.215,Physical Inactivity,Female
+Burlington,3,Black,2,126,0.567,0.457,0.671,0.108,0.128,Physical Inactivity,Female
+Burlington,3,White,3,660,0.449,0.392,0.507,0.058,0.066,Physical Inactivity,Female
+Burlington,3,Other,4,29,**,**,**,0.190,0.243,Physical Inactivity,Female
+Burlington,3,Hispanic,5,28,**,**,**,0.161,0.255,Physical Inactivity,Female
+Camden,4,All Races,.,917,0.531,0.480,0.582,0.051,0.056,Physical Inactivity,Female
+Camden,4,Asian/Pacific Islander,1,19,**,**,**,0.112,0.134,Physical Inactivity,Female
+Camden,4,Black,2,160,0.621,0.524,0.708,0.093,0.125,Physical Inactivity,Female
+Camden,4,White,3,629,0.480,0.416,0.545,0.065,0.069,Physical Inactivity,Female
+Camden,4,Other,4,19,**,**,**,0.179,0.252,Physical Inactivity,Female
+Camden,4,Hispanic,5,90,0.628,0.521,0.723,0.103,0.140,Physical Inactivity,Female
+Cape May,5,All Races,.,732,0.459,0.395,0.525,0.066,0.073,Physical Inactivity,Female
+Cape May,5,Asian/Pacific Islander,1,1,**,**,**,0.000,0.000,Physical Inactivity,Female
+Cape May,5,Black,2,25,**,**,**,0.129,0.209,Physical Inactivity,Female
+Cape May,5,White,3,671,0.436,0.362,0.514,0.076,0.089,Physical Inactivity,Female
+Cape May,5,Other,4,7,**,**,**,0.152,0.204,Physical Inactivity,Female
+Cape May,5,Hispanic,5,28,**,**,**,0.150,0.161,Physical Inactivity,Female
+Cumberland,6,All Races,.,767,0.580,0.527,0.631,0.052,0.064,Physical Inactivity,Female
+Cumberland,6,Asian/Pacific Islander,1,6,**,**,**,0.236,0.990,Physical Inactivity,Female
+Cumberland,6,Black,2,108,0.624,0.502,0.733,0.118,0.160,Physical Inactivity,Female
+Cumberland,6,White,3,512,0.526,0.451,0.600,0.075,0.081,Physical Inactivity,Female
+Cumberland,6,Other,4,28,**,**,**,0.135,0.215,Physical Inactivity,Female
+Cumberland,6,Hispanic,5,113,0.636,0.533,0.728,0.098,0.138,Physical Inactivity,Female
+Essex,7,All Races,.,"1,670",0.556,0.516,0.595,0.040,0.045,Physical Inactivity,Female
+Essex,7,Asian/Pacific Islander,1,29,**,**,**,0.219,0.246,Physical Inactivity,Female
+Essex,7,Black,2,788,0.590,0.536,0.643,0.054,0.067,Physical Inactivity,Female
+Essex,7,White,3,502,0.511,0.442,0.579,0.069,0.072,Physical Inactivity,Female
+Essex,7,Other,4,46,**,**,**,0.121,0.174,Physical Inactivity,Female
+Essex,7,Hispanic,5,305,0.583,0.501,0.661,0.081,0.099,Physical Inactivity,Female
+Gloucester,8,All Races,.,764,0.505,0.447,0.563,0.058,0.060,Physical Inactivity,Female
+Gloucester,8,Asian/Pacific Islander,1,6,**,**,**,0.140,0.251,Physical Inactivity,Female
+Gloucester,8,Black,2,61,0.519,0.385,0.651,0.136,0.145,Physical Inactivity,Female
+Gloucester,8,White,3,663,0.486,0.423,0.549,0.063,0.066,Physical Inactivity,Female
+Gloucester,8,Other,4,11,**,**,**,0.184,0.259,Physical Inactivity,Female
+Gloucester,8,Hispanic,5,23,**,**,**,0.093,0.203,Physical Inactivity,Female
+Hudson,9,All Races,.,"1,053",**,**,**,0.047,0.054,Physical Inactivity,Female
+Hudson,9,Asian/Pacific Islander,1,61,0.471,0.320,0.628,0.159,0.173,Physical Inactivity,Female
+Hudson,9,Black,2,160,0.568,0.455,0.674,0.111,0.131,Physical Inactivity,Female
+Hudson,9,White,3,419,0.470,0.400,0.540,0.070,0.076,Physical Inactivity,Female
+Hudson,9,Other,4,46,**,**,**,0.140,0.274,Physical Inactivity,Female
+Hudson,9,Hispanic,5,367,0.597,0.524,0.667,0.072,0.091,Physical Inactivity,Female
+Hunterdon,10,All Races,.,766,0.436,0.371,0.504,0.067,0.078,Physical Inactivity,Female
+Hunterdon,10,Asian/Pacific Islander,1,6,**,**,**,0.227,0.254,Physical Inactivity,Female
+Hunterdon,10,Black,2,11,**,**,**,0.193,0.265,Physical Inactivity,Female
+Hunterdon,10,White,3,711,0.413,0.343,0.486,0.072,0.089,Physical Inactivity,Female
+Hunterdon,10,Other,4,7,**,**,**,0.000,0.000,Physical Inactivity,Female
+Hunterdon,10,Hispanic,5,31,**,**,**,0.162,0.210,Physical Inactivity,Female
+Mercer,11,All Races,.,833,0.555,0.507,0.603,0.048,0.055,Physical Inactivity,Female
+Mercer,11,Asian/Pacific Islander,1,39,**,**,**,0.190,0.223,Physical Inactivity,Female
+Mercer,11,Black,2,156,0.725,0.641,0.796,0.078,0.145,Physical Inactivity,Female
+Mercer,11,White,3,550,0.478,0.409,0.548,0.070,0.075,Physical Inactivity,Female
+Mercer,11,Other,4,20,**,**,**,0.136,0.144,Physical Inactivity,Female
+Mercer,11,Hispanic,5,68,0.612,0.462,0.743,0.144,0.189,Physical Inactivity,Female
+Middlesex,12,All Races,.,848,**,**,**,0.048,0.057,Physical Inactivity,Female
+Middlesex,12,Asian/Pacific Islander,1,100,0.530,0.408,0.650,0.124,0.134,Physical Inactivity,Female
+Middlesex,12,Black,2,83,0.677,0.538,0.790,0.128,0.202,Physical Inactivity,Female
+Middlesex,12,White,3,543,0.488,0.414,0.563,0.075,0.078,Physical Inactivity,Female
+Middlesex,12,Other,4,22,**,**,**,0.148,0.267,Physical Inactivity,Female
+Middlesex,12,Hispanic,5,100,0.632,0.518,0.733,0.109,0.151,Physical Inactivity,Female
+Monmouth,13,All Races,.,780,0.487,0.429,0.545,0.058,0.061,Physical Inactivity,Female
+Monmouth,13,Asian/Pacific Islander,1,12,**,**,**,0.130,0.134,Physical Inactivity,Female
+Monmouth,13,Black,2,43,**,**,**,0.154,0.215,Physical Inactivity,Female
+Monmouth,13,White,3,651,0.461,0.398,0.525,0.064,0.071,Physical Inactivity,Female
+Monmouth,13,Other,4,14,**,**,**,0.075,0.082,Physical Inactivity,Female
+Monmouth,13,Hispanic,5,60,0.625,0.468,0.760,0.150,0.204,Physical Inactivity,Female
+Morris,14,All Races,.,882,0.451,0.395,0.508,0.057,0.064,Physical Inactivity,Female
+Morris,14,Asian/Pacific Islander,1,28,**,**,**,0.215,0.318,Physical Inactivity,Female
+Morris,14,Black,2,21,**,**,**,0.180,0.213,Physical Inactivity,Female
+Morris,14,White,3,761,0.445,0.380,0.512,0.066,0.076,Physical Inactivity,Female
+Morris,14,Other,4,18,**,**,**,0.213,0.382,Physical Inactivity,Female
+Morris,14,Hispanic,5,54,0.644,0.492,0.771,0.143,0.204,Physical Inactivity,Female
+Ocean,15,All Races,.,848,0.479,0.427,0.531,0.052,0.055,Physical Inactivity,Female
+Ocean,15,Asian/Pacific Islander,1,4,**,**,**,0.178,0.212,Physical Inactivity,Female
+Ocean,15,Black,2,19,**,**,**,0.177,0.266,Physical Inactivity,Female
+Ocean,15,White,3,761,0.451,0.394,0.508,0.057,0.065,Physical Inactivity,Female
+Ocean,15,Other,4,16,**,**,**,0.176,0.609,Physical Inactivity,Female
+Ocean,15,Hispanic,5,48,**,**,**,0.149,0.210,Physical Inactivity,Female
+Passaic,16,All Races,.,797,0.609,0.559,0.657,0.050,0.065,Physical Inactivity,Female
+Passaic,16,Asian/Pacific Islander,1,14,**,**,**,0.188,0.275,Physical Inactivity,Female
+Passaic,16,Black,2,94,0.602,0.484,0.709,0.114,0.147,Physical Inactivity,Female
+Passaic,16,White,3,409,0.528,0.449,0.605,0.079,0.085,Physical Inactivity,Female
+Passaic,16,Other,4,11,**,**,**,0.100,0.152,Physical Inactivity,Female
+Passaic,16,Hispanic,5,269,0.697,0.619,0.766,0.074,0.124,Physical Inactivity,Female
+Salem,17,All Races,.,831,0.566,0.507,0.622,0.058,0.068,Physical Inactivity,Female
+Salem,17,Asian/Pacific Islander,1,1,**,**,**,0.000,.,Physical Inactivity,Female
+Salem,17,Black,2,126,0.523,0.414,0.630,0.109,0.117,Physical Inactivity,Female
+Salem,17,White,3,643,0.534,0.465,0.602,0.069,0.076,Physical Inactivity,Female
+Salem,17,Other,4,22,**,**,**,0.155,0.209,Physical Inactivity,Female
+Salem,17,Hispanic,5,39,**,**,**,0.137,0.299,Physical Inactivity,Female
+Somerset,18,All Races,.,750,0.478,0.418,0.539,0.061,0.065,Physical Inactivity,Female
+Somerset,18,Asian/Pacific Islander,1,45,**,**,**,0.164,0.171,Physical Inactivity,Female
+Somerset,18,Black,2,46,**,**,**,0.094,0.103,Physical Inactivity,Female
+Somerset,18,White,3,583,0.447,0.371,0.527,0.079,0.090,Physical Inactivity,Female
+Somerset,18,Other,4,14,**,**,**,0.187,0.230,Physical Inactivity,Female
+Somerset,18,Hispanic,5,62,0.646,0.500,0.769,0.137,0.198,Physical Inactivity,Female
+Sussex,19,All Races,.,738,0.465,0.401,0.530,0.065,0.071,Physical Inactivity,Female
+Sussex,19,Asian/Pacific Islander,1,10,**,**,**,0.210,0.344,Physical Inactivity,Female
+Sussex,19,Black,2,17,**,**,**,0.215,0.270,Physical Inactivity,Female
+Sussex,19,White,3,665,0.466,0.393,0.539,0.073,0.080,Physical Inactivity,Female
+Sussex,19,Other,4,14,**,**,**,0.202,0.290,Physical Inactivity,Female
+Sussex,19,Hispanic,5,32,**,**,**,0.126,0.137,Physical Inactivity,Female
+Union,20,All Races,.,813,0.589,0.539,0.637,0.049,0.061,Physical Inactivity,Female
+Union,20,Asian/Pacific Islander,1,21,**,**,**,0.179,0.240,Physical Inactivity,Female
+Union,20,Black,2,175,0.589,0.490,0.680,0.096,0.119,Physical Inactivity,Female
+Union,20,White,3,417,0.549,0.471,0.625,0.078,0.088,Physical Inactivity,Female
+Union,20,Other,4,29,**,**,**,0.160,0.187,Physical Inactivity,Female
+Union,20,Hispanic,5,171,0.669,0.569,0.756,0.095,0.146,Physical Inactivity,Female
+Warren,21,All Races,.,762,0.474,0.413,0.535,0.062,0.066,Physical Inactivity,Female
+Warren,21,Asian/Pacific Islander,1,5,**,**,**,0.000,0.000,Physical Inactivity,Female
+Warren,21,Black,2,24,**,**,**,0.124,0.370,Physical Inactivity,Female
+Warren,21,White,3,692,0.512,0.444,0.579,0.068,0.071,Physical Inactivity,Female
+Warren,21,Other,4,12,**,**,**,0.265,0.430,Physical Inactivity,Female
+Warren,21,Hispanic,5,29,**,**,**,0.155,0.173,Physical Inactivity,Female
+Total,.,All Races,.,"51,365",0.173,0.168,0.179,0.006,0.017,Binge Drinking,Male and Female
+Total,.,Asian/Pacific Islander,1,"1,905",0.087,0.070,0.107,0.018,0.108,Binge Drinking,Male and Female
+Total,.,Black,2,"6,036",**,**,**,0.013,0.056,Binge Drinking,Male and Female
+Total,.,White,3,"35,929",0.210,0.202,0.219,0.008,0.020,Binge Drinking,Male and Female
+Total,.,Other,4,"1,208",0.097,0.075,0.124,0.024,0.129,Binge Drinking,Male and Female
+Total,.,Hispanic,5,"6,287",0.167,0.154,0.181,0.013,0.040,Binge Drinking,Male and Female
+Atlantic,1,All Races,.,"2,303",0.171,0.150,0.196,0.023,0.068,Binge Drinking,Male and Female
+Atlantic,1,Asian/Pacific Islander,1,60,0.078,0.024,0.229,0.090,0.589,Binge Drinking,Male and Female
+Atlantic,1,Black,2,304,0.125,0.087,0.176,0.044,0.180,Binge Drinking,Male and Female
+Atlantic,1,White,3,"1,607",0.203,0.172,0.237,0.032,0.081,Binge Drinking,Male and Female
+Atlantic,1,Other,4,60,0.084,0.036,0.183,0.068,0.415,Binge Drinking,Male and Female
+Atlantic,1,Hispanic,5,272,0.180,0.127,0.248,0.060,0.170,Binge Drinking,Male and Female
+Bergen,2,All Races,.,"2,400",0.165,0.145,0.188,0.022,0.066,Binge Drinking,Male and Female
+Bergen,2,Asian/Pacific Islander,1,189,0.112,0.066,0.184,0.058,0.263,Binge Drinking,Male and Female
+Bergen,2,Black,2,151,0.092,0.050,0.163,0.055,0.306,Binge Drinking,Male and Female
+Bergen,2,White,3,"1,622",0.190,0.163,0.221,0.029,0.078,Binge Drinking,Male and Female
+Bergen,2,Other,4,59,0.149,0.070,0.287,0.106,0.362,Binge Drinking,Male and Female
+Bergen,2,Hispanic,5,379,0.175,0.133,0.227,0.047,0.137,Binge Drinking,Male and Female
+Burlington,3,All Races,.,"2,379",0.174,0.151,0.199,0.024,0.070,Binge Drinking,Male and Female
+Burlington,3,Asian/Pacific Islander,1,52,0.009,0.001,0.062,0.018,0.997,Binge Drinking,Male and Female
+Burlington,3,Black,2,320,0.090,0.056,0.142,0.042,0.236,Binge Drinking,Male and Female
+Burlington,3,White,3,"1,832",0.223,0.193,0.257,0.032,0.074,Binge Drinking,Male and Female
+Burlington,3,Other,4,74,0.073,0.031,0.163,0.061,0.428,Binge Drinking,Male and Female
+Burlington,3,Hispanic,5,101,0.082,0.042,0.154,0.054,0.334,Binge Drinking,Male and Female
+Camden,4,All Races,.,"2,598",0.173,0.150,0.199,0.024,0.071,Binge Drinking,Male and Female
+Camden,4,Asian/Pacific Islander,1,51,0.024,0.006,0.090,0.033,0.687,Binge Drinking,Male and Female
+Camden,4,Black,2,424,0.130,0.092,0.182,0.045,0.176,Binge Drinking,Male and Female
+Camden,4,White,3,"1,825",0.189,0.160,0.221,0.031,0.083,Binge Drinking,Male and Female
+Camden,4,Other,4,55,0.284,0.171,0.433,0.133,0.239,Binge Drinking,Male and Female
+Camden,4,Hispanic,5,243,0.201,0.139,0.282,0.071,0.181,Binge Drinking,Male and Female
+Cape May,5,All Races,.,"2,085",0.184,0.155,0.217,0.031,0.085,Binge Drinking,Male and Female
+Cape May,5,Asian/Pacific Islander,1,6,**,**,**,0.000,.,Binge Drinking,Male and Female
+Cape May,5,Black,2,74,0.156,0.074,0.300,0.111,0.363,Binge Drinking,Male and Female
+Cape May,5,White,3,"1,901",0.199,0.166,0.237,0.036,0.092,Binge Drinking,Male and Female
+Cape May,5,Other,4,34,**,**,**,0.034,0.721,Binge Drinking,Male and Female
+Cape May,5,Hispanic,5,70,0.175,0.090,0.313,0.110,0.322,Binge Drinking,Male and Female
+Cumberland,6,All Races,.,"2,168",**,**,**,0.024,0.076,Binge Drinking,Male and Female
+Cumberland,6,Asian/Pacific Islander,1,22,**,**,**,0.061,0.633,Binge Drinking,Male and Female
+Cumberland,6,Black,2,288,0.127,0.085,0.185,0.050,0.200,Binge Drinking,Male and Female
+Cumberland,6,White,3,"1,447",0.174,0.142,0.211,0.035,0.102,Binge Drinking,Male and Female
+Cumberland,6,Other,4,75,0.170,0.086,0.308,0.110,0.330,Binge Drinking,Male and Female
+Cumberland,6,Hispanic,5,336,0.172,0.126,0.231,0.053,0.156,Binge Drinking,Male and Female
+Essex,7,All Races,.,"4,532",0.157,0.141,0.176,0.018,0.057,Binge Drinking,Male and Female
+Essex,7,Asian/Pacific Islander,1,109,0.119,0.062,0.216,0.075,0.322,Binge Drinking,Male and Female
+Essex,7,Black,2,"1,887",0.119,0.097,0.146,0.024,0.102,Binge Drinking,Male and Female
+Essex,7,White,3,"1,582",0.233,0.198,0.272,0.037,0.082,Binge Drinking,Male and Female
+Essex,7,Other,4,138,0.073,0.032,0.154,0.057,0.401,Binge Drinking,Male and Female
+Essex,7,Hispanic,5,816,0.163,0.129,0.204,0.038,0.117,Binge Drinking,Male and Female
+Gloucester,8,All Races,.,"2,222",0.214,0.185,0.246,0.030,0.072,Binge Drinking,Male and Female
+Gloucester,8,Asian/Pacific Islander,1,19,**,**,**,0.084,0.528,Binge Drinking,Male and Female
+Gloucester,8,Black,2,155,0.213,0.122,0.345,0.112,0.267,Binge Drinking,Male and Female
+Gloucester,8,White,3,"1,927",0.224,0.192,0.260,0.034,0.077,Binge Drinking,Male and Female
+Gloucester,8,Other,4,39,**,**,**,0.102,0.374,Binge Drinking,Male and Female
+Gloucester,8,Hispanic,5,82,0.149,0.077,0.268,0.094,0.322,Binge Drinking,Male and Female
+Hudson,9,All Races,.,"3,279",0.171,0.153,0.192,0.019,0.058,Binge Drinking,Male and Female
+Hudson,9,Asian/Pacific Islander,1,280,0.095,0.059,0.149,0.044,0.238,Binge Drinking,Male and Female
+Hudson,9,Black,2,433,0.121,0.080,0.180,0.049,0.207,Binge Drinking,Male and Female
+Hudson,9,White,3,"1,340",0.262,0.226,0.302,0.038,0.074,Binge Drinking,Male and Female
+Hudson,9,Other,4,124,0.048,0.023,0.099,0.036,0.380,Binge Drinking,Male and Female
+Hudson,9,Hispanic,5,"1,102",0.164,0.135,0.198,0.031,0.097,Binge Drinking,Male and Female
+Hunterdon,10,All Races,.,"2,176",0.179,0.150,0.213,0.032,0.090,Binge Drinking,Male and Female
+Hunterdon,10,Asian/Pacific Islander,1,36,**,**,**,0.014,1.065,Binge Drinking,Male and Female
+Hunterdon,10,Black,2,31,**,**,**,0.040,0.982,Binge Drinking,Male and Female
+Hunterdon,10,White,3,"2,009",0.196,0.163,0.234,0.036,0.092,Binge Drinking,Male and Female
+Hunterdon,10,Other,4,21,**,**,**,0.140,0.580,Binge Drinking,Male and Female
+Hunterdon,10,Hispanic,5,79,0.153,0.076,0.285,0.103,0.342,Binge Drinking,Male and Female
+Mercer,11,All Races,.,"2,216",**,**,**,0.023,0.072,Binge Drinking,Male and Female
+Mercer,11,Asian/Pacific Islander,1,122,0.133,0.078,0.216,0.068,0.260,Binge Drinking,Male and Female
+Mercer,11,Black,2,357,0.159,0.118,0.212,0.047,0.150,Binge Drinking,Male and Female
+Mercer,11,White,3,"1,474",0.203,0.169,0.241,0.036,0.092,Binge Drinking,Male and Female
+Mercer,11,Other,4,49,**,**,**,0.117,0.362,Binge Drinking,Male and Female
+Mercer,11,Hispanic,5,214,0.102,0.062,0.164,0.050,0.248,Binge Drinking,Male and Female
+Middlesex,12,All Races,.,"2,544",0.152,0.132,0.173,0.020,0.068,Binge Drinking,Male and Female
+Middlesex,12,Asian/Pacific Islander,1,398,0.087,0.048,0.153,0.051,0.299,Binge Drinking,Male and Female
+Middlesex,12,Black,2,206,0.131,0.080,0.209,0.064,0.248,Binge Drinking,Male and Female
+Middlesex,12,White,3,"1,517",0.197,0.165,0.234,0.034,0.089,Binge Drinking,Male and Female
+Middlesex,12,Other,4,76,0.039,0.012,0.121,0.046,0.607,Binge Drinking,Male and Female
+Middlesex,12,Hispanic,5,347,0.206,0.156,0.266,0.055,0.135,Binge Drinking,Male and Female
+Monmouth,13,All Races,.,"2,240",**,**,**,0.027,0.065,Binge Drinking,Male and Female
+Monmouth,13,Asian/Pacific Islander,1,60,0.055,0.017,0.168,0.064,0.596,Binge Drinking,Male and Female
+Monmouth,13,Black,2,104,0.150,0.089,0.241,0.075,0.255,Binge Drinking,Male and Female
+Monmouth,13,White,3,"1,849",0.247,0.215,0.282,0.034,0.070,Binge Drinking,Male and Female
+Monmouth,13,Other,4,45,**,**,**,0.083,0.652,Binge Drinking,Male and Female
+Monmouth,13,Hispanic,5,182,0.130,0.079,0.207,0.063,0.246,Binge Drinking,Male and Female
+Morris,14,All Races,.,"2,583",0.186,0.162,0.212,0.025,0.068,Binge Drinking,Male and Female
+Morris,14,Asian/Pacific Islander,1,130,0.105,0.060,0.177,0.057,0.278,Binge Drinking,Male and Female
+Morris,14,Black,2,71,0.106,0.051,0.207,0.075,0.360,Binge Drinking,Male and Female
+Morris,14,White,3,"2,124",0.214,0.183,0.248,0.032,0.077,Binge Drinking,Male and Female
+Morris,14,Other,4,61,0.093,0.042,0.193,0.071,0.393,Binge Drinking,Male and Female
+Morris,14,Hispanic,5,197,0.172,0.120,0.241,0.060,0.179,Binge Drinking,Male and Female
+Ocean,15,All Races,.,"2,334",0.174,0.150,0.200,0.025,0.075,Binge Drinking,Male and Female
+Ocean,15,Asian/Pacific Islander,1,17,**,**,**,0.008,0.018,Binge Drinking,Male and Female
+Ocean,15,Black,2,60,0.197,0.093,0.370,0.138,0.358,Binge Drinking,Male and Female
+Ocean,15,White,3,"2,075",0.181,0.155,0.212,0.028,0.080,Binge Drinking,Male and Female
+Ocean,15,Other,4,37,**,**,**,0.104,0.555,Binge Drinking,Male and Female
+Ocean,15,Hispanic,5,145,0.111,0.067,0.177,0.054,0.249,Binge Drinking,Male and Female
+Passaic,16,All Races,.,"2,225",**,**,**,0.026,0.070,Binge Drinking,Male and Female
+Passaic,16,Asian/Pacific Islander,1,60,0.034,0.010,0.110,0.041,0.620,Binge Drinking,Male and Female
+Passaic,16,Black,2,237,0.117,0.072,0.182,0.054,0.236,Binge Drinking,Male and Female
+Passaic,16,White,3,"1,189",0.202,0.167,0.243,0.038,0.095,Binge Drinking,Male and Female
+Passaic,16,Other,4,42,**,**,**,0.056,0.550,Binge Drinking,Male and Female
+Passaic,16,Hispanic,5,697,0.202,0.161,0.250,0.045,0.113,Binge Drinking,Male and Female
+Salem,17,All Races,.,"2,196",0.201,0.165,0.242,0.038,0.098,Binge Drinking,Male and Female
+Salem,17,Asian/Pacific Islander,1,4,**,**,**,0.000,.,Binge Drinking,Male and Female
+Salem,17,Black,2,252,0.152,0.084,0.259,0.086,0.290,Binge Drinking,Male and Female
+Salem,17,White,3,"1,804",0.222,0.180,0.270,0.045,0.104,Binge Drinking,Male and Female
+Salem,17,Other,4,49,**,**,**,0.055,0.835,Binge Drinking,Male and Female
+Salem,17,Hispanic,5,87,0.180,0.102,0.298,0.097,0.275,Binge Drinking,Male and Female
+Somerset,18,All Races,.,"2,211",**,**,**,0.026,0.087,Binge Drinking,Male and Female
+Somerset,18,Asian/Pacific Islander,1,181,0.100,0.061,0.161,0.049,0.249,Binge Drinking,Male and Female
+Somerset,18,Black,2,122,0.112,0.056,0.214,0.076,0.347,Binge Drinking,Male and Female
+Somerset,18,White,3,"1,683",0.175,0.143,0.211,0.034,0.100,Binge Drinking,Male and Female
+Somerset,18,Other,4,48,**,**,**,0.082,0.429,Binge Drinking,Male and Female
+Somerset,18,Hispanic,5,177,0.184,0.119,0.274,0.077,0.214,Binge Drinking,Male and Female
+Sussex,19,All Races,.,"2,098",0.209,0.178,0.243,0.032,0.079,Binge Drinking,Male and Female
+Sussex,19,Asian/Pacific Islander,1,24,**,**,**,0.143,0.347,Binge Drinking,Male and Female
+Sussex,19,Black,2,51,0.096,0.040,0.216,0.083,0.438,Binge Drinking,Male and Female
+Sussex,19,White,3,"1,871",0.225,0.190,0.265,0.038,0.085,Binge Drinking,Male and Female
+Sussex,19,Other,4,33,**,**,**,0.116,0.288,Binge Drinking,Male and Female
+Sussex,19,Hispanic,5,119,0.172,0.106,0.265,0.079,0.235,Binge Drinking,Male and Female
+Union,20,All Races,.,"2,399",0.164,0.144,0.186,0.021,0.066,Binge Drinking,Male and Female
+Union,20,Asian/Pacific Islander,1,70,0.115,0.047,0.255,0.098,0.439,Binge Drinking,Male and Female
+Union,20,Black,2,453,0.078,0.050,0.119,0.034,0.221,Binge Drinking,Male and Female
+Union,20,White,3,"1,264",0.221,0.184,0.262,0.039,0.090,Binge Drinking,Male and Female
+Union,20,Other,4,59,0.104,0.042,0.238,0.092,0.450,Binge Drinking,Male and Female
+Union,20,Hispanic,5,553,0.164,0.130,0.205,0.038,0.117,Binge Drinking,Male and Female
+Warren,21,All Races,.,"2,177",0.186,0.158,0.217,0.029,0.081,Binge Drinking,Male and Female
+Warren,21,Asian/Pacific Islander,1,15,**,**,**,0.041,1.064,Binge Drinking,Male and Female
+Warren,21,Black,2,56,0.122,0.052,0.260,0.099,0.415,Binge Drinking,Male and Female
+Warren,21,White,3,"1,987",0.213,0.182,0.249,0.033,0.080,Binge Drinking,Male and Female
+Warren,21,Other,4,30,**,**,**,0.102,0.370,Binge Drinking,Male and Female
+Warren,21,Hispanic,5,89,0.112,0.057,0.208,0.073,0.335,Binge Drinking,Male and Female
+Total,.,All Races,.,"21,432",0.221,0.212,0.230,0.009,0.021,Binge Drinking,Male
+Total,.,Asian/Pacific Islander,1,"1,073",0.116,0.089,0.149,0.030,0.131,Binge Drinking,Male
+Total,.,Black,2,"2,030",0.165,0.142,0.191,0.024,0.075,Binge Drinking,Male
+Total,.,White,3,"15,188",0.256,0.244,0.269,0.012,0.025,Binge Drinking,Male
+Total,.,Other,4,538,0.122,0.089,0.166,0.038,0.159,Binge Drinking,Male
+Total,.,Hispanic,5,"2,603",0.232,0.211,0.254,0.021,0.047,Binge Drinking,Male
+Atlantic,1,All Races,.,988,0.238,0.202,0.277,0.038,0.080,Binge Drinking,Male
+Atlantic,1,Asian/Pacific Islander,1,38,**,**,**,0.094,0.616,Binge Drinking,Male
+Atlantic,1,Black,2,116,0.173,0.098,0.285,0.093,0.274,Binge Drinking,Male
+Atlantic,1,White,3,695,0.270,0.224,0.321,0.049,0.092,Binge Drinking,Male
+Atlantic,1,Other,4,19,**,**,**,0.089,0.732,Binge Drinking,Male
+Atlantic,1,Hispanic,5,120,0.280,0.190,0.392,0.102,0.186,Binge Drinking,Male
+Bergen,2,All Races,.,"1,092",**,**,**,0.033,0.079,Binge Drinking,Male
+Bergen,2,Asian/Pacific Islander,1,115,0.159,0.089,0.268,0.088,0.282,Binge Drinking,Male
+Bergen,2,Black,2,57,0.133,0.060,0.272,0.102,0.392,Binge Drinking,Male
+Bergen,2,White,3,722,0.247,0.206,0.294,0.044,0.092,Binge Drinking,Male
+Bergen,2,Other,4,24,**,**,**,0.146,0.505,Binge Drinking,Male
+Bergen,2,Hispanic,5,174,0.222,0.164,0.294,0.065,0.149,Binge Drinking,Male
+Burlington,3,All Races,.,962,0.198,0.165,0.236,0.036,0.091,Binge Drinking,Male
+Burlington,3,Asian/Pacific Islander,1,30,**,**,**,0.036,0.968,Binge Drinking,Male
+Burlington,3,Black,2,107,0.142,0.082,0.236,0.076,0.271,Binge Drinking,Male
+Burlington,3,White,3,753,0.242,0.199,0.291,0.046,0.098,Binge Drinking,Male
+Burlington,3,Other,4,29,**,**,**,0.136,0.574,Binge Drinking,Male
+Burlington,3,Hispanic,5,43,**,**,**,0.070,0.525,Binge Drinking,Male
+Camden,4,All Races,.,"1,026",0.231,0.193,0.275,0.041,0.091,Binge Drinking,Male
+Camden,4,Asian/Pacific Islander,1,26,**,**,**,0.076,0.618,Binge Drinking,Male
+Camden,4,Black,2,144,0.193,0.126,0.285,0.080,0.210,Binge Drinking,Male
+Camden,4,White,3,742,0.230,0.184,0.283,0.050,0.110,Binge Drinking,Male
+Camden,4,Other,4,24,**,**,**,0.164,0.253,Binge Drinking,Male
+Camden,4,Hispanic,5,90,0.268,0.167,0.400,0.118,0.224,Binge Drinking,Male
+Cape May,5,All Races,.,856,0.239,0.197,0.288,0.046,0.097,Binge Drinking,Male
+Cape May,5,Asian/Pacific Islander,1,4,**,**,**,0.000,.,Binge Drinking,Male
+Cape May,5,Black,2,28,**,**,**,0.109,0.596,Binge Drinking,Male
+Cape May,5,White,3,776,0.254,0.206,0.309,0.052,0.104,Binge Drinking,Male
+Cape May,5,Other,4,21,**,**,**,0.061,0.712,Binge Drinking,Male
+Cape May,5,Hispanic,5,27,**,**,**,0.149,0.376,Binge Drinking,Male
+Cumberland,6,All Races,.,874,0.227,0.189,0.271,0.041,0.091,Binge Drinking,Male
+Cumberland,6,Asian/Pacific Islander,1,11,**,**,**,0.054,0.879,Binge Drinking,Male
+Cumberland,6,Black,2,100,0.152,0.092,0.239,0.073,0.245,Binge Drinking,Male
+Cumberland,6,White,3,584,0.249,0.194,0.313,0.060,0.122,Binge Drinking,Male
+Cumberland,6,Other,4,34,**,**,**,0.133,0.192,Binge Drinking,Male
+Cumberland,6,Hispanic,5,145,0.254,0.180,0.347,0.084,0.168,Binge Drinking,Male
+Essex,7,All Races,.,"1,687",0.197,0.170,0.227,0.028,0.074,Binge Drinking,Male
+Essex,7,Asian/Pacific Islander,1,62,0.173,0.087,0.317,0.114,0.334,Binge Drinking,Male
+Essex,7,Black,2,582,0.153,0.116,0.199,0.041,0.137,Binge Drinking,Male
+Essex,7,White,3,692,0.269,0.218,0.326,0.054,0.102,Binge Drinking,Male
+Essex,7,Other,4,56,0.136,0.054,0.300,0.118,0.444,Binge Drinking,Male
+Essex,7,Hispanic,5,295,0.210,0.159,0.272,0.057,0.138,Binge Drinking,Male
+Gloucester,8,All Races,.,931,0.286,0.242,0.336,0.047,0.084,Binge Drinking,Male
+Gloucester,8,Asian/Pacific Islander,1,9,**,**,**,0.101,0.528,Binge Drinking,Male
+Gloucester,8,Black,2,53,0.178,0.095,0.307,0.105,0.302,Binge Drinking,Male
+Gloucester,8,White,3,809,0.302,0.253,0.356,0.052,0.087,Binge Drinking,Male
+Gloucester,8,Other,4,21,**,**,**,0.131,0.350,Binge Drinking,Male
+Gloucester,8,Hispanic,5,39,**,**,**,0.119,0.233,Binge Drinking,Male
+Hudson,9,All Races,.,"1,336",0.229,0.199,0.262,0.032,0.070,Binge Drinking,Male
+Hudson,9,Asian/Pacific Islander,1,155,0.157,0.079,0.288,0.102,0.333,Binge Drinking,Male
+Hudson,9,Black,2,136,0.164,0.098,0.263,0.082,0.254,Binge Drinking,Male
+Hudson,9,White,3,576,0.326,0.271,0.387,0.059,0.092,Binge Drinking,Male
+Hudson,9,Other,4,50,0.070,0.028,0.164,0.062,0.457,Binge Drinking,Male
+Hudson,9,Hispanic,5,419,0.229,0.184,0.282,0.049,0.110,Binge Drinking,Male
+Hunterdon,10,All Races,.,961,0.211,0.168,0.261,0.046,0.112,Binge Drinking,Male
+Hunterdon,10,Asian/Pacific Islander,1,21,**,**,**,0.025,1.104,Binge Drinking,Male
+Hunterdon,10,Black,2,11,**,**,**,0.000,0.000,Binge Drinking,Male
+Hunterdon,10,White,3,887,0.228,0.180,0.285,0.052,0.117,Binge Drinking,Male
+Hunterdon,10,Other,4,10,**,**,**,0.138,0.457,Binge Drinking,Male
+Hunterdon,10,Hispanic,5,32,**,**,**,0.145,0.389,Binge Drinking,Male
+Mercer,11,All Races,.,932,**,**,**,0.036,0.097,Binge Drinking,Male
+Mercer,11,Asian/Pacific Islander,1,59,0.191,0.136,0.261,0.062,0.166,Binge Drinking,Male
+Mercer,11,Black,2,133,0.162,0.100,0.252,0.075,0.238,Binge Drinking,Male
+Mercer,11,White,3,626,0.241,0.188,0.303,0.057,0.121,Binge Drinking,Male
+Mercer,11,Other,4,19,**,**,**,0.183,0.433,Binge Drinking,Male
+Mercer,11,Hispanic,5,95,0.139,0.077,0.236,0.078,0.287,Binge Drinking,Male
+Middlesex,12,All Races,.,"1,185",**,**,**,0.031,0.080,Binge Drinking,Male
+Middlesex,12,Asian/Pacific Islander,1,229,0.093,0.042,0.193,0.071,0.391,Binge Drinking,Male
+Middlesex,12,Black,2,76,0.200,0.105,0.347,0.121,0.308,Binge Drinking,Male
+Middlesex,12,White,3,672,0.247,0.203,0.298,0.048,0.098,Binge Drinking,Male
+Middlesex,12,Other,4,47,**,**,**,0.049,0.667,Binge Drinking,Male
+Middlesex,12,Hispanic,5,161,0.292,0.211,0.388,0.090,0.157,Binge Drinking,Male
+Monmouth,13,All Races,.,988,0.252,0.213,0.295,0.041,0.083,Binge Drinking,Male
+Monmouth,13,Asian/Pacific Islander,1,35,**,**,**,0.058,0.929,Binge Drinking,Male
+Monmouth,13,Black,2,39,**,**,**,0.110,0.283,Binge Drinking,Male
+Monmouth,13,White,3,806,0.294,0.245,0.348,0.052,0.090,Binge Drinking,Male
+Monmouth,13,Other,4,21,**,**,**,0.077,0.882,Binge Drinking,Male
+Monmouth,13,Hispanic,5,87,0.213,0.129,0.330,0.100,0.240,Binge Drinking,Male
+Morris,14,All Races,.,"1,153",0.219,0.185,0.258,0.036,0.085,Binge Drinking,Male
+Morris,14,Asian/Pacific Islander,1,80,0.096,0.050,0.177,0.061,0.324,Binge Drinking,Male
+Morris,14,Black,2,34,**,**,**,0.098,0.382,Binge Drinking,Male
+Morris,14,White,3,910,0.249,0.205,0.300,0.048,0.098,Binge Drinking,Male
+Morris,14,Other,4,33,**,**,**,0.110,0.477,Binge Drinking,Male
+Morris,14,Hispanic,5,96,0.209,0.126,0.326,0.100,0.244,Binge Drinking,Male
+Ocean,15,All Races,.,976,0.226,0.188,0.270,0.041,0.092,Binge Drinking,Male
+Ocean,15,Asian/Pacific Islander,1,10,**,**,**,0.034,0.074,Binge Drinking,Male
+Ocean,15,Black,2,28,**,**,**,0.116,0.199,Binge Drinking,Male
+Ocean,15,White,3,858,0.229,0.188,0.276,0.044,0.097,Binge Drinking,Male
+Ocean,15,Other,4,15,**,**,**,0.203,0.598,Binge Drinking,Male
+Ocean,15,Hispanic,5,65,0.202,0.112,0.336,0.112,0.282,Binge Drinking,Male
+Passaic,16,All Races,.,913,0.263,0.224,0.305,0.041,0.079,Binge Drinking,Male
+Passaic,16,Asian/Pacific Islander,1,35,**,**,**,0.044,0.812,Binge Drinking,Male
+Passaic,16,Black,2,77,0.117,0.061,0.214,0.074,0.323,Binge Drinking,Male
+Passaic,16,White,3,513,0.249,0.194,0.313,0.060,0.123,Binge Drinking,Male
+Passaic,16,Other,4,21,**,**,**,0.070,0.560,Binge Drinking,Male
+Passaic,16,Hispanic,5,267,0.329,0.262,0.404,0.071,0.111,Binge Drinking,Male
+Salem,17,All Races,.,822,0.270,0.217,0.330,0.057,0.107,Binge Drinking,Male
+Salem,17,Asian/Pacific Islander,1,3,**,**,**,0.000,.,Binge Drinking,Male
+Salem,17,Black,2,64,0.201,0.099,0.367,0.134,0.340,Binge Drinking,Male
+Salem,17,White,3,702,0.275,0.218,0.341,0.061,0.114,Binge Drinking,Male
+Salem,17,Other,4,22,**,**,**,0.036,1.037,Binge Drinking,Male
+Salem,17,Hispanic,5,31,**,**,**,0.120,0.186,Binge Drinking,Male
+Somerset,18,All Races,.,958,0.188,0.150,0.232,0.041,0.110,Binge Drinking,Male
+Somerset,18,Asian/Pacific Islander,1,95,0.123,0.070,0.206,0.066,0.276,Binge Drinking,Male
+Somerset,18,Black,2,47,**,**,**,0.091,0.440,Binge Drinking,Male
+Somerset,18,White,3,713,0.194,0.151,0.246,0.048,0.126,Binge Drinking,Male
+Somerset,18,Other,4,26,**,**,**,0.054,0.226,Binge Drinking,Male
+Somerset,18,Hispanic,5,77,0.284,0.182,0.415,0.118,0.211,Binge Drinking,Male
+Sussex,19,All Races,.,899,0.268,0.223,0.319,0.048,0.092,Binge Drinking,Male
+Sussex,19,Asian/Pacific Islander,1,9,**,**,**,0.156,0.216,Binge Drinking,Male
+Sussex,19,Black,2,21,**,**,**,0.096,0.640,Binge Drinking,Male
+Sussex,19,White,3,797,0.287,0.235,0.346,0.056,0.099,Binge Drinking,Male
+Sussex,19,Other,4,16,**,**,**,0.181,0.228,Binge Drinking,Male
+Sussex,19,Hispanic,5,56,0.231,0.125,0.387,0.132,0.291,Binge Drinking,Male
+Union,20,All Races,.,993,0.205,0.173,0.240,0.033,0.083,Binge Drinking,Male
+Union,20,Asian/Pacific Islander,1,40,**,**,**,0.148,0.393,Binge Drinking,Male
+Union,20,Black,2,157,0.097,0.050,0.181,0.063,0.331,Binge Drinking,Male
+Union,20,White,3,539,0.264,0.211,0.324,0.056,0.109,Binge Drinking,Male
+Union,20,Other,4,17,**,**,**,0.131,0.548,Binge Drinking,Male
+Union,20,Hispanic,5,240,0.202,0.151,0.265,0.057,0.144,Binge Drinking,Male
+Warren,21,All Races,.,900,0.259,0.214,0.311,0.048,0.095,Binge Drinking,Male
+Warren,21,Asian/Pacific Islander,1,7,**,**,**,0.155,0.974,Binge Drinking,Male
+Warren,21,Black,2,20,**,**,**,0.094,0.469,Binge Drinking,Male
+Warren,21,White,3,816,0.291,0.241,0.347,0.053,0.093,Binge Drinking,Male
+Warren,21,Other,4,13,**,**,**,0.088,0.948,Binge Drinking,Male
+Warren,21,Hispanic,5,44,**,**,**,0.100,0.391,Binge Drinking,Male
+Total,.,All Races,.,"29,933",0.127,0.120,0.134,0.007,0.028,Binge Drinking,Female
+Total,.,Asian/Pacific Islander,1,832,0.057,0.041,0.081,0.020,0.175,Binge Drinking,Female
+Total,.,Black,2,"4,006",0.088,0.075,0.102,0.013,0.078,Binge Drinking,Female
+Total,.,White,3,"20,741",0.163,0.152,0.173,0.011,0.033,Binge Drinking,Female
+Total,.,Other,4,670,0.077,0.051,0.114,0.031,0.208,Binge Drinking,Female
+Total,.,Hispanic,5,"3,684",0.105,0.090,0.122,0.016,0.077,Binge Drinking,Female
+Atlantic,1,All Races,.,"1,315",0.110,0.087,0.138,0.025,0.118,Binge Drinking,Female
+Atlantic,1,Asian/Pacific Islander,1,22,**,**,**,0.065,0.994,Binge Drinking,Female
+Atlantic,1,Black,2,188,0.097,0.056,0.164,0.052,0.274,Binge Drinking,Female
+Atlantic,1,White,3,912,0.125,0.094,0.164,0.035,0.142,Binge Drinking,Female
+Atlantic,1,Other,4,41,**,**,**,0.079,0.501,Binge Drinking,Female
+Atlantic,1,Hispanic,5,152,0.095,0.046,0.187,0.067,0.363,Binge Drinking,Female
+Bergen,2,All Races,.,"1,308",**,**,**,0.025,0.112,Binge Drinking,Female
+Bergen,2,Asian/Pacific Islander,1,74,0.048,0.019,0.120,0.045,0.479,Binge Drinking,Female
+Bergen,2,Black,2,94,0.067,0.029,0.146,0.054,0.414,Binge Drinking,Female
+Bergen,2,White,3,900,0.132,0.101,0.172,0.035,0.136,Binge Drinking,Female
+Bergen,2,Other,4,35,**,**,**,0.125,0.439,Binge Drinking,Female
+Bergen,2,Hispanic,5,205,0.126,0.075,0.202,0.062,0.254,Binge Drinking,Female
+Burlington,3,All Races,.,"1,417",0.150,0.121,0.185,0.032,0.109,Binge Drinking,Female
+Burlington,3,Asian/Pacific Islander,1,22,**,**,**,0.000,.,Binge Drinking,Female
+Burlington,3,Black,2,213,0.058,0.027,0.120,0.043,0.379,Binge Drinking,Female
+Burlington,3,White,3,"1,079",0.206,0.163,0.257,0.047,0.116,Binge Drinking,Female
+Burlington,3,Other,4,45,**,**,**,0.081,0.555,Binge Drinking,Female
+Burlington,3,Hispanic,5,58,0.096,0.042,0.205,0.077,0.409,Binge Drinking,Female
+Camden,4,All Races,.,"1,572",0.123,0.099,0.152,0.027,0.110,Binge Drinking,Female
+Camden,4,Asian/Pacific Islander,1,25,**,**,**,0.000,.,Binge Drinking,Female
+Camden,4,Black,2,280,0.071,0.042,0.117,0.036,0.264,Binge Drinking,Female
+Camden,4,White,3,"1,083",0.150,0.118,0.190,0.036,0.122,Binge Drinking,Female
+Camden,4,Other,4,31,**,**,**,0.132,0.335,Binge Drinking,Female
+Camden,4,Hispanic,5,153,0.159,0.092,0.260,0.083,0.266,Binge Drinking,Female
+Cape May,5,All Races,.,"1,229",0.132,0.096,0.178,0.040,0.157,Binge Drinking,Female
+Cape May,5,Asian/Pacific Islander,1,2,**,**,**,0.000,.,Binge Drinking,Female
+Cape May,5,Black,2,46,**,**,**,0.154,0.405,Binge Drinking,Female
+Cape May,5,White,3,"1,125",0.150,0.105,0.210,0.052,0.176,Binge Drinking,Female
+Cape May,5,Other,4,13,**,**,**,0.000,.,Binge Drinking,Female
+Cape May,5,Hispanic,5,43,**,**,**,0.132,0.507,Binge Drinking,Female
+Cumberland,6,All Races,.,"1,294",0.091,0.070,0.118,0.024,0.132,Binge Drinking,Female
+Cumberland,6,Asian/Pacific Islander,1,11,**,**,**,0.073,0.822,Binge Drinking,Female
+Cumberland,6,Black,2,188,0.081,0.041,0.154,0.054,0.341,Binge Drinking,Female
+Cumberland,6,White,3,863,0.102,0.073,0.142,0.034,0.170,Binge Drinking,Female
+Cumberland,6,Other,4,41,**,**,**,0.124,0.578,Binge Drinking,Female
+Cumberland,6,Hispanic,5,191,0.060,0.033,0.107,0.035,0.298,Binge Drinking,Female
+Essex,7,All Races,.,"2,845",**,**,**,0.021,0.088,Binge Drinking,Female
+Essex,7,Asian/Pacific Islander,1,47,**,**,**,0.055,0.524,Binge Drinking,Female
+Essex,7,Black,2,"1,305",0.090,0.067,0.119,0.026,0.146,Binge Drinking,Female
+Essex,7,White,3,890,0.198,0.154,0.249,0.048,0.123,Binge Drinking,Female
+Essex,7,Other,4,82,0.035,0.010,0.115,0.043,0.633,Binge Drinking,Female
+Essex,7,Hispanic,5,521,0.120,0.081,0.175,0.046,0.197,Binge Drinking,Female
+Gloucester,8,All Races,.,"1,291",0.153,0.118,0.195,0.038,0.128,Binge Drinking,Female
+Gloucester,8,Asian/Pacific Islander,1,10,**,**,**,0.000,.,Binge Drinking,Female
+Gloucester,8,Black,2,102,0.188,0.095,0.338,0.121,0.328,Binge Drinking,Female
+Gloucester,8,White,3,"1,118",0.159,0.122,0.204,0.041,0.130,Binge Drinking,Female
+Gloucester,8,Other,4,18,**,**,**,0.076,0.981,Binge Drinking,Female
+Gloucester,8,Hispanic,5,43,**,**,**,0.028,1.063,Binge Drinking,Female
+Hudson,9,All Races,.,"1,943",0.115,0.095,0.138,0.022,0.096,Binge Drinking,Female
+Hudson,9,Asian/Pacific Islander,1,125,0.067,0.036,0.119,0.040,0.304,Binge Drinking,Female
+Hudson,9,Black,2,297,0.086,0.045,0.158,0.054,0.322,Binge Drinking,Female
+Hudson,9,White,3,764,0.191,0.152,0.236,0.042,0.112,Binge Drinking,Female
+Hudson,9,Other,4,74,0.018,0.005,0.061,0.022,0.618,Binge Drinking,Female
+Hudson,9,Hispanic,5,683,0.097,0.067,0.138,0.035,0.186,Binge Drinking,Female
+Hunterdon,10,All Races,.,"1,215",0.148,0.111,0.195,0.042,0.145,Binge Drinking,Female
+Hunterdon,10,Asian/Pacific Islander,1,15,**,**,**,0.000,.,Binge Drinking,Female
+Hunterdon,10,Black,2,20,**,**,**,0.021,1.092,Binge Drinking,Female
+Hunterdon,10,White,3,"1,122",0.166,0.123,0.220,0.048,0.148,Binge Drinking,Female
+Hunterdon,10,Other,4,11,**,**,**,0.194,0.647,Binge Drinking,Female
+Hunterdon,10,Hispanic,5,47,**,**,**,0.101,0.490,Binge Drinking,Female
+Mercer,11,All Races,.,"1,284",**,**,**,0.029,0.104,Binge Drinking,Female
+Mercer,11,Asian/Pacific Islander,1,63,0.097,0.049,0.183,0.064,0.336,Binge Drinking,Female
+Mercer,11,Black,2,224,0.160,0.112,0.225,0.056,0.179,Binge Drinking,Female
+Mercer,11,White,3,848,0.166,0.126,0.216,0.045,0.138,Binge Drinking,Female
+Mercer,11,Other,4,30,**,**,**,0.130,0.521,Binge Drinking,Female
+Mercer,11,Hispanic,5,119,0.065,0.027,0.148,0.056,0.437,Binge Drinking,Female
+Middlesex,12,All Races,.,"1,359",**,**,**,0.026,0.123,Binge Drinking,Female
+Middlesex,12,Asian/Pacific Islander,1,169,0.079,0.032,0.182,0.069,0.444,Binge Drinking,Female
+Middlesex,12,Black,2,130,0.072,0.032,0.154,0.057,0.401,Binge Drinking,Female
+Middlesex,12,White,3,845,0.130,0.094,0.178,0.042,0.163,Binge Drinking,Female
+Middlesex,12,Other,4,29,**,**,**,0.044,1.025,Binge Drinking,Female
+Middlesex,12,Hispanic,5,186,0.130,0.078,0.211,0.065,0.256,Binge Drinking,Female
+Monmouth,13,All Races,.,"1,252",0.171,0.139,0.208,0.034,0.102,Binge Drinking,Female
+Monmouth,13,Asian/Pacific Islander,1,25,**,**,**,0.055,0.716,Binge Drinking,Female
+Monmouth,13,Black,2,65,0.123,0.051,0.268,0.104,0.429,Binge Drinking,Female
+Monmouth,13,White,3,"1,043",0.210,0.170,0.256,0.043,0.106,Binge Drinking,Female
+Monmouth,13,Other,4,24,**,**,**,0.124,0.880,Binge Drinking,Female
+Monmouth,13,Hispanic,5,95,0.049,0.022,0.106,0.039,0.404,Binge Drinking,Female
+Morris,14,All Races,.,"1,430",0.151,0.120,0.188,0.034,0.114,Binge Drinking,Female
+Morris,14,Asian/Pacific Islander,1,50,0.101,0.033,0.266,0.106,0.538,Binge Drinking,Female
+Morris,14,Black,2,37,**,**,**,0.046,0.698,Binge Drinking,Female
+Morris,14,White,3,"1,214",0.174,0.135,0.221,0.043,0.125,Binge Drinking,Female
+Morris,14,Other,4,28,**,**,**,0.077,0.642,Binge Drinking,Female
+Morris,14,Hispanic,5,101,0.136,0.084,0.213,0.063,0.237,Binge Drinking,Female
+Ocean,15,All Races,.,"1,358",0.121,0.094,0.155,0.030,0.127,Binge Drinking,Female
+Ocean,15,Asian/Pacific Islander,1,7,**,**,**,0.000,.,Binge Drinking,Female
+Ocean,15,Black,2,32,**,**,**,0.059,0.183,Binge Drinking,Female
+Ocean,15,White,3,"1,217",0.134,0.102,0.174,0.036,0.136,Binge Drinking,Female
+Ocean,15,Other,4,22,**,**,**,0.091,0.680,Binge Drinking,Female
+Ocean,15,Hispanic,5,80,0.047,0.017,0.125,0.048,0.519,Binge Drinking,Female
+Passaic,16,All Races,.,"1,312",0.116,0.088,0.150,0.031,0.137,Binge Drinking,Female
+Passaic,16,Asian/Pacific Islander,1,25,**,**,**,0.063,0.883,Binge Drinking,Female
+Passaic,16,Black,2,160,0.088,0.048,0.158,0.053,0.308,Binge Drinking,Female
+Passaic,16,White,3,676,0.156,0.115,0.207,0.046,0.151,Binge Drinking,Female
+Passaic,16,Other,4,21,**,**,**,0.079,0.951,Binge Drinking,Female
+Passaic,16,Hispanic,5,430,0.092,0.052,0.156,0.051,0.281,Binge Drinking,Female
+Salem,17,All Races,.,"1,374",0.135,0.095,0.187,0.046,0.172,Binge Drinking,Female
+Salem,17,Asian/Pacific Islander,1,1,**,**,**,0.000,.,Binge Drinking,Female
+Salem,17,Black,2,188,0.069,0.034,0.136,0.048,0.354,Binge Drinking,Female
+Salem,17,White,3,"1,102",0.163,0.110,0.233,0.061,0.192,Binge Drinking,Female
+Salem,17,Other,4,27,**,**,**,0.105,0.883,Binge Drinking,Female
+Salem,17,Hispanic,5,56,0.073,0.026,0.187,0.073,0.507,Binge Drinking,Female
+Somerset,18,All Races,.,"1,253",**,**,**,0.033,0.137,Binge Drinking,Female
+Somerset,18,Asian/Pacific Islander,1,86,0.076,0.035,0.158,0.058,0.391,Binge Drinking,Female
+Somerset,18,Black,2,75,0.108,0.042,0.247,0.096,0.455,Binge Drinking,Female
+Somerset,18,White,3,970,0.158,0.114,0.214,0.050,0.160,Binge Drinking,Female
+Somerset,18,Other,4,22,**,**,**,0.061,0.983,Binge Drinking,Female
+Somerset,18,Hispanic,5,100,0.090,0.037,0.202,0.077,0.434,Binge Drinking,Female
+Sussex,19,All Races,.,"1,199",0.151,0.115,0.197,0.041,0.138,Binge Drinking,Female
+Sussex,19,Asian/Pacific Islander,1,15,**,**,**,0.000,.,Binge Drinking,Female
+Sussex,19,Black,2,30,**,**,**,0.109,0.520,Binge Drinking,Female
+Sussex,19,White,3,"1,074",0.167,0.124,0.221,0.049,0.148,Binge Drinking,Female
+Sussex,19,Other,4,17,**,**,**,0.000,.,Binge Drinking,Female
+Sussex,19,Hispanic,5,63,0.091,0.044,0.177,0.063,0.355,Binge Drinking,Female
+Union,20,All Races,.,"1,406",0.124,0.100,0.153,0.026,0.109,Binge Drinking,Female
+Union,20,Asian/Pacific Islander,1,30,**,**,**,0.000,.,Binge Drinking,Female
+Union,20,Black,2,296,0.061,0.036,0.104,0.033,0.274,Binge Drinking,Female
+Union,20,White,3,725,0.171,0.126,0.228,0.051,0.151,Binge Drinking,Female
+Union,20,Other,4,42,**,**,**,0.086,0.554,Binge Drinking,Female
+Union,20,Hispanic,5,313,0.127,0.085,0.187,0.051,0.202,Binge Drinking,Female
+Warren,21,All Races,.,"1,277",0.120,0.091,0.156,0.032,0.136,Binge Drinking,Female
+Warren,21,Asian/Pacific Islander,1,8,**,**,**,0.000,.,Binge Drinking,Female
+Warren,21,Black,2,36,**,**,**,0.073,0.535,Binge Drinking,Female
+Warren,21,White,3,"1,171",0.143,0.109,0.186,0.038,0.137,Binge Drinking,Female
+Warren,21,Other,4,17,**,**,**,0.087,0.225,Binge Drinking,Female
+Warren,21,Hispanic,5,45,**,**,**,0.014,0.054,Binge Drinking,Female
